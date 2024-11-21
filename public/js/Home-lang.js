@@ -25,8 +25,8 @@ function getCookie(name) {
 // 언어 설정 함수
 function setLanguage(lang) {
     const pageTitles = {
-        'Notices.html': { kor: '공지사항', eng: 'Notice' },
-        'Projects.html': { kor: '프로젝트', eng: 'Projects' },
+        'Professor.html': { kor: '교수 소개', eng: 'Professor' },
+        'research-act.html': { kor: '연구 활동', eng: 'Research' },
         'OS-Log.html': { kor: 'OS 마당', eng: 'OS Log' },
         'Members.html': { kor: '멤버 소개', eng: 'Members' }
     };
@@ -45,10 +45,10 @@ function setLanguage(lang) {
             }
         });
         // 텍스트를 한국어로 변경
-        document.getElementById('noticeLink').innerText = '공지사항';
-        document.getElementById('projectsLink').innerText = '프로젝트';
-        document.getElementById('osLogLink').innerText = 'OS 마당';
-        document.getElementById('membersLink').innerText = '멤버 소개';
+        document.getElementById('professer_Link').innerText = '교수 소개';
+        document.getElementById('research_Link').innerText = '연구 활동';
+        document.getElementById('osLog_Link').innerText = 'OS 마당';
+        document.getElementById('members_Link').innerText = '멤버 소개';
         document.querySelector('title').innerText = 'OS LAB' + (titleSuffix ? ' - ' + titleSuffix : '');
         if (document.querySelector('h1')) {
             document.querySelector('h1').innerText = titleSuffix;
@@ -65,10 +65,10 @@ function setLanguage(lang) {
             }
         });
         // 텍스트를 영어로 변경
-        document.getElementById('noticeLink').innerText = 'Notice';
-        document.getElementById('projectsLink').innerText = 'Projects';
-        document.getElementById('osLogLink').innerText = 'OS Log';
-        document.getElementById('membersLink').innerText = 'Members';
+        document.getElementById('professer_Link').innerText = 'Professor';
+        document.getElementById('research_Link').innerText = 'Research';
+        document.getElementById('osLog_Link').innerText = 'OS Log';
+        document.getElementById('members_Link').innerText = 'Members';
         document.querySelector('title').innerText = 'OS LAB' + (titleSuffix ? ' - ' + titleSuffix : '');
         if (document.querySelector('h1')) {
             document.querySelector('h1').innerText = titleSuffix;
@@ -90,15 +90,15 @@ function updateDropdownMenu(lang) {
     dropdownMenu.innerHTML = '';
 
     const itemsKor = [
-        { text: '공지사항', link: '/HTML/Notices.html' },
-        { text: '프로젝트', link: '/HTML/Projects.html' },
+        { text: '교수 소개', link: '/HTML/Professor.html' },
+        { text: '연구 활동', link: '/HTML/Research.html' },
         { text: 'OS 마당', link: '/HTML/OS-Log.html' },
         { text: '멤버 소개', link: '/HTML/Members.html' },
     ];
 
     const itemsEng = [
-        { text: 'Notice', link: '/HTML/Notices.html' },
-        { text: 'Projects', link: '/HTML/Projects.html' },
+        { text: 'Professor', link: '/HTML/Professor.html' },
+        { text: 'Reserch', link: '/HTML/Reserch.html' },
         { text: 'OS Log', link: '/HTML/OS-Log.html' },
         { text: 'Members', link: '/HTML/Members.html' },
     ];
