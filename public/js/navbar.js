@@ -1,7 +1,7 @@
 // 샌드위치 버튼 클릭 시 드롭다운 메뉴 표시
 document.querySelector('.navbar-toggler').addEventListener('click', function() {
     const dropdownMenu = document.getElementById('dropdownMenuCustom');
-    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    dropdownMenu.classList.toggle('show'); // display 토글 대신 클래스 토글 사용
 });
 
 // 로고 클릭 시 루트 경로로 이동

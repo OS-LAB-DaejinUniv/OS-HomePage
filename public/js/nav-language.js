@@ -65,7 +65,7 @@ function setLanguage(lang) {
             }
         });
         // 텍스트를 영어로 변경
-        document.getElementById('professer_Link').innerText = 'Professor';
+        document.getElementById('professor_Link').innerText = 'Professor';
         document.getElementById('research_Link').innerText = 'Research';
         document.getElementById('osLog_Link').innerText = 'OS Log';
         document.getElementById('members_Link').innerText = 'Members';
@@ -96,7 +96,7 @@ function updateDropdownMenu(lang) {
 
     const itemsEng = [
         { text: 'Professor', link: '/HTML/Professor.html' },
-        { text: 'Reserch', link: '/HTML/Reserch.html' },
+        { text: 'Research', link: '/HTML/Research.html' }, // 'Reserch' → 'Research' 수정
         { text: 'OS Log', link: '/HTML/OS-Log.html' },
         { text: 'Members', link: '/HTML/Members.html' },
     ];
@@ -152,3 +152,36 @@ document.getElementById('korBtnMobile').addEventListener('click', function() {
 document.getElementById('engBtnMobile').addEventListener('click', function() {
     setLanguage('eng');
 });
+
+// Home-lang.js의 setHomeContent 기능 통합
+function setHomeContent(data, lang) {
+    const sloganTop = data.sloganTop[lang];
+    const sloganMid = data.sloganMid[lang];
+    const sloganBot = data.sloganBot[lang];
+    const projectButtonText = data.projectButtonText[lang];
+
+    document.getElementById('sloganTopH3').innerText = sloganTop.title || 'Loading...';
+    document.getElementById('sloganTopLine1').innerText = sloganTop.line1 || 'Json을 불러올 수 없습니다';
+    document.getElementById('sloganTopLine2').innerText = sloganTop.line2 || 'Can\'t load json files';
+
+    document.getElementById('sloganMidH3').innerText = sloganMid.title || 'Loading...';
+    document.getElementById('sloganMidLine1').innerText = sloganMid.line1 || 'Json을 불러올 수 없습니다';
+    document.getElementById('sloganMidLine2').innerText = sloganMid.line2 || 'Can\'t load json files';
+
+    document.getElementById('sloganBotH3').innerText = sloganBot.title || 'Loading...';
+    document.getElementById('sloganBotLine1').innerText = sloganBot.line1 || 'Json을 불러올 수 없습니다';
+    document.getElementById('sloganBotLine2').innerText = sloganBot.line2 || 'Can\'t load json files';
+
+    document.getElementById('viewProjectsBtn').innerText = projectButtonText || 'Loading...';
+
+    // 새로 추가된 콘텐츠 설정
+    const contents = data.contents;
+
+    contents.forEach((content, index) => {
+        const titleElement = document.querySelectorAll('.post-title-box h3')[index];
+        const contentElement = document.querySelectorAll('.post-body p')[index];
+
+        titleElement.textContent = content.title[lang];
+        contentElement.innerHTML = content.content[lang].replace(/\n/g, '<br>'); // 줄넘김 처리
+    });
+}

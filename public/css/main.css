@@ -85,8 +85,8 @@ body {
 }
 
 .dropdown-menu-custom.show {
-    display: flex;
-    flex-direction: row;
+    display: flex; /* 기존 display: none; 수정 */
+    flex-direction: column; /* 드롭다운 항목을 세로로 배치 */
     justify-content: center;
     align-items: center;
 }

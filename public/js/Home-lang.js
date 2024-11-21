@@ -12,12 +12,8 @@ function getCookie(name) {
     const ca = document.cookie.split(';');
     for (let i = 0; i < ca.length; i++) {
         let c = ca[i];
-        while (c.charAt(0) === ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(nameEQ) === 0) {
-            return c.substring(nameEQ.length, c.length);
-        }
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
 }
@@ -26,7 +22,7 @@ function getCookie(name) {
 function setLanguage(lang) {
     const pageTitles = {
         'Professor.html': { kor: '교수 소개', eng: 'Professor' },
-        'research-act.html': { kor: '연구 활동', eng: 'Research' },
+        'Research.html': { kor: '연구 활동', eng: 'Research' },
         'OS-Log.html': { kor: 'OS 마당', eng: 'OS Log' },
         'Members.html': { kor: '멤버 소개', eng: 'Members' }
     };
@@ -45,7 +41,7 @@ function setLanguage(lang) {
             }
         });
         // 텍스트를 한국어로 변경
-        document.getElementById('professer_Link').innerText = '교수 소개';
+        document.getElementById('professor_Link').innerText = '교수 소개';
         document.getElementById('research_Link').innerText = '연구 활동';
         document.getElementById('osLog_Link').innerText = 'OS 마당';
         document.getElementById('members_Link').innerText = '멤버 소개';
@@ -65,7 +61,7 @@ function setLanguage(lang) {
             }
         });
         // 텍스트를 영어로 변경
-        document.getElementById('professer_Link').innerText = 'Professor';
+        document.getElementById('professor_Link').innerText = 'Professor';
         document.getElementById('research_Link').innerText = 'Research';
         document.getElementById('osLog_Link').innerText = 'OS Log';
         document.getElementById('members_Link').innerText = 'Members';
@@ -98,7 +94,7 @@ function updateDropdownMenu(lang) {
 
     const itemsEng = [
         { text: 'Professor', link: '/HTML/Professor.html' },
-        { text: 'Reserch', link: '/HTML/Reserch.html' },
+        { text: 'Research', link: '/HTML/Research.html' },
         { text: 'OS Log', link: '/HTML/OS-Log.html' },
         { text: 'Members', link: '/HTML/Members.html' },
     ];
