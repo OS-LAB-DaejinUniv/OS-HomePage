@@ -1,0 +1,223 @@
+/* Home.css */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.slogan-box {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.slogan-box h3 {
+    font-size: 30px;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+.slogan-box h2 {
+    font-size: 38px;
+    font-weight: normal;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.8);
+    margin: 0;
+}
+
+.slogan-box h2 .line1 {
+    font-size: 38px;
+    display: inline-block;
+    transform: translateY(-5px);
+    margin-right: 100px;
+}
+
+.slogan-box h2 .line2 {
+    font-size: 45px;
+    display: inline-block;
+    transform: translateY(5px);
+    margin-left: 100px;
+}
+
+.image-container {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.image-container .image-box {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+.image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(217, 217, 217, 0.2);
+    backdrop-filter: blur(4px);
+    z-index: 1;
+}
+
+/* 미디어 쿼리: 화면 너비가 980px 이하일 때 */
+@media (max-width: 980px) {
+    .slogan-box h3 {
+        font-size: 28px;
+    }
+
+    .slogan-box h2 .line1 {
+        font-size: 30px;
+        margin-right: 75px;
+    }
+
+    .slogan-box h2 .line2 {
+        font-size: 38px;
+        margin-left: 75px;
+    }
+
+    .image-container {
+        display: none;
+    }
+
+    .image-container-small {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        height: 600px;
+        position: relative;
+    }
+
+    .image-container-small .image-box {
+        flex: 1;
+        height: 600px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .image-container-small .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(217, 217, 217, 0.2);
+        backdrop-filter: blur(4px);
+        z-index: 1;
+    }
+
+    .post-container {
+        width: 650px;
+        height: 290px; /* 비율에 맞게 높이도 조정 */
+        margin: 30px auto;
+    }
+
+    .post-content h3 {
+        font-size: 28px;
+        padding: 8px;
+    }
+
+    .post-content {
+        padding: 15px 2px;
+    }
+}
+
+/* 추가 미디어 쿼리: 작은 모바일 기기 */
+@media (max-width: 575px) {
+    .slogan-box h3 {
+        font-size: 26px;
+    }
+
+    .slogan-box h2 .line1 {
+        font-size: 28px;
+        margin-right: 50px;
+    }
+
+    .slogan-box h2 .line2 {
+        font-size: 32px;
+        margin-left: 50px;
+    }
+}
+
+/* 프로젝트 자세히 보기 버튼 스타일 */
+.view-projects-btn {
+    display: inline-block;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 15px auto;
+    color: white;
+    background-color: gray;
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* 게시물 상자 스타일 */
+.post-container {
+    width: 785px;
+    height: 350px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    display: flex;
+    margin: 50px auto;
+    overflow: hidden;
+}
+
+.post-image {
+    flex: 1.685;
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+}
+
+.post-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    position: relative;
+    padding: 20px 3px;
+}
+
+.post-content h3 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+.post-title-box {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.post-title-box h3 {
+    margin: 0;
+}
+
+.post-body {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    word-wrap: break-word;
+}

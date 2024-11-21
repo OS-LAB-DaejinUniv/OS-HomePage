@@ -1,0 +1,25 @@
+/* style.css 파일 */
+@font-face {
+    font-family: 'HancomMalangMalang';
+    src: url('/Fonts/HancomMalangMalang-Bold.woff2') format('woff2'),
+        url('/Fonts/HancomMalangMalang-Bold.woff') format('woff'),
+        url('/Fonts/HancomMalangMalang-Bold.ttf') format('truetype'),
+        url('/Fonts/HancomMalangMalang-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HancomMalangMalang';
+    src: url('/Fonts/HancomMalangMalang-Regular.woff2') format('woff2'),
+        url('/Fonts/HancomMalangMalang-Regular.woff') format('woff'),
+        url('/Fonts/HancomMalangMalang-Regular.ttf') format('truetype'),
+        url('/Fonts/HancomMalangMalang-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 웹사이트에서 폰트를 메인 폰트로 사용 */
+body {
+    font-family: 'HancomMalangMalang', sans-serif !important;
+}

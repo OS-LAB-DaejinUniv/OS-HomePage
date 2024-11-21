@@ -1,0 +1,105 @@
+body {
+    font-family: 'HancomMalangMalang', sans-serif !important;
+}
+
+.navbar-brand img {
+    height: 25px;
+}
+
+.nav-item .nav-link {
+    margin: 0 10px;
+    position: relative;
+    padding-bottom: 10px; /* 아래 패딩 추가 */
+}
+
+.nav-item .nav-link.current-page::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 3px; /* 글자 3px 아래에 위치 */
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    border-radius: 5px;
+    background-color: blue;
+    opacity: 0.2; /* 투명도 50% */
+}
+
+.index-page .nav-item .nav-link.current-page::after {
+    display: none;
+}
+
+.container, .container-fluid {
+    padding: 0 !important;
+    max-width: 100% !important; /* 최대 폭 제한 제거 */
+}
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.language-option {
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.language-option.active {
+    color: black;
+    opacity: 1;
+}
+
+.language-option.inactive {
+    color: black;
+    opacity: 0.4;
+}
+
+/* 반응형 디자인을 위한 추가 스타일 */
+@media (max-width: 991px) {
+    .language-switch.d-lg-none {
+        display: flex;
+    }
+    .language-switch.d-none.d-lg-flex {
+        display: none;
+    }
+    .navbar-toggler {
+        margin-left: 20px;
+    }
+}
+
+/* 드롭다운 메뉴 커스텀 스타일 */
+.dropdown-menu-custom {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 10px 0;
+    text-align: center; /* 중앙 정렬을 위한 스타일 */
+}
+
+.dropdown-menu-custom.show {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-menu-custom a {
+    display: block;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    width: 100%; /* 넓이를 100%로 설정 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.dropdown-menu-custom a:hover {
+    background-color: #f1f1f1;
+}
