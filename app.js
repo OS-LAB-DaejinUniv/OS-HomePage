@@ -16,6 +16,13 @@ app.get('/', (req, res) => {
     res.render('pages/home', { lang });
 });
 
+// 기본 라우트
+app.get('/Professor', (req, res) => {
+    let lang = req.cookies.language || 'kor';
+    res.render('pages/Professor', { lang });
+});
+
+
 // 언어 변경 라우트
 app.get('/setLanguage/:lang', (req, res) => {
     const { lang } = req.params;
