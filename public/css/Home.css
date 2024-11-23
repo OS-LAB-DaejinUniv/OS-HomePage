@@ -250,10 +250,13 @@ body, html {
 /* 이미지 갤러리 섹션 스타일 */
 .image-gallery {
     width: 1300px;
+    height: 725px;
     display: flex;
     justify-content: space-between;
     margin: 50px auto;
     flex-wrap: wrap;
+    border-radius: 25px;
+    overflow: hidden;
 }
 
 .gallery-item {
