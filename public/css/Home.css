@@ -191,8 +191,8 @@ body, html {
 
 /* 게시물 상자 스타일 */
 .post-container {
-    width: 785px;
-    height: 350px;
+    width: 725px;
+    height: 325px;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 25px;
     display: flex;
@@ -201,7 +201,7 @@ body, html {
 }
 
 .post-image {
-    flex: 1.685;
+    flex: 1.45;
     background-size: cover;
     background-position: center;
     border-radius: 25px;
