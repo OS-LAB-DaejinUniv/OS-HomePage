@@ -6,7 +6,7 @@ body, html {
 
 .slogan-box {
     width: 100%;
-    height: 250px;
+    height: 27vh;
     position: relative;
     margin: 0 auto;
     display: flex;
@@ -56,7 +56,8 @@ body, html {
 
 .image-container {
     width: 100%;
-    height: 700px;
+    height: 75vh;
+    min-height: 650px;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -97,19 +98,21 @@ body, html {
 
     .image-container {
         display: none;
+        width: 100%;
+        
     }
 
     .image-container-small {
         width: 100%;
         display: flex;
         flex-direction: row;
-        height: 600px;
+        height: 56vh;
+        min-height: 400px;
         position: relative;
     }
 
     .image-container-small .image-box {
         flex: 1;
-        height: 600px;
         background-size: cover;
         background-position: center;
     }
