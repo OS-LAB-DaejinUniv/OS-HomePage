@@ -1,0 +1,36 @@
+.rsch-container {
+    width: 950px;
+    height: 325px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    display: flex;
+
+    margin: 50px auto;
+    overflow: hidden;
+}
+
+.rsch-container img {
+    background-size: fill !important;
+}
+
+.content-image {
+    width: 500px;
+    background-size: cover;
+}
+
+.post-content-rsch {
+    margin: 0 1rem 0 1rem;
+}
+
+.glow {
+    box-shadow: 0 5px 15px rgba(97, 97, 97, 0.4);
+}
+@font-face {
+    font-family: 'ptr';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+.asdf {
+    font-family: 'ptr';
+}

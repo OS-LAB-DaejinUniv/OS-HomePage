@@ -22,6 +22,10 @@ app.get('/Professor', (req, res) => {
     res.render('pages/Professor', { lang });
 });
 
+app.get('/Research', (req, res) => {
+    let lang = req.cookies.language || 'kor';
+    res.render('pages/Research', { lang });
+});
 
 // 언어 변경 라우트
 app.get('/setLanguage/:lang', (req, res) => {
@@ -30,7 +34,7 @@ app.get('/setLanguage/:lang', (req, res) => {
     res.redirect('back');
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
