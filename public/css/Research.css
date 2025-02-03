@@ -1,36 +1,86 @@
 .rsch-container {
-    width: 950px;
-    height: 325px;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 25px;
-    display: flex;
-
-    margin: 50px auto;
-    overflow: hidden;
+  width: 950px;
+  height: 325px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  display: flex;
+  margin: 50px auto;
+  overflow: hidden;
 }
 
 .rsch-container img {
-    background-size: fill !important;
+  object-fit: cover;
 }
 
 .content-image {
-    width: 500px;
-    background-size: cover;
+  width: 500px;
+  background-size: cover;
 }
 
 .post-content-rsch {
-    margin: 0 1rem 0 1rem;
+  margin: 0 1rem 0 1rem;
 }
 
 .glow {
-    box-shadow: 0 5px 15px rgba(97, 97, 97, 0.4);
+  box-shadow: 0 5px 15px rgba(97, 97, 97, 0.4);
 }
 @font-face {
-    font-family: 'ptr';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+  font-family: "ptr";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
 .asdf {
-    font-family: 'ptr';
+  font-family: "ptr";
+}
+
+/* 연구 게시물 레이아웃을 위한 기본 스타일 (연구 페이지 항목) */
+.research-item {
+  border-radius: 8px;
+  display: flex;
+  width: 65vw;
+  height: 315px;
+  background-color: #fff;
+  margin-bottom: 1rem;
+  max-width: 950px;
+}
+
+.research-img {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  width: 400px;
+  object-fit: cover;
+}
+
+.research-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 2rem;
+}
+
+/* 5줄 이상이면 ..으로 처리 (텍스트 줄 제한) */
+.research-content {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 미디어 쿼리: 화면 너비 980px 이하 */
+@media (max-width: 980px) {
+  .research-item {
+    flex-direction: column;
+    height: auto;
+    width: 90vw;
+  }
+  .research-img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+  }
+  .research-info {
+    padding: 1rem;
+  }
 }
