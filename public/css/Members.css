@@ -1,0 +1,57 @@
+body {
+    font-family: 'HancomMalangMalang', sans-serif !important;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.member-card {
+    background: rgba(217, 217, 217, 0.50);
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(97, 97, 97, 0.4);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(2px);
+}
+
+.member-card img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    margin-left: 1rem;
+}
+
+.member-card .member-info {
+    flex: 1;
+}
+
+.member-card .member-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.member-card .member-info p {
+    margin: 0.5rem 0 0;
+    color: #666;
+}
+
+.github-icon-container {
+    display: flex;
+    align-items: center;
+    background: rgba(217, 217, 217, 0.50);
+    border-radius: 25px;
+    padding: 2px 5px; /* Adjusted padding */
+    margin-top: 10px;
+}
+
+.github-icon {
+    width: 0.8em; /* Adjusted size */
+    height: 0.8em; /* Adjusted size */
+    margin-right: 5px;
+    vertical-align: middle;
+}
