@@ -1,50 +1,51 @@
 /* Home.css */
-body, html {
-    height: 100%;
-    margin: 0;
+body,
+html {
+  height: 100%;
+  margin: 0;
 }
 
 .slogan-box {
-    width: 100%;
-    height: 27vh;
-    position: relative;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  width: 100%;
+  height: 27vh;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .slogan-box h3 {
-    font-size: 30px;
-    font-weight: normal;
-    color: rgba(0, 0, 0, 0.5);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    margin: 0;
+  font-size: 30px;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 0;
 }
 
 .slogan-box h2 {
-    font-size: 38px;
-    font-weight: normal;
-    margin-top: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    color: rgba(0, 0, 0, 0.8);
-    margin: 0;
+  font-size: 38px;
+  font-weight: normal;
+  margin-top: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0;
 }
 
 .slogan-box h2 .line1 {
-    font-size: 38px;
-    display: inline-block;
-    transform: translateY(-5px);
-    margin-right: 100px;
+  font-size: 38px;
+  display: inline-block;
+  transform: translateY(-5px);
+  margin-right: 100px;
 }
 
 .slogan-box h2 .line2 {
-    font-size: 45px;
-    display: inline-block;
-    transform: translateY(5px);
-    margin-left: 100px;
+  font-size: 45px;
+  display: inline-block;
+  transform: translateY(5px);
+  margin-left: 100px;
 }
 /* 
 .aaa{
@@ -55,21 +56,68 @@ body, html {
 } */
 
 .image-container {
-    width: 100%;
-    height: 75vh;
-    min-height: 650px;
-    display: flex;
-    flex-direction: row;
-    position: relative;
+  width: 100%;
+  height: 75vh;
+  min-height: 650px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
 }
 
 .image-container .image-box {
-    flex: 1;
-    background-size: cover;
-    background-position: center;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
 }
 
 .image-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(217, 217, 217, 0.2);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+/* 미디어 쿼리: 화면 너비가 980px 이하일 때 */
+@media (max-width: 980px) {
+  .slogan-box h3 {
+    font-size: 28px;
+  }
+
+  .slogan-box h2 .line1 {
+    font-size: 30px;
+    margin-right: 75px;
+  }
+
+  .slogan-box h2 .line2 {
+    font-size: 38px;
+    margin-left: 75px;
+  }
+
+  .image-container {
+    display: none;
+    width: 100%;
+  }
+
+  .image-container-small {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 56vh;
+    min-height: 400px;
+    position: relative;
+  }
+
+  .image-container-small .image-box {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .image-container-small .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -78,217 +126,420 @@ body, html {
     background: rgba(217, 217, 217, 0.2);
     backdrop-filter: blur(4px);
     z-index: 1;
-}
+  }
 
-/* 미디어 쿼리: 화면 너비가 980px 이하일 때 */
-@media (max-width: 980px) {
-    .slogan-box h3 {
-        font-size: 28px;
-    }
+  .post-container {
+    width: 650px;
+    height: 290px; /* 비율에 맞게 높이도 조정 */
+    margin: 30px auto;
+  }
 
-    .slogan-box h2 .line1 {
-        font-size: 30px;
-        margin-right: 75px;
-    }
+  .post-content h3 {
+    font-size: 28px;
+    padding: 8px;
+  }
 
-    .slogan-box h2 .line2 {
-        font-size: 38px;
-        margin-left: 75px;
-    }
+  .post-content {
+    padding: 15px 2px;
+  }
 
-    .image-container {
-        display: none;
-        width: 100%;
-        
-    }
+  .image-gallery {
+    width: 100%;
+    padding: 0 20px;
+  }
 
-    .image-container-small {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        height: 56vh;
-        min-height: 400px;
-        position: relative;
-    }
+  .gallery-item {
+    width: 45%; /* 두 개씩 표시 */
+  }
 
-    .image-container-small .image-box {
-        flex: 1;
-        background-size: cover;
-        background-position: center;
-    }
+  .gallery-desktop {
+    display: none;
+  }
 
-    .image-container-small .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(217, 217, 217, 0.2);
-        backdrop-filter: blur(4px);
-        z-index: 1;
-    }
+  .gallery-slider {
+    display: block;
+    height: 600px;
+  }
 
-    .post-container {
-        width: 650px;
-        height: 290px; /* 비율에 맞게 높이도 조정 */
-        margin: 30px auto;
-    }
+  .gallery-container {
+    height: 600px;
+  }
 
-    .post-content h3 {
-        font-size: 28px;
-        padding: 8px;
-    }
+  .tablet-view {
+    display: block;
+  }
 
-    .post-content {
-        padding: 15px 2px;
-    }
-
-    .image-gallery {
-        width: 100%;
-        padding: 0 20px;
-    }
-
-    .gallery-item {
-        width: 45%; /* 두 개씩 표시 */
-    }
+  .mobile-view {
+    display: none;
+  }
 }
 
 /* 추가 미디어 쿼리: 작은 모바일 기기 */
 @media (max-width: 575px) {
-    .slogan-box h3 {
-        font-size: 26px;
-    }
+  .slogan-box h3 {
+    font-size: 26px;
+  }
 
-    .slogan-box h2 .line1 {
-        font-size: 28px;
-        margin-right: 50px;
-    }
+  .slogan-box h2 .line1 {
+    font-size: 28px;
+    margin-right: 50px;
+  }
 
-    .slogan-box h2 .line2 {
-        font-size: 32px;
-        margin-left: 50px;
-    }
+  .slogan-box h2 .line2 {
+    font-size: 32px;
+    margin-left: 50px;
+  }
 
-    .image-gallery {
-        flex-direction: column;
-        align-items: center;
-    }
+  .image-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .gallery-item {
-        width: 80%;
-    }
+  .gallery-item {
+    width: 80%;
+  }
+
+  .gallery-container {
+    height: 500px;
+  }
+
+  .gallery-slider {
+    height: 500px;
+  }
+
+  .tablet-view {
+    display: none;
+  }
+
+  .mobile-view {
+    display: block;
+  }
 }
 
 /* 프로젝트 자세히 보기 버튼 스타일 */
 .view-projects-btn {
-    display: inline-block;
-    font-size: 20px;
-    padding: 10px 20px;
-    margin: 15px auto;
-    color: white;
-    background-color: gray;
-    border-radius: 25px;
-    text-decoration: none;
-    text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 15px auto;
+  color: white;
+  background-color: gray;
+  border-radius: 25px;
+  text-decoration: none;
+  text-align: center;
 }
 
 /* 게시물 상자 스타일 */
 .post-container {
-    width: 725px;
-    height: 325px;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 25px;
-    display: flex;
-    margin: 50px auto;
-    overflow: hidden;
+  width: 725px;
+  height: 325px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  display: flex;
+  margin: 50px auto;
+  overflow: hidden;
 }
 
 .post-image {
-    flex: 1.45;
-    background-size: cover;
-    background-position: center;
-    border-radius: 25px;
+  flex: 1.45;
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
 }
 
 .post-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    position: relative;
-    padding: 20px 3px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  position: relative;
+  padding: 20px 3px;
 }
 
 .post-content h3 {
-    font-size: 35px;
-    margin-bottom: 10px;
-    text-align: center;
-    padding: 10px;
+  font-size: 35px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 10px;
 }
 
 .post-title-box {
-    width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .post-title-box h3 {
-    margin: 0;
+  margin: 0;
 }
 
 .post-body {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    word-wrap: break-word;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  word-wrap: break-word;
 }
 
-/* 이미지 갤러리 섹션 스타일 */
+/* 이미지 갤러리 섹션 스타일 - 간소화 */
 .image-gallery {
-    width: 1300px;
-    height: 725px;
-    display: flex;
-    justify-content: space-between;
-    margin: 50px auto;
-    flex-wrap: wrap;
-    border-radius: 25px;
-    overflow: hidden;
+  width: 100%;
+  max-width: 1300px;
+  margin: 50px auto;
+  position: relative;
 }
 
-.gallery-item {
-    position: relative;
-    width: 25%; /* 4개가 한 줄에 배치되도록 */
-    margin-bottom: 20px;
-    
+.gallery-container {
+  width: 100%;
+  height: 725px;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
 }
 
-.gallery-item img {
-    width: 100%;
-    height: 725px;
+/* 데스크탑 뷰 */
+.gallery-desktop {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-desktop .gallery-item {
+  width: 25%;
+  height: 100%;
+  position: relative;
+}
+
+.gallery-desktop .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 슬라이더 공통 스타일 */
+.gallery-slider {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: relative;
+}
+
+.slider-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 1s ease;
+  height: 100%;
+}
+
+.slide {
+  position: relative;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+/* 태블릿 슬라이더 (2개 이미지) */
+.tablet-slider .slide {
+  width: 50%;
+}
+
+.tablet-slider .slide img {
+  object-fit: contain;
+}
+
+/* 모바일 슬라이더 (1개 이미지) */
+.mobile-slider .slide {
+  width: 100%;
+}
+
+.mobile-slider .slide img {
+  object-fit: contain;
 }
 
 .description-circle {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.35);
-    border-radius: 100px;
-    width: auto;
-    height: 35px;
-    padding: 10px;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50px;
+  padding: 8px 15px;
+  color: white;
+  font-size: 14px;
+  backdrop-filter: blur(3px);
+  white-space: nowrap;
+  z-index: 5;
+}
+
+/* 미디어 쿼리 - 중복 제거 및 통합 */
+@media (max-width: 980px) {
+  .slogan-box h3 {
+    font-size: 28px;
+  }
+
+  .slogan-box h2 .line1 {
+    font-size: 30px;
+    margin-right: 75px;
+  }
+
+  .slogan-box h2 .line2 {
+    font-size: 38px;
+    margin-left: 75px;
+  }
+
+  .image-container {
+    display: none;
+    width: 100%;
+  }
+
+  .image-container-small {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    
+    flex-direction: row;
+    height: 56vh;
+    min-height: 400px;
+    position: relative;
+  }
+
+  .image-container-small .image-box {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .image-container-small .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(217, 217, 217, 0.2);
     backdrop-filter: blur(4px);
-    color: white;
+    z-index: 1;
+  }
+
+  .post-container {
+    width: 650px;
+    height: 290px; /* 비율에 맞게 높이도 조정 */
+    margin: 30px auto;
+  }
+
+  .post-content h3 {
+    font-size: 28px;
+    padding: 8px;
+  }
+
+  .post-content {
+    padding: 15px 2px;
+  }
+
+  .image-gallery {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .gallery-item {
+    width: 45%; /* 두 개씩 표시 */
+  }
+
+  .gallery-desktop {
+    display: none;
+  }
+
+  .gallery-slider {
+    display: block;
+    height: 600px;
+  }
+
+  .gallery-container {
+    height: 600px;
+  }
+
+  .tablet-view {
+    display: block;
+  }
+
+  .mobile-view {
+    display: none;
+  }
+
+  .gallery-container {
+    height: 550px;
+  }
+
+  .gallery-desktop {
+    display: none !important;
+  }
+
+  .tablet-slider {
+    display: block !important;
+  }
+
+  .mobile-slider {
+    display: none !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .slogan-box h3 {
+    font-size: 26px;
+  }
+
+  .slogan-box h2 .line1 {
+    font-size: 28px;
+    margin-right: 50px;
+  }
+
+  .slogan-box h2 .line2 {
+    font-size: 32px;
+    margin-left: 50px;
+  }
+
+  .image-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-item {
+    width: 80%;
+  }
+
+  .gallery-container {
+    height: 500px;
+  }
+
+  .gallery-slider {
+    height: 500px;
+  }
+
+  .tablet-view {
+    display: none;
+  }
+
+  .mobile-view {
+    display: block;
+  }
+
+  .gallery-container {
+    height: 400px;
+  }
+
+  .tablet-slider {
+    display: none !important;
+  }
+
+  .mobile-slider {
+    display: block !important;
+  }
 }
