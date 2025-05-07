@@ -16,96 +16,163 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <%- include('../partials/header') %>
-    <div class="container mt-5">
-      <h1 class="text-center mb-5"><%= lang === 'eng' ? 'Members' : '멤버 소개' %></h1>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="member-card">
-            <div class="member-info">
-              <h3><%= lang === 'eng' ? 'Leader, Yeonjin Kim' : '랩장 김연진' %></h3>
-              <p><%= lang === 'eng' ? 'Email: kyj9750322@gmail.com' : '이메일: kyj9750322@gmail.com' %></p>
-              <p><%= lang === 'eng' ? 'Additional Info: In-school competition, GDSC - DJU in action' : '추가정보: 교내내경진대회, GDSC - DJU 활동중' %></p>
-              <p><%= lang === 'eng' ? 'Areas of interest: Information security' : '관심분야 : 정보보안' %></p>
-              <div class="github-icon-container">
-                <img src="/images/Member/github.png" alt="GitHub" class="github-icon">
-                @kimyeonjin1230
-              </div>
-            </div>
-            <img src="https://github.com/Kimyeonjin1230.png" alt="Leader, Yeonjin Kim">
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="member-card">
-              <div class="member-info">
-                <h3><%= lang === 'eng' ? 'Leader, Yeonjin Kim' : '랩장 김연진' %></h3>
-                <p><%= lang === 'eng' ? 'Email: kyj9750322@gmail.com' : '이메일: kyj9750322@gmail.com' %></p>
-                <p><%= lang === 'eng' ? 'Additional Info: In-school competition, GDSC - DJU in action' : '추가정보: 교내내경진대회, GDSC - DJU 활동중' %></p>
-                <p><%= lang === 'eng' ? 'Areas of interest: Information security' : '관심분야 : 정보보안' %></p>
-                <div class="github-icon-container">
-                  <img src="/images/Member/github.png" alt="GitHub" class="github-icon">
-                  @kimyeonjin1230
-                </div>
-              </div>
-              <img src="https://github.com/Kimyeonjin1230.png" alt="Leader, Yeonjin Kim">
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="member-card">
-              <div class="member-info">
-                <h3><%= lang === 'eng' ? 'Leader, Yeonjin Kim' : '랩장 김연진' %></h3>
-                <p><%= lang === 'eng' ? 'Email: kyj9750322@gmail.com' : '이메일: kyj9750322@gmail.com' %></p>
-                <p><%= lang === 'eng' ? 'Additional Info: In-school competition, GDSC - DJU in action' : '추가정보: 교내내경진대회, GDSC - DJU 활동중' %></p>
-                <p><%= lang === 'eng' ? 'Areas of interest: Information security' : '관심분야 : 정보보안' %></p>
-                <div class="github-icon-container">
-                  <img src="/images/Member/github.png" alt="GitHub" class="github-icon">
-                  @kimyeonjin1230
-                </div>
-              </div>
-              <img src="https://github.com/Kimyeonjin1230.png" alt="Leader, Yeonjin Kim">
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="member-card">
-              <div class="member-info">
-                <h3><%= lang === 'eng' ? 'Leader, Yeonjin Kim' : '랩장 김연진' %></h3>
-                <p><%= lang === 'eng' ? 'Email: kyj9750322@gmail.com' : '이메일: kyj9750322@gmail.com' %></p>
-                <p><%= lang === 'eng' ? 'Additional Info: In-school competition, GDSC - DJU in action' : '추가정보: 교내내경진대회, GDSC - DJU 활동중' %></p>
-                <p><%= lang === 'eng' ? 'Areas of interest: Information security' : '관심분야 : 정보보안' %></p>
-                <div class="github-icon-container">
-                  <img src="/images/Member/github.png" alt="GitHub" class="github-icon">
-                  @kimyeonjin1230
-                </div>
-              </div>
-              <img src="https://github.com/Kimyeonjin1230.png" alt="Leader, Yeonjin Kim">
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="member-card">
-              <div class="member-info">
-                <h3><%= lang === 'eng' ? 'Leader, Yeonjin Kim' : '랩장 김연진' %></h3>
-                <p><%= lang === 'eng' ? 'Email: kyj9750322@gmail.com' : '이메일: kyj9750322@gmail.com' %></p>
-                <p><%= lang === 'eng' ? 'Additional Info: In-school competition, GDSC - DJU in action' : '추가정보: 교내내경진대회, GDSC - DJU 활동중' %></p>
-                <p><%= lang === 'eng' ? 'Areas of interest: Information security' : '관심분야 : 정보보안' %></p>
-                <div class="github-icon-container">
-                  <img src="/images/Member/github.png" alt="GitHub" class="github-icon">
-                  @kimyeonjin1230
-                </div>
-              </div>
-              <img src="https://github.com/Kimyeonjin1230.png" alt="Leader, Yeonjin Kim">
-            </div>
-          </div>
 
-        
+    <div class="container mt-5 mb-5">
+      <div class="page-header text-center mb-5" data-aos="fade-down">
+        <h1 class="title-heading">
+          <%= lang === 'eng' ? 'Meet Our Team' : '연구실 멤버 소개' %>
+        </h1>
+        <p class="subtitle">
+          <%= lang === 'eng' ? 'The talented members behind OS LAB' : 'OS LAB을 이끌어가는 열정적인 멤버들' %>
+        </p>
+      </div>
+
+      <!-- 필터링 옵션 -->
+      <div class="filter-container text-center mb-4" data-aos="fade-up">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-filter active" data-filter="all">
+            <%= lang === 'eng' ? 'All Members' : '전체 멤버' %>
+          </button>
+          <button type="button" class="btn btn-filter" data-filter="leader">
+            <%= lang === 'eng' ? 'Leaders' : '랩장/부랩장' %>
+          </button>
+          <button type="button" class="btn btn-filter" data-filter="member">
+            <%= lang === 'eng' ? 'Members' : '일반 멤버' %>
+          </button>
+        </div>
+      </div>
+
+      <div class="row members-container" id="membersContainer">
+        <!-- 멤버 카드들은 JavaScript에서 동적으로 추가됩니다 -->
+        <div class="loading-container text-center">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <p class="mt-2">
+            <%= lang === 'eng' ? 'Loading members...' : '멤버 정보를 불러오는 중...' %>
+          </p>
+        </div>
       </div>
     </div>
+
+    <!-- 멤버 상세 정보 모달 -->
+    <div
+      class="modal fade"
+      id="memberDetailModal"
+      tabindex="-1"
+      aria-labelledby="memberDetailModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="memberDetailModalLabel">
+              멤버 상세 정보
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4 text-center">
+                <img
+                  id="modalMemberImg"
+                  src=""
+                  alt="Member"
+                  class="modal-member-img"
+                />
+                <div class="mt-3">
+                  <a
+                    id="modalGithubLink"
+                    href="#"
+                    target="_blank"
+                    class="github-btn"
+                  >
+                    <i class="fab fa-github"></i> GitHub
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <h2 id="modalMemberName" class="mb-2"></h2>
+                <p id="modalMemberPosition" class="mb-3 text-muted"></p>
+
+                <div class="member-detail-item">
+                  <h6>
+                    <i class="fas fa-envelope"></i> <%= lang === 'eng' ? 'Email' : '이메일' %>
+                  </h6>
+                  <p id="modalMemberEmail"></p>
+                </div>
+
+                <div class="member-detail-item">
+                  <h6>
+                    <i class="fas fa-lightbulb"></i> <%= lang === 'eng' ? 'Research Interests' : '관심 분야' %>
+                  </h6>
+                  <div
+                    id="modalMemberInterests"
+                    class="interests-container"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <%- include('../partials/footer') %>
     <script src="/js/cookies.js"></script>
     <script src="/js/nav-language.js"></script>
     <script src="/js/navbar.js"></script>
     <script src="/js/Members-lang.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // AOS 초기화
+        AOS.init({
+          duration: 800,
+          once: true,
+        });
+
+        // 필터링 기능
+        const filterButtons = document.querySelectorAll(".btn-filter");
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // 활성화된 버튼 스타일 변경
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            this.classList.add("active");
+
+            const filter = this.getAttribute("data-filter");
+            const memberCards = document.querySelectorAll(
+              ".member-card-container"
+            );
+
+            memberCards.forEach((card) => {
+              if (
+                filter === "all" ||
+                card.getAttribute("data-role") === filter
+              ) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+        });
+      });
+    </script>
   </body>
 </html>

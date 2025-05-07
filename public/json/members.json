@@ -1,0 +1,112 @@
+{
+  "members": [
+    {
+      "name": {
+        "kor": "김지훈",
+        "eng": "Jihoon Kim"
+      },
+      "position": {
+        "kor": "연구실장",
+        "eng": "Lab Manager"
+      },
+      "email": "jihoon@oslab.kr",
+      "interests": {
+        "kor": ["운영체제", "클라우드 컴퓨팅", "분산 시스템"],
+        "eng": ["Operating Systems", "Cloud Computing", "Distributed Systems"]
+      },
+      "github": "jihoonkim",
+      "img": "https://avatars.githubusercontent.com/u/1234567",
+      "role": "leader"
+    },
+    {
+      "name": {
+        "kor": "박서연",
+        "eng": "Seoyeon Park"
+      },
+      "position": {
+        "kor": "부연구실장",
+        "eng": "Deputy Manager"
+      },
+      "email": "seoyeon@oslab.kr",
+      "interests": {
+        "kor": ["네트워크 보안", "시스템 프로그래밍", "웹 서비스"],
+        "eng": ["Network Security", "System Programming", "Web Services"]
+      },
+      "github": "seoyeonpark",
+      "img": "https://avatars.githubusercontent.com/u/2345678",
+      "role": "leader"
+    },
+    {
+      "name": {
+        "kor": "이민준",
+        "eng": "Minjun Lee"
+      },
+      "position": {
+        "kor": "연구원",
+        "eng": "Researcher"
+      },
+      "email": "minjun@oslab.kr",
+      "interests": {
+        "kor": ["머신러닝", "임베디드 시스템", "리눅스 커널"],
+        "eng": ["Machine Learning", "Embedded Systems", "Linux Kernel"]
+      },
+      "github": "minjunlee",
+      "img": "https://avatars.githubusercontent.com/u/3456789",
+      "role": "member"
+    },
+    {
+      "name": {
+        "kor": "최수아",
+        "eng": "Sua Choi"
+      },
+      "position": {
+        "kor": "연구원",
+        "eng": "Researcher"
+      },
+      "email": "sua@oslab.kr",
+      "interests": {
+        "kor": ["데이터베이스", "서버 최적화", "컨테이너화"],
+        "eng": ["Databases", "Server Optimization", "Containerization"]
+      },
+      "github": "suachoi",
+      "img": "https://avatars.githubusercontent.com/u/4567890",
+      "role": "member"
+    },
+    {
+      "name": {
+        "kor": "정도윤",
+        "eng": "Doyun Jung"
+      },
+      "position": {
+        "kor": "연구원",
+        "eng": "Researcher"
+      },
+      "email": "doyun@oslab.kr",
+      "interests": {
+        "kor": ["보안", "네트워크 프로토콜", "DevOps"],
+        "eng": ["Security", "Network Protocols", "DevOps"]
+      },
+      "github": "doyunjung",
+      "img": "https://avatars.githubusercontent.com/u/5678901",
+      "role": "member"
+    },
+    {
+      "name": {
+        "kor": "한소율",
+        "eng": "Soyul Han"
+      },
+      "position": {
+        "kor": "연구원",
+        "eng": "Researcher"
+      },
+      "email": "soyul@oslab.kr",
+      "interests": {
+        "kor": ["웹 개발", "UI/UX", "프론트엔드"],
+        "eng": ["Web Development", "UI/UX", "Frontend"]
+      },
+      "github": "soyulhan",
+      "img": "https://avatars.githubusercontent.com/u/6789012",
+      "role": "member"
+    }
+  ]
+}
