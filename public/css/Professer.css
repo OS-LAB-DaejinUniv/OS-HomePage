@@ -1,3 +1,128 @@
-.professer{
-  padding: 0%;
+.main-box-prof {
+  width: 900px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px gray;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+.main-box-career {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.prof-pic {
+  width: 270px;
+  height: auto;
+  object-fit: contain;
+}
+
+.prof-info {
+  margin-left: 50px;
+}
+
+.prof-info-name {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.prof-info-main div {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.prof-info-main-info {
+  width: 100px;
+}
+
+.prof-info-main-detail {
+  width: 500px;
+}
+
+.prof-career {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.prof-career-detail {
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgb(236, 236, 236);
+  box-shadow: 0px 0px 5px gray;
+}
+
+@media (max-width: 450px) and (max-height: 850px) {
+  .main-box-prof {
+    /* width: 320px; */
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px gray;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+  }
+
+  .main-box-career {
+    /* width: 320px; */
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  .prof-pic {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .prof-info {
+    margin-left: 10px;
+  }
+
+  .prof-info-name {
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .prof-info-main div {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3px;
+    font-size: 13px;
+  }
+
+  .prof-info-main-info {
+    width: 55px;
+  }
+
+  .prof-info-main-detail {
+    width: 200px;
+  }
+
+  .prof-career {
+    width: 100%;
+    margin-top: 25px;
+    font-size: 15px;
+  }
+
+  .prof-career-detail {
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(236, 236, 236);
+    box-shadow: 0px 0px 5px gray;
+    font-size: 12px;
+  }
 }

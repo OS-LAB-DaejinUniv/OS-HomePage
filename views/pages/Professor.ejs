@@ -9,19 +9,152 @@
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/Professer.css" />
     <link rel="stylesheet" href="/css/styles.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
   </head>
   <body>
     <%- include('../partials/header') %>
-    <!-- 이 사이에 코드를 넣으면 됨 -->
+    <div class="main-box-prof">
+      <img class="prof-pic" src="/images/Prof/prof.jpeg" alt="" />
+      <div class="prof-info">
+        <div class="prof-info-name">학부장 이시진</div>
+        <div class="prof-info-main">
+          <div>
+            <span class="prof-info-main-info">전화번호</span><span class="prof-info-main-detail">031-539-1966</span>
+          </div>
+          <div>
+            <span class="prof-info-main-info">이메일</span><span class="prof-info-main-detail">sjlee@daejin.ac.kr</span>
+          </div>
+          <div>
+            <span class="prof-info-main-info">전공</span
+            ><span class="prof-info-main-detail">[컴퓨터공학전공]분산 및 운영체제</span>
+          </div>
+          <div>
+            <span class="prof-info-main-info">소속학회</span
+            ><span class="prof-info-main-detail">한국정보처리학회, 한국인터넷정보학회</span>
+          </div>
+          <div>
+            <span class="prof-info-main-info">연구분야</span
+            ><span class="prof-info-main-detail"
+              >클라우드 컴퓨팅, 산업 보안,<br />
+              빅데이터 분석 및 처리, 분산 시스템 등</span
+            >
+          </div>
+          <div>
+            <span class="prof-info-main-info">학력사항</span
+            ><span class="prof-info-main-detail"
+              >박사: 중앙대학교, 운영체제 전공, 1997<br />석사: 중앙대학교, 시스템소프트웨어 전공, 1992<br />학사:
+              중앙대학교, 시스템소프트웨어 전공, 1990</span
+            >
+          </div>
+        </div>
+        <!-- <div>전화번호: 031-539-1966</div>
+        <div>이메일: sjlee@daejin.ac.kr</div>
+        <div>전공: [컴퓨터공학전공]분산 및 운영체제</div>
+        <div>소속학회: 한국정보처리학회, 한국인터넷정보학회</div>
+        <div>연구분야: 클라우드컴퓨팅, 산업 보안, 빅데이터 분석 및 처리, 분산 시스템 등</div>
+        <div>학력사항: </div>
+        <div>사무실: 대진대학교 이공대학 다동 4층</div> -->
+      </div>
+    </div>
+    <div class="main-box-career">
+      <div class="prof-career">
+        경력사항
+        <div class="prof-career-detail">
+          창원대학교 자연과학대학 전자계산학과, 시간강사, 1995.03~1997.02<br />
+          중앙대학교 공과대학, 시간강사, 1994.09~1997.02<br />
+          중앙대학교 산업교육원 전문과정, 시간강사, 1993.08~1995.12<br />
+          중앙대학교 전산센터, 교육조교, 1992.09~1993.08<br />
+          중앙대학교 공과대학, 시간강사, 1992.09~1993.02<br />
+          한국전자통신연구소 프로세서구조연구실, 위촉연구원, 1990.12~1991.07<br />
+          중앙대학교 공과대학, 연구조교, 1990.09~1992.02<br />
+          한국전자통신연구소(ETR)프로세서구조 연구실, 위촉연구원, 1990.09~1991.02<br />
+        </div>
+      </div>
+      <div class="prof-career">
+        논문
+        <div class="prof-career-detail">
+          「Learning concept sequencing through semantic-based syllabus design and integration」 Indian Journal of
+          Science and Technology, SCOPUS, 공동연구(참여), 2015.08<br />
+          「조직 프로세스 분석을 통한 경량형 산업보안 관리수준 측정모형 설계」 한국IT서비스학회지, 공동연구(제1저자),
+          2014.03<br />
+          「내부정보유출 방지를 위한 데이터베이스 보안 솔루션 보안성 평가」 한국정보기술학회논문지, 공동연구(참여),
+          2009.06<br />
+          「오픈소스 소프트웨어 특성을 고려한 소프트웨어 평가모델」 한국인터넷정보학회 2008 춘계학술발표대회, 2008.05<br />
+          「게임 서비스 침해유형에 따른 기술적 대응방안 연구」 Information Systems Review, 2007.12<br />
+          「임베디드 시스템에서 필획기반 다국어 입력 시스템」 인터넷정보학회논문지, 2007.12 「개선된 개인정보
+          입력보호기술 개발에 관한 연구」 한국경영공학회지, 2007.11<br />
 
+          「The Research of Keyboard Security for u Trading」 2007 International Conference on Intelligent Pervasive
+          Computing, 2007.10<br />
+          「Linux에서의 통합형 멀티미디어 플레이어 설계 및 구현」 2007 춘계학술발표대회 논문집, 2007.06<br />
+          「유비쿼터스컴퓨팅:비즈니스모델과전망」 국제통상논총, 2004.02<br />
+          「다중 Gigabit Server NICs에서 동적 검출주기를 적용한 결함 허용 메커니즘」 한국인터넷정보학회논문지,
+          2002.11<br />
+          「국내외 CRM 서비스 시장의 현황분석 및 전망」 국제통상논총, 2002.02<br />
+          「인터넷 쇼핑몰의 최근동향과 발전방안」 , 2001.02<br />
+          「인터넷상의 전자상거래 개관」 , 1999.03<br />
+          「A Qos-oriented Intramedia Synchronization Using Buffer」 IASTED 주최 AI'99, 1999.02<br />
+          「OLE기반 멀티미디어 전자 메일 시스템」 정보통신논문집, 1998.12<br />
+        </div>
+      </div>
+      <div class="prof-career">
+        연구비수혜
+        <div class="prof-career-detail">
+          「개인간 저작물 유통을 위한 라이선스 이력추적 및 이용현황 분석 기술」 한국저작권위원회, 공동연구원, 2016.02<br />
+          「개인간 저작물 유통을 위한 라이선스 이력추적 및 이용현황 분석 기술」 한국저작권위원회, 공동연구원, 2014.06<br />
+          「회사 홈페이지 구축 및 관련사항 컨설팅-(주)서원」 기술지도대학사무국, 2001.12<br />
+        </div>
+      </div>
+
+      <div class="prof-career">
+        학술활동
+        <div class="prof-career-detail">
+          「Hadoop을 이용한 트위터 메시지 분석 시스템 설계」 2012년도 한국인터넷정보학회 하계학술발표대회, 공동(교신),
+          2012.06<br />
+          「내부자 보안사고에 기반한 맞춤식 내부자보안 모델 연구」 2011년도 한국인터넷정보학회 하계학술발표대회, 단독,
+          2011.06<br />
+          「내부자 위협에서의 비형식적 보안요소에 관한 고찰」 2010년도 정기총회 및 추계학술발표대회, 단독, 2010.10<br />
+          「내부자 위협을 고려한 정보보호 대책 요구사항 분석 연구」 2010년도 한국인터넷정보학회 학술대회, 단독,
+          2010.06<br />
+        </div>
+      </div>
+      <div class="prof-career">
+        연구보고서
+        <div class="prof-career-detail">
+          「2008학년도 대입전형 변화에 따른 세부 전형방법 연구」 대진대 교무처 입학관리과, 공동, 2006.08<br />
+
+          「컴퓨터공학과교육과정개편에관한연구」 대진대학교컴퓨터공학과, 공동, 2003.12<br />
+
+          「전자상거래 확대에 따른 경기북부지역 기업의 정보인프라 수준평가 및 대응방안」 , 공동, 2002.01<br />
+
+          「전문대학원 발전 및 특성화 방안 연구 보고서」 , 공동, 2001.12<br />
+
+          「2001 교양교육분야 자체평가연구보고서」 , 공동, 2001.09<br />
+
+          「전기전자정보통신공학분야자체평가연구보고서」 , 단독, 2000.10<br />
+
+          「대진대학교 장단기 발전 계획 수립 연구보고서」 대진대학교, 단독, 1999.10<br />
+
+          「연구소 활성화 방안」 대진대학교, 단독, 1999.08<br />
+        </div>
+      </div>
+      <div class="prof-career">
+        저서
+        <div class="prof-career-detail">
+          「(실무능력 향상) 엑셀&파워포인트 2013」 , 단독, 2015.08<br />「(유티즌을 위한) SNS와 인터넷활용 지침서」 ,
+          공동, 2012.03<br />「엑셀 & 파워포인트 기초 및 활용」 , 공동(책임), 2012.03<br />「(쉽게 배우는) 디지털 콘텐츠
+          제작 입문」 , 공동, 2012.03<br />「컴퓨터 문서작성 완벽가이드」 , 공동, 2012.03<br />「UCC 시대의 디지털
+          멀티미디어」 도서출판 그린, 2008.01<br />「비지니스 데이터 활용과 프리젠테이션」 도서출판 그린, 2008.01<br />「실용
+          문서편집기」 도서출판 그린, 2007.08<br />「컴퓨터 시스템 개론」 도서출판 그린, 2007.08<br />「유티즌을 위한
+          인터넷 활용」 도서출판 그린, 2007.08<br />「워드 프로세스 실무」 기한재, 2004.03<br />「(엑셀과
+          파워포인트)오피스 실무」 기한재, 2004.03<br />「멀티미디어 이해와 활용」 기한재, 2004.03<br />「컴퓨터기초와
+          활용」 기한재, 2004.03<br />「인터넷 정보과학」 기한재, 2004.03<br />「운영체제」 , 2002.09<br />「정보화사회를
+          위한 컴퓨터활용」 , 2000.03<br />「컴퓨터와 정보화사회」 , 1999.08<br />「컴퓨터와 정보화사회」 , 1999.01<br />「인터넷과
+          PC통신」 , 1999.01<br />「컴퓨터와 정보통신」 , 1998.03<br />
+        </div>
+      </div>
+    </div>
     <%- include('../partials/footer') %>
     <script src="/js/cookies.js"></script>
     <script src="/js/nav-language.js"></script>
