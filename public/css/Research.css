@@ -463,6 +463,21 @@ body {
   color: #666;
 }
 
+/* Mermaid 다이어그램 스타일 */
+.mermaid-diagram {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.mermaid-diagram svg {
+  max-width: 100%;
+  height: auto !important;
+}
+
 /* 모달 푸터 - 스타일 조정 */
 .modal-footer {
   padding: 16px 64px;
