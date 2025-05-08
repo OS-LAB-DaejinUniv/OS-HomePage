@@ -1,0 +1,141 @@
+{
+  "members": [
+    {
+      "name": {
+        "kor": "김연진",
+        "eng": "Yeonjin Kim"
+      },
+      "position": {
+        "kor": "랩장",
+        "eng": "Lab Manager"
+      },
+      "email": "kyj9750322@gmail.com",
+      "interests": {
+        "kor": ["시스템 보안", "정보 보호", "네트워크 보안", "포렌식"],
+        "eng": ["System Sec", "Info Sec", "Network Sec", "Forensics"]
+      },
+      "github": "OS-LAB-DaejinUniv",
+      "img": "../images/img-prof.jpeg",
+      "role": "leader",
+      "bio": {
+        "kor": "운영체제 및 분산 컴퓨팅 분야의 전문 지식으로 OS Lab을 이끌고 있습니다. 학생 멘토링과 시스템 소프트웨어 연구 발전에 열정을 가지고 있습니다.",
+        "eng": "Leading the OS Lab with expertise in operating systems and distributed computing. Passionate about mentoring students and advancing research in system software."
+      }
+    },
+    {
+      "name": {
+        "kor": "양준석",
+        "eng": "Junseok Yang"
+      },
+      "position": {
+        "kor": "부원",
+        "eng": "Member"
+      },
+      "email": "admin@os-lab.dev",
+      "interests": {
+        "kor": [
+          "네트워크 보안",
+          "시스템 보안",
+          "클라우드 컴퓨팅",
+          "웹 서비스",
+          "DevOps"
+        ],
+        "eng": [
+          "Network Sec",
+          "System Sec",
+          "Cloud Computing",
+          "Web Services",
+          "DevOps"
+        ]
+      },
+      "github": "JJ-IM",
+      "img": "https://github.com/JJ-IM.png",
+      "role": "member",
+      "bio": {
+        "kor": "운영체제 및 분산 컴퓨팅 분야의 전문 지식으로 OS Lab을 이끌고 있습니다. 학생 멘토링과 시스템 소프트웨어 연구 발전에 열정을 가지고 있습니다.",
+        "eng": "Leading the OS Lab with expertise in operating systems and distributed computing. Passionate about mentoring students and advancing research in system software."
+      }
+    },
+    {
+      "name": {
+        "kor": "신우진",
+        "eng": "Woojin Shin"
+      },
+      "position": {
+        "kor": "부원",
+        "eng": "Member"
+      },
+      "email": "whoami@os-lab.dev",
+      "interests": {
+        "kor": ["파이썬", "서버 엔지니어링", "데이터 엔지니어링", "DevOps"],
+        "eng": ["Python", "Server Engineering", "Data Engineering", "DevOps"]
+      },
+      "github": "tlsnwls",
+      "img": "https://github.com/tlsnwls.png",
+      "role": "member",
+      "bio": {
+        "kor": "운영체제 및 분산 컴퓨팅 분야의 전문 지식으로 OS Lab을 이끌고 있습니다. 학생 멘토링과 시스템 소프트웨어 연구 발전에 열정을 가지고 있습니다.",
+        "eng": "Leading the OS Lab with expertise in operating systems and distributed computing. Passionate about mentoring students and advancing research in system software."
+      }
+    },
+    {
+      "name": {
+        "kor": "강병재",
+        "eng": "Byeongjae Kang"
+      },
+      "position": {
+        "kor": "부원",
+        "eng": "Member"
+      },
+      "email": "dmesg@os-lab.dev",
+      "interests": {
+        "kor": ["네트워크", "웹 풀스택", "서버 엔지니어링", "임베디드 시스템"],
+        "eng": [
+          "Network",
+          "Web Fullstack",
+          "Server Engineering",
+          "Embedded Systems"
+        ]
+      },
+      "github": "2o4oo",
+      "img": "https://github.com/2o4oo.png",
+      "role": "member"
+    },
+    {
+      "name": {
+        "kor": "이동재",
+        "eng": "Dongjae Lee"
+      },
+      "position": {
+        "kor": "부원",
+        "eng": "Member"
+      },
+      "email": "krhasta@os-lab.dev",
+      "interests": {
+        "kor": ["웹 프론트엔드", "UI/UX", "서버 엔지니어링"],
+        "eng": ["Web Frontend", "UI/UX", "Server Engineering"]
+      },
+      "github": "krhasta",
+      "img": "https://github.com/krhasta.png",
+      "role": "member"
+    },
+    {
+      "name": {
+        "kor": "오채빈",
+        "eng": "Chaebeen Oh"
+      },
+      "position": {
+        "kor": "부원",
+        "eng": "Member"
+      },
+      "email": "chaebin0926@naver.com",
+      "interests": {
+        "kor": ["웹 개발", "UI/UX", "프론트엔드"],
+        "eng": ["Web Development", "UI/UX", "Frontend"]
+      },
+      "github": "chaeb03",
+      "img": "https://github.com/chaeb03.png",
+      "role": "member"
+    }
+  ]
+}

@@ -1,74 +1,118 @@
 {
-    "sloganTop": {
-        "kor": {
-            "title": "Developer",
-            "line1": "아이디어에서 현실까지",
-            "line2": "개발자가 만드는 세상"
-        },
-        "eng": {
-            "title": "Developer",
-            "line1": "Ideas to Code",
-            "line2": "By Developers"
-        }
+  "sloganTop": {
+    "kor": {
+      "title": "Developer",
+      "line1": "아이디어에서 현실까지",
+      "line2": "개발자가 만드는 세상"
     },
-    "sloganMid": {
-        "kor": {
-            "title": "Server Engineer",
-            "line1": "코드로 시작하는 서버의 이야기",
-            "line2": "세상을 연결하는 우리의 여정"
-        },
-        "eng": {
-            "title": "Server Engineer",
-            "line1": "Server Stories in Code",
-            "line2": "Connecting the World"
-        }
-    },    
-    "sloganBot": {
-        "kor": {
-            "title": "TeamWork",
-            "line1": "각자의 장점을 모아",
-            "line2": "불가능을 가능으로"
-        },
-        "eng": {
-            "title": "TeamWork",
-            "line1": "Strengths Combined",
-            "line2": "Success Achieved"
-        }
+    "eng": {
+      "title": "Developer",
+      "line1": "Ideas to Code",
+      "line2": "By Developers"
+    }
+  },
+  "sloganMid": {
+    "kor": {
+      "title": "Server Engineer",
+      "line1": "코드로 시작하는 서버의 이야기",
+      "line2": "세상을 연결하는 우리의 여정"
     },
-    "projectButtonText": {
-        "kor": "프로젝트 자세히 보기",
-        "eng": "View Projects"
+    "eng": {
+      "title": "Server Engineer",
+      "line1": "Server Stories in Code",
+      "line2": "Connecting the World"
+    }
+  },
+  "sloganBot": {
+    "kor": {
+      "title": "TeamWork",
+      "line1": "각자의 장점을 모아",
+      "line2": "불가능을 가능으로"
     },
-    "contents": [
-        {
-            "title": {
-                "kor": "서버 실습",
-                "eng": "Server Practice"
-            },
-            "content": {
-                "kor": "실제 서버의 분해와 조립을 통해<br>하드웨어의 구조를 직접 경험하며,<br>설정을 통해 최적화 기술을 터득합니다.<br>전문 네트워크 장비를 사용하여<br>현장과 유사한 환경에서 경험을 쌓습니다.<br>이 과정을 통해 하드웨어와 소프트웨어를<br>효과적으로 다루는 방법을 습득하고,<br>실제 서버 운영을 통해<br>전문적인 실무 능력을 강화합니다.",
-                "eng": "Understand hardware through<br>server disassembly and configuration.<br>Enhance network management skills<br>with professional equipment in real-world scenarios.<br>Learn efficient operation of hardware and software,<br>and gain hands-on experience<br>through actual server operations,<br>strengthening practical capabilities."
-            }
-        },
-        {
-            "title": {
-                "kor": "보안 관리",
-                "eng": "Security Management"
-            },
-            "content": {
-                    "kor": "서버 보안의 기초, 심화 기술까지 다루며,<br>효과적인 접근 제어와 암호화 기술을 익히며,<br>실제 사례를 통해 보안 위협을 분석하고,<br>최신 해킹 기법에 대응하는 법을 배웁니다.<br>침입 탐지 시스템과 방화벽 설정을 통해<br>서버의 보안을 강화하며,<br>가상 환경에서 여러 시나리오들을 실습하여<br>현실적인 대응 능력을 길러냅니다.",
-                    "eng": "Study network protection techniques<br>and analyze security threats.<br>Develop and implement strategies<br>through hands-on intrusion prevention.<br>This strengthens defense capabilities<br>and keeps systems updated<br>with the latest security trends,<br>providing practical experience."
-            }
-        },
-        {
-            "title": {
-                "kor": "개인 실습",
-                "eng": "Personal Practice"
-            },
-            "content": {
-                "kor": "개인 실습용 PC와 연구실 서버를 통해,<br>독립적인 연구와 개발 환경을 제공하고,<br>학생들은 공용 서버를 이용하여<br>협업 프로젝트를 진행하며,<br>팀워크와 협력 능력을 키웁니다.<br>실습 과정에서 최신 기술을 익히고,<br>연구 결과를 공유하며 피드백을 받습니다.<br>이를 통해 실무 경험을 쌓아,<br>프로젝트 성공을 위한 기반을 마련합니다.",
-                "eng": "Provide PCs and servers<br>for personal practice and independent research.<br>Use personal PCs as servers<br>to gain real-world experience,<br>enhancing research skills.<br>This process serves as a crucial step<br>towards project success<br>and overall skill improvement."
-            }
+    "eng": {
+      "title": "TeamWork",
+      "line1": "Strengths Combined",
+      "line2": "Success Achieved"
+    }
+  },
+  "projectButtonText": {
+    "kor": "연구 활동 자세히 보기",
+    "eng": "View Research Activities"
+  },
+  "sectionTitle": {
+    "kor": "OS LAB의 핵심 활동",
+    "eng": "OS LAB Core Activities"
+  },
+  "sectionSubtitle": {
+    "kor": "우리 연구실에서 제공하는 다양한 실습 및 연구 활동을 알아보세요",
+    "eng": "Explore our lab's diverse research and hands-on activities"
+  },
+  "gallery": {
+    "items": [
+      {
+        "src": "/images/Home/gallery-1.jpg",
+        "alt": "Gallery Image 1",
+        "desc": {
+          "kor": "연구실 MT",
+          "eng": "Lab Retreat"
         }
+      },
+      {
+        "src": "/images/Home/gallery-2.jpg",
+        "alt": "Gallery Image 2",
+        "desc": {
+          "kor": "연구실 연합 MT",
+          "eng": "Joint Lab Retreat"
+        }
+      },
+      {
+        "src": "/images/Home/gallery-3.jpg",
+        "alt": "Gallery Image 3",
+        "desc": {
+          "kor": "스승의 날",
+          "eng": "Teachers' Day"
+        }
+      },
+      {
+        "src": "/images/Home/gallery-4.jpg",
+        "alt": "Gallery Image 4",
+        "desc": {
+          "kor": "시험기간",
+          "eng": "Exam Period"
+        }
+      }
     ]
+  },
+  "contents": [
+    {
+      "title": {
+        "kor": "서버 실습",
+        "eng": "Server Practice"
+      },
+      "content": {
+        "kor": "실제 서버의 분해와 조립을 통해<br>하드웨어의 구조를 직접 경험하며,<br>설정을 통해 최적화 기술을 터득합니다.<br>전문 네트워크 장비를 사용하여<br>현장과 유사한 환경에서 경험을 쌓습니다.<br>이 과정을 통해 하드웨어와 소프트웨어를<br>효과적으로 다루는 방법을 습득하고,<br>실제 서버 운영을 통해<br>전문적인 실무 능력을 강화합니다.",
+        "eng": "Understand hardware through<br>server disassembly and configuration.<br>Enhance network management skills<br>with professional equipment in real-world scenarios.<br>Learn efficient operation of hardware and software,<br>and gain hands-on experience<br>through actual server operations,<br>strengthening practical capabilities."
+      }
+    },
+    {
+      "title": {
+        "kor": "보안 관리",
+        "eng": "Security Management"
+      },
+      "content": {
+        "kor": "서버 보안의 기초, 심화 기술까지 다루며,<br>효과적인 접근 제어와 암호화 기술을 익히며,<br>실제 사례를 통해 보안 위협을 분석하고,<br>최신 해킹 기법에 대응하는 법을 배웁니다.<br>침입 탐지 시스템과 방화벽 설정을 통해<br>서버의 보안을 강화하며,<br>가상 환경에서 여러 시나리오들을 실습하여<br>현실적인 대응 능력을 길러냅니다.",
+        "eng": "Study network protection techniques<br>and analyze security threats.<br>Develop and implement strategies<br>through hands-on intrusion prevention.<br>This strengthens defense capabilities<br>and keeps systems updated<br>with the latest security trends,<br>providing practical experience."
+      }
+    },
+    {
+      "title": {
+        "kor": "개인 실습",
+        "eng": "Personal Practice"
+      },
+      "content": {
+        "kor": "개인 실습용 PC와 연구실 서버를 통해,<br>독립적인 연구와 개발 환경을 제공하고,<br>학생들은 공용 서버를 이용하여<br>협업 프로젝트를 진행하며,<br>팀워크와 협력 능력을 키웁니다.<br>실습 과정에서 최신 기술을 익히고,<br>연구 결과를 공유하며 피드백을 받습니다.<br>이를 통해 실무 경험을 쌓아,<br>프로젝트 성공을 위한 기반을 마련합니다.",
+        "eng": "Provide PCs and servers<br>for personal practice and independent research.<br>Use personal PCs as servers<br>to gain real-world experience,<br>enhancing research skills.<br>This process serves as a crucial step<br>towards project success<br>and overall skill improvement."
+      }
+    }
+  ]
 }

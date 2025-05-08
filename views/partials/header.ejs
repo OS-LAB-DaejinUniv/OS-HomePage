@@ -1,37 +1,53 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid flex items-center justify-between px-4 mx-auto">
-        <a class="navbar-brand" href="/">
-            <img src="/images/Logo.png" alt="OS 연구실 로고" height="25">
-        </a>
-        <div class="d-flex align-items-center order-lg-2">
-            <div class="language-switch d-lg-none me-3">
-                <span id="korBtnMobile" class="language-option active">Kor</span> | <span id="engBtnMobile" class="language-option inactive">Eng</span>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  <div class="container-fluid flex items-center justify-between px-4 mx-auto">
+    <a class="navbar-brand" href="/">
+      <img src="/images/Logo.png" alt="OS 연구실 로고" height="25" />
+    </a>
+    <div class="d-flex align-items-center order-lg-2">
+      <div class="language-switch d-lg-none me-3">
+        <span id="korBtnMobile" class="language-option active">Kor</span> |
+        <span id="engBtnMobile" class="language-option inactive">Eng</span>
+      </div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <!-- 현대적인 햄버거 아이콘 -->
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div class="collapse navbar-collapse justify-center order-lg-1" id="navbarNav">
-            <ul class="navbar-nav flex gap-16">
-                <li class="nav-item">
-                    <a class="nav-link" id="professor_Link" href="/Professor">교수 소개</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="research_Link" href="/Research">연구 활동</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="osLog_Link" href="/OS-Log">OS 마당</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="members_Link" href="/Members">멤버 소개</a>
-                </li>
-            </ul>
-        </div>
-        <div class="language-switch d-none d-lg-flex ms-auto order-lg-3">
-            <span id="korBtn" class="language-option active">Kor</span> | <span id="engBtn" class="language-option inactive">Eng</span>
-        </div>
+      </button>
     </div>
+    <div class="collapse navbar-collapse justify-center order-lg-1" id="navbarNav">
+      <ul class="navbar-nav flex gap-16">
+        <li class="nav-item">
+          <a class="nav-link" id="home_Link" href="/">메인 화면</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="professor_Link" href="/Professor">교수 소개</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="research_Link" href="/Research">연구 활동</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="members_Link" href="/Members">멤버 소개</a>
+        </li>
+      </ul>
+    </div>
+    <div class="language-switch d-none d-lg-flex ms-auto order-lg-3">
+      <span id="korBtn" class="language-option active">Kor</span> |
+      <span id="engBtn" class="language-option inactive">Eng</span>
+    </div>
+  </div>
 </nav>
 <div class="dropdown-menu-custom" id="dropdownMenuCustom">
-    <!-- JS에서 작업 -->
+  <!-- JS에서 작업 -->
 </div>

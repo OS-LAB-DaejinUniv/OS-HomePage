@@ -1,25 +1,25 @@
+/**
+ * 연구 페이지 특화 기능
+ */
+
 document.addEventListener("DOMContentLoaded", function () {
+  loadResearchContent();
+});
+
+// 언어 변경 시 컨텐츠 업데이트
+document.addEventListener("languageChanged", function () {
+  loadResearchContent();
+});
+
+// 연구 콘텐츠 로드
+function loadResearchContent() {
   fetch("/json/research.json")
     .then((response) => response.json())
     .then((data) => setResearchContent(data, getLanguage()))
     .catch((error) => console.error("Error loading research content:", error));
-});
-
-// 초기 로딩 외, 언어 변경 시 다시 업데이트
-document.addEventListener("languageChanged", function () {
-  fetch("/json/research.json")
-    .then((response) => response.json())
-    .then((data) => setResearchContent(data, getLanguage()))
-    .catch((error) => console.error("Error updating research content:", error));
-});
-
-function getLanguage() {
-  const cookies = document.cookie
-    .split(";")
-    .find((c) => c.trim().startsWith("language="));
-  return cookies ? cookies.split("=")[1] : "kor";
 }
 
+// 연구 콘텐츠 설정
 function setResearchContent(data, lang) {
   const container = document.getElementById("researchContainer");
   if (!container) return;
@@ -39,9 +39,9 @@ function setResearchContent(data, lang) {
           <p class="leading-6 research-content">${item.content[lang]}</p>
           ${
             item.link && item.link[lang]
-              ? `<a href="${item.link[lang]}" class="btn btn-primary">${
-                  lang === "eng" ? "View Details" : "자세히 보기"
-                }</a>`
+              ? `<a href="${item.link[lang]}" class="btn btn-primary">
+                ${lang === "eng" ? "View Details" : "자세히 보기"}
+              </a>`
               : ""
           }
         </div>

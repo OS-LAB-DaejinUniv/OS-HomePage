@@ -1,0 +1,126 @@
+{
+  "professor": {
+    "name": {
+      "kor": "학부장 이시진",
+      "eng": "Prof. Sijin Lee"
+    },
+    "contact": [
+      {
+        "label": {
+          "kor": "사무실",
+          "eng": "Office"
+        },
+        "value": "031-539-1966"
+      },
+      {
+        "label": {
+          "kor": "이메일",
+          "eng": "Email"
+        },
+        "value": "sjlee@daejin.ac.kr"
+      },
+      {
+        "label": {
+          "kor": "전공",
+          "eng": "Major"
+        },
+        "value": {
+          "kor": "[컴퓨터공학전공] 분산 및 운영체제",
+          "eng": "[Computer Engineering] Distributed & Operating Systems"
+        }
+      },
+      {
+        "label": {
+          "kor": "소속학회",
+          "eng": "Academic Societies"
+        },
+        "value": {
+          "kor": "한국정보처리학회, 한국인터넷정보학회",
+          "eng": "Korea Information Processing Society, Korean Society For Internet Information"
+        }
+      },
+      {
+        "label": {
+          "kor": "연구분야",
+          "eng": "Research Areas"
+        },
+        "value": {
+          "kor": "클라우드 컴퓨팅, 산업 보안, 빅데이터 분석 및 처리, 분산 시스템 등",
+          "eng": "Cloud Computing, Industrial Security, Big Data Analysis & Processing, Distributed Systems"
+        }
+      },
+      {
+        "label": {
+          "kor": "학력사항",
+          "eng": "Education"
+        },
+        "value": {
+          "kor": "박사: 중앙대학교, 운영체제 전공, 1997\n석사: 중앙대학교, 시스템소프트웨어 전공, 1992\n학사: 중앙대학교, 시스템소프트웨어 전공, 1990",
+          "eng": "Ph.D: Chung-Ang University, Operating Systems, 1997\nM.S.: Chung-Ang University, System Software, 1992\nB.S.: Chung-Ang University, System Software, 1990"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "title": {
+          "kor": "경력사항",
+          "eng": "Career Experience"
+        },
+        "content": {
+          "kor": "창원대학교 자연과학대학 전자계산학과, 시간강사, 1995.03~1997.02\n중앙대학교 공과대학, 시간강사, 1994.09~1997.02\n중앙대학교 산업교육원 전문과정, 시간강사, 1993.08~1995.12\n중앙대학교 전산센터, 교육조교, 1992.09~1993.08\n중앙대학교 공과대학, 시간강사, 1992.09~1993.02\n한국전자통신연구소 프로세서구조연구실, 위촉연구원, 1990.12~1991.07\n중앙대학교 공과대학, 연구조교, 1990.09~1992.02\n한국전자통신연구소(ETR)프로세서구조 연구실, 위촉연구원, 1990.09~1991.02",
+          "eng": "Changwon National University, Computer Science Department, Lecturer, 1995.03~1997.02\nChung-Ang University, College of Engineering, Lecturer, 1994.09~1997.02\nChung-Ang University, Industrial Education Center, Lecturer, 1993.08~1995.12\nChung-Ang University, Computing Center, Teaching Assistant, 1992.09~1993.08\nChung-Ang University, College of Engineering, Lecturer, 1992.09~1993.02\nKorea Electronics and Telecommunications Research Institute, Processor Architecture Lab, Research Fellow, 1990.12~1991.07\nChung-Ang University, College of Engineering, Research Assistant, 1990.09~1992.02\nKorea Electronics and Telecommunications Research Institute (ETR), Processor Architecture Lab, Research Fellow, 1990.09~1991.02"
+        }
+      },
+      {
+        "title": {
+          "kor": "논문",
+          "eng": "Publications"
+        },
+        "content": {
+          "kor": "「Learning concept sequencing through semantic-based syllabus design and integration」 Indian Journal of Science and Technology, SCOPUS, 공동연구(참여), 2015.08\n「조직 프로세스 분석을 통한 경량형 산업보안 관리수준 측정모형 설계」 한국IT서비스학회지, 공동연구(제1저자), 2014.03\n「내부정보유출 방지를 위한 데이터베이스 보안 솔루션 보안성 평가」 한국정보기술학회논문지, 공동연구(참여), 2009.06\n「오픈소스 소프트웨어 특성을 고려한 소프트웨어 평가모델」 한국인터넷정보학회 2008 춘계학술발표대회, 2008.05\n「게임 서비스 침해유형에 따른 기술적 대응방안 연구」 Information Systems Review, 2007.12\n「임베디드 시스템에서 필획기반 다국어 입력 시스템」 인터넷정보학회논문지, 2007.12 「개선된 개인정보 입력보호기술 개발에 관한 연구」 한국경영공학회지, 2007.11\n「The Research of Keyboard Security for u Trading」 2007 International Conference on Intelligent Pervasive Computing, 2007.10\n「Linux에서의 통합형 멀티미디어 플레이어 설계 및 구현」 2007 춘계학술발표대회 논문집, 2007.06\n「유비쿼터스컴퓨팅:비즈니스모델과전망」 국제통상논총, 2004.02\n「다중 Gigabit Server NICs에서 동적 검출주기를 적용한 결함 허용 메커니즘」 한국인터넷정보학회논문지, 2002.11\n「국내외 CRM 서비스 시장의 현황분석 및 전망」 국제통상논총, 2002.02\n「인터넷 쇼핑몰의 최근동향과 발전방안」 , 2001.02\n「인터넷상의 전자상거래 개관」 , 1999.03\n「A Qos-oriented Intramedia Synchronization Using Buffer」 IASTED 주최 AI'99, 1999.02\n「OLE기반 멀티미디어 전자 메일 시스템」 정보통신논문집, 1998.12",
+          "eng": "「Learning concept sequencing through semantic-based syllabus design and integration」 Indian Journal of Science and Technology, SCOPUS, Co-researcher, 2015.08\n「Design of a lightweight industrial security management level measurement model through organizational process analysis」 Journal of Korea IT Service Society, Co-researcher (First Author), 2014.03\n「Security evaluation of database security solutions for preventing internal information leakage」 Journal of Korea Information Technology Society, Co-researcher, 2009.06\n「Software evaluation model considering open source software characteristics」 Korean Society for Internet Information 2008 Spring Conference, 2008.05\n「Research on technical countermeasures according to types of game service infringement」 Information Systems Review, 2007.12\n「Stroke-based multilingual input system in embedded systems」 Journal of Korean Society for Internet Information, 2007.12 「Research on development of improved personal information input protection technology」 Journal of Korean Management Engineering Society, 2007.11\n「The Research of Keyboard Security for u Trading」 2007 International Conference on Intelligent Pervasive Computing, 2007.10\n「Design and implementation of integrated multimedia player in Linux」 Proceedings of the 2007 Spring Conference, 2007.06\n「Ubiquitous Computing: Business models and prospects」 International Trade Review, 2004.02\n「Fault tolerance mechanism applying dynamic detection cycle in multiple Gigabit Server NICs」 Journal of Korean Society for Internet Information, 2002.11\n「Analysis and prospects of domestic and foreign CRM service market」 International Trade Review, 2002.02\n「Recent trends and development plans of Internet shopping malls」, 2001.02\n「Overview of electronic commerce on the Internet」, 1999.03\n「A Qos-oriented Intramedia Synchronization Using Buffer」 IASTED AI'99, 1999.02\n「OLE-based multimedia email system」 Journal of Information and Communication, 1998.12"
+        }
+      },
+      {
+        "title": {
+          "kor": "연구비수혜",
+          "eng": "Research Grants"
+        },
+        "content": {
+          "kor": "「개인간 저작물 유통을 위한 라이선스 이력추적 및 이용현황 분석 기술」 한국저작권위원회, 공동연구원, 2016.02\n「개인간 저작물 유통을 위한 라이선스 이력추적 및 이용현황 분석 기술」 한국저작권위원회, 공동연구원, 2014.06\n「회사 홈페이지 구축 및 관련사항 컨설팅-(주)서원」 기술지도대학사무국, 2001.12",
+          "eng": "「License history tracking and usage analysis technology for distribution of works between individuals」 Korea Copyright Commission, Co-researcher, 2016.02\n「License history tracking and usage analysis technology for distribution of works between individuals」 Korea Copyright Commission, Co-researcher, 2014.06\n「Company homepage construction and related consulting - Seowon Co., Ltd.」 Technology Guidance University Office, 2001.12"
+        }
+      },
+      {
+        "title": {
+          "kor": "학술활동",
+          "eng": "Academic Activities"
+        },
+        "content": {
+          "kor": "「Hadoop을 이용한 트위터 메시지 분석 시스템 설계」 2012년도 한국인터넷정보학회 하계학술발표대회, 공동(교신), 2012.06\n「내부자 보안사고에 기반한 맞춤식 내부자보안 모델 연구」 2011년도 한국인터넷정보학회 하계학술발표대회, 단독, 2011.06\n「내부자 위협에서의 비형식적 보안요소에 관한 고찰」 2010년도 정기총회 및 추계학술발표대회, 단독, 2010.10\n「내부자 위협을 고려한 정보보호 대책 요구사항 분석 연구」 2010년도 한국인터넷정보학회 학술대회, 단독, 2010.06",
+          "eng": "「Design of Twitter message analysis system using Hadoop」 2012 Korean Society for Internet Information Summer Conference, Co-researcher (Corresponding author), 2012.06\n「Research on customized insider security model based on insider security incidents」 2011 Korean Society for Internet Information Summer Conference, Individual, 2011.06\n「A study on informal security elements in insider threats」 2010 General Assembly and Autumn Conference, Individual, 2010.10\n「Research on analysis of information protection countermeasure requirements considering insider threats」 2010 Korean Society for Internet Information Conference, Individual, 2010.06"
+        }
+      },
+      {
+        "title": {
+          "kor": "연구보고서",
+          "eng": "Research Reports"
+        },
+        "content": {
+          "kor": "「2008학년도 대입전형 변화에 따른 세부 전형방법 연구」 대진대 교무처 입학관리과, 공동, 2006.08\n「컴퓨터공학과교육과정개편에관한연구」 대진대학교컴퓨터공학과, 공동, 2003.12\n「전자상거래 확대에 따른 경기북부지역 기업의 정보인프라 수준평가 및 대응방안」 , 공동, 2002.01\n「전문대학원 발전 및 특성화 방안 연구 보고서」 , 공동, 2001.12\n「2001 교양교육분야 자체평가연구보고서」 , 공동, 2001.09\n「전기전자정보통신공학분야자체평가연구보고서」 , 단독, 2000.10\n「대진대학교 장단기 발전 계획 수립 연구보고서」 대진대학교, 단독, 1999.10\n「연구소 활성화 방안」 대진대학교, 단독, 1999.08",
+          "eng": "「Research on detailed selection methods according to changes in college admission selection for 2008」 Daejin University Academic Affairs Office, Admissions Management Department, Co-researcher, 2006.08\n「Research on curriculum revision for computer engineering department」 Daejin University Computer Engineering Department, Co-researcher, 2003.12\n「Assessment of information infrastructure level and countermeasures of companies in northern Gyeonggi area due to expansion of e-commerce」, Co-researcher, 2002.01\n「Research report on development and specialization plans for graduate schools」, Co-researcher, 2001.12\n「2001 Self-evaluation research report for liberal arts education」, Co-researcher, 2001.09\n「Self-evaluation research report for electrical, electronic, and information communication engineering fields」, Individual, 2000.10\n「Research report on establishing short and long-term development plans for Daejin University」 Daejin University, Individual, 1999.10\n「Measures to revitalize research institutes」 Daejin University, Individual, 1999.08"
+        }
+      },
+      {
+        "title": {
+          "kor": "저서",
+          "eng": "Books"
+        },
+        "content": {
+          "kor": "「(실무능력 향상) 엑셀&파워포인트 2013」 , 단독, 2015.08\n「(유티즌을 위한) SNS와 인터넷활용 지침서」 , 공동, 2012.03\n「엑셀 & 파워포인트 기초 및 활용」 , 공동(책임), 2012.03\n「(쉽게 배우는) 디지털 콘텐츠 제작 입문」 , 공동, 2012.03\n「컴퓨터 문서작성 완벽가이드」 , 공동, 2012.03\n「UCC 시대의 디지털 멀티미디어」 도서출판 그린, 2008.01\n「비지니스 데이터 활용과 프리젠테이션」 도서출판 그린, 2008.01\n「실용 문서편집기」 도서출판 그린, 2007.08\n「컴퓨터 시스템 개론」 도서출판 그린, 2007.08\n「유티즌을 위한 인터넷 활용」 도서출판 그린, 2007.08\n「워드 프로세스 실무」 기한재, 2004.03\n「(엑셀과 파워포인트)오피스 실무」 기한재, 2004.03\n「멀티미디어 이해와 활용」 기한재, 2004.03\n「컴퓨터기초와 활용」 기한재, 2004.03\n「인터넷 정보과학」 기한재, 2004.03\n「운영체제」 , 2002.09\n「정보화사회를 위한 컴퓨터활용」 , 2000.03\n「컴퓨터와 정보화사회」 , 1999.08\n「컴퓨터와 정보화사회」 , 1999.01\n「인터넷과 PC통신」 , 1999.01\n「컴퓨터와 정보통신」 , 1998.03",
+          "eng": "「(Practical Skills Improvement) Excel & PowerPoint 2013」, Individual, 2015.08\n「(For Utizens) SNS and Internet Usage Guidelines」, Co-author, 2012.03\n「Excel & PowerPoint Basics and Applications」, Co-author (Lead), 2012.03\n「(Easy Learning) Introduction to Digital Content Creation」, Co-author, 2012.03\n「Complete Guide to Computer Document Creation」, Co-author, 2012.03\n「Digital Multimedia in the UCC Era」 Green Publishing, 2008.01\n「Business Data Utilization and Presentation」 Green Publishing, 2008.01\n「Practical Document Editor」 Green Publishing, 2007.08\n「Introduction to Computer Systems」 Green Publishing, 2007.08\n「Internet Utilization for Utizens」 Green Publishing, 2007.08\n「Word Process Practice」 Gihan Publishing, 2004.03\n「(Excel and PowerPoint) Office Practice」 Gihan Publishing, 2004.03\n「Understanding and Utilizing Multimedia」 Gihan Publishing, 2004.03\n「Computer Basics and Utilization」 Gihan Publishing, 2004.03\n「Internet Information Science」 Gihan Publishing, 2004.03\n「Operating Systems」, 2002.09\n「Computer Utilization for Information Society」, 2000.03\n「Computers and Information Society」, 1999.08\n「Computers and Information Society」, 1999.01\n「Internet and PC Communication」, 1999.01\n「Computers and Information Communication」, 1998.03"
+        }
+      }
+    ]
+  }
+}

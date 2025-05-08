@@ -1,57 +1,562 @@
+/* 기본 스타일 */
 body {
-    font-family: 'HancomMalangMalang', sans-serif !important;
+  font-family: "HancomMalangMalang", "Noto Sans KR", sans-serif !important;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.members-main {
+  padding: 3rem 0;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1140px;
+  padding: 0 1.5rem;
+  margin: 0 auto;
 }
 
+/* 페이지 헤더 */
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title-heading {
+  font-family: "HancomMalangMalang", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.title-heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #1a73e8, #4285f4);
+  margin: 0.8rem auto 0;
+  border-radius: 3px;
+}
+
+.subtitle {
+  font-family: "HancomMalangMalang", sans-serif;
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 멤버 그리드 - 새로운 레이아웃 */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 30px;
+  justify-content: center;
+  position: relative;
+  min-height: 300px;
+  margin: 0 auto;
+}
+
+/* 로딩 인디케이터 */
+.loading-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 10;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(26, 115, 232, 0.3);
+  border-top-color: #1a73e8;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+}
+
+.loading-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 멤버 카드 스타일 */
 .member-card {
-    background: rgba(217, 217, 217, 0.50);
-    border-radius: 25px;
-    box-shadow: 0 5px 15px rgba(97, 97, 97, 0.4);
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  height: 100%;
+  width: 100%; /* 명시적 너비 설정 */
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.member-image-container {
+  position: relative;
+  padding-top: 100%; /* 정사각형 비율 */
+  overflow: hidden;
+  background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+}
+
+.member-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.member-card:hover .member-image {
+  transform: scale(1.05);
+}
+
+/* 역할 태그 수정 - 너비 축소 및 중앙 정렬 */
+.member-role {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  font-weight: 600;
+  z-index: 1;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 45px; /* 너비를 60px에서 45px로 축소 */
+  height: 26px;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.member-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.member-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #333;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.member-position {
+  color: #1a73e8;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.member-email {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+  word-break: break-all;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.member-email i {
+  color: #1a73e8;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.member-interests {
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.interest-tag {
+  display: inline-block;
+  background-color: #f0f7ff;
+  color: #1a73e8;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 30px;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+  transition: all 0.2s ease;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.interest-tag:hover {
+  background-color: #e0edff;
+  transform: translateY(-2px);
+}
+
+.member-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+  margin-top: auto;
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.github-link i {
+  margin-right: 0.5rem;
+}
+
+.github-link:hover {
+  color: #1a73e8;
+}
+
+.details-button {
+  background: none;
+  border: none;
+  color: #1a73e8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.details-button:hover {
+  color: #0d5bcd;
+}
+
+.details-button i {
+  margin-left: 0.3rem;
+  font-size: 0.8rem;
+}
+
+/* 새로운 모달 디자인 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.member-modal {
+  background: white;
+  width: 90%;
+  max-width: 800px;
+  max-height: 85vh;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(30px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.modal-overlay.show .member-modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-body {
+  display: flex;
+  overflow: hidden;
+  flex-grow: 1;
+  position: relative; /* 닫기 버튼 위치 지정을 위해 추가 */
+}
+
+/* 닫기 버튼을 오른쪽 상단으로 이동 */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* 모달 왼쪽 사이드바 수정 - 이름 위치 변경 */
+.modal-left {
+  width: 250px;
+  padding: 2rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9fafc;
+}
+
+.modal-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  border: 5px solid white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.modal-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 이름을 프로필 사진 아래로 이동 */
+.modal-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.6rem;
+  text-align: center;
+  width: 100%;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.modal-position {
+  font-size: 1.1rem;
+  color: #1a73e8;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.modal-contact {
+  width: 100%;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+  color: #555;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.contact-item i {
+  width: 20px;
+  margin-right: 0.7rem;
+  color: #1a73e8;
+}
+
+.contact-item a {
+  color: #555;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.contact-item a:hover {
+  color: #1a73e8;
+}
+
+.modal-right {
+  flex: 1;
+  padding: 2.5rem 2rem 2rem;
+  overflow-y: auto;
+  position: relative;
+}
+
+.info-section {
+  margin-bottom: 2rem;
+}
+
+.info-section h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.info-section h4 i {
+  margin-right: 0.8rem;
+  color: #1a73e8;
+}
+
+.interests-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.interests-list .interest-tag {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.bio-text {
+  line-height: 1.7;
+  color: #555;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+/* 반응형 스타일 */
+@media (min-width: 981px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* 태블릿 (981px 이하) */
+@media (max-width: 980px) {
+  .members-grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 0 15px;
+  }
+
+  .modal-body {
+    flex-direction: column;
+  }
+
+  .modal-left {
+    width: 100%;
+    padding: 1.5rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .modal-name {
+    font-size: 1.6rem;
     margin-bottom: 1rem;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    backdrop-filter: blur(2px);
+  }
+
+  .modal-avatar {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+  }
+
+  .modal-position {
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-contact {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .modal-right {
+    padding: 1.5rem;
+  }
 }
 
-.member-card img {
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    object-fit: cover;
-    margin-left: 1rem;
-}
+/* 모바일 (575px 이하) */
+@media (max-width: 575px) {
+  .members-grid {
+    grid-template-columns: repeat(1, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
 
-.member-card .member-info {
-    flex: 1;
-}
+  .title-heading {
+    font-size: 2rem;
+  }
 
-.member-card .member-info h3 {
-    margin: 0;
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .member-card {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .modal-close {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .modal-avatar {
+    width: 110px;
+    height: 110px;
+  }
+
+  .modal-name {
     font-size: 1.5rem;
+  }
 }
 
-.member-card .member-info p {
-    margin: 0.5rem 0 0;
-    color: #666;
-}
-
-.github-icon-container {
-    display: flex;
-    align-items: center;
-    background: rgba(217, 217, 217, 0.50);
-    border-radius: 25px;
-    padding: 2px 5px; /* Adjusted padding */
-    margin-top: 10px;
-}
-
-.github-icon {
-    width: 0.8em; /* Adjusted size */
-    height: 0.8em; /* Adjusted size */
-    margin-right: 5px;
-    vertical-align: middle;
+/* body에 모달 열림 상태 표시 */
+body.modal-open {
+  overflow: hidden;
 }

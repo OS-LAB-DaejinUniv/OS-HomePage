@@ -1,0 +1,6 @@
+{
+  "[ejs]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  }
+}

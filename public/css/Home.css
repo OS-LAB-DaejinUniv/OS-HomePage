@@ -1,13 +1,17 @@
-/* Home.css */
+/* Home.css - 연구실 메인 페이지 스타일 */
 body,
 html {
   height: 100%;
   margin: 0;
+  font-family: "HancomMalangMalang", "Noto Sans KR", sans-serif;
+  color: #333;
 }
 
+/* ===== 슬로건 섹션 스타일 ===== */
 .slogan-box {
   width: 100%;
   height: 27vh;
+  min-height: 220px;
   position: relative;
   margin: 0 auto;
   display: flex;
@@ -15,23 +19,28 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 20px 15px;
+  transition: all 0.3s ease;
 }
 
 .slogan-box h3 {
   font-size: 30px;
-  font-weight: normal;
-  color: rgba(0, 0, 0, 0.5);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  margin: 0;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  margin: 0 0 10px 0;
+  transition: all 0.3s ease;
 }
 
 .slogan-box h2 {
   font-size: 38px;
-  font-weight: normal;
+  font-weight: bold;
   margin-top: 10px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.85);
   margin: 0;
+  line-height: 1.5;
+  transition: all 0.3s ease;
 }
 
 .slogan-box h2 .line1 {
@@ -39,6 +48,7 @@ html {
   display: inline-block;
   transform: translateY(-5px);
   margin-right: 100px;
+  transition: all 0.3s ease;
 }
 
 .slogan-box h2 .line2 {
@@ -46,15 +56,10 @@ html {
   display: inline-block;
   transform: translateY(5px);
   margin-left: 100px;
+  transition: all 0.3s ease;
 }
-/* 
-.aaa{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 
+/* ===== 이미지 컨테이너 스타일 ===== */
 .image-container {
   width: 100%;
   height: 75vh;
@@ -62,12 +67,20 @@ html {
   display: flex;
   flex-direction: row;
   position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .image-container .image-box {
   flex: 1;
   background-size: cover;
   background-position: center;
+  transition: transform 0.5s ease;
+  position: relative;
+}
+
+.image-container .image-box:hover {
+  transform: scale(1.03);
 }
 
 .image-container .overlay {
@@ -77,249 +90,288 @@ html {
   width: 100%;
   height: 100%;
   background: rgba(217, 217, 217, 0.2);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(3px);
   z-index: 1;
+  transition: all 0.3s ease;
 }
 
-/* 미디어 쿼리: 화면 너비가 980px 이하일 때 */
-@media (max-width: 980px) {
-  .slogan-box h3 {
-    font-size: 28px;
-  }
-
-  .slogan-box h2 .line1 {
-    font-size: 30px;
-    margin-right: 75px;
-  }
-
-  .slogan-box h2 .line2 {
-    font-size: 38px;
-    margin-left: 75px;
-  }
-
-  .image-container {
-    display: none;
-    width: 100%;
-  }
-
-  .image-container-small {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    height: 56vh;
-    min-height: 400px;
-    position: relative;
-  }
-
-  .image-container-small .image-box {
-    flex: 1;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .image-container-small .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(217, 217, 217, 0.2);
-    backdrop-filter: blur(4px);
-    z-index: 1;
-  }
-
-  .post-container {
-    width: 650px;
-    height: 290px; /* 비율에 맞게 높이도 조정 */
-    margin: 30px auto;
-  }
-
-  .post-content h3 {
-    font-size: 28px;
-    padding: 8px;
-  }
-
-  .post-content {
-    padding: 15px 2px;
-  }
-
-  .image-gallery {
-    width: 100%;
-    padding: 0 20px;
-  }
-
-  .gallery-item {
-    width: 45%; /* 두 개씩 표시 */
-  }
-
-  .gallery-desktop {
-    display: none;
-  }
-
-  .gallery-slider {
-    display: block;
-    height: 600px;
-  }
-
-  .gallery-container {
-    height: 600px;
-  }
-
-  .tablet-view {
-    display: block;
-  }
-
-  .mobile-view {
-    display: none;
-  }
+.image-container-small {
+  width: 100%;
+  display: none; /* 기본적으로 숨김 */
+  flex-direction: row;
+  height: 56vh;
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-/* 추가 미디어 쿼리: 작은 모바일 기기 */
-@media (max-width: 575px) {
-  .slogan-box h3 {
-    font-size: 26px;
-  }
-
-  .slogan-box h2 .line1 {
-    font-size: 28px;
-    margin-right: 50px;
-  }
-
-  .slogan-box h2 .line2 {
-    font-size: 32px;
-    margin-left: 50px;
-  }
-
-  .image-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .gallery-item {
-    width: 80%;
-  }
-
-  .gallery-container {
-    height: 500px;
-  }
-
-  .gallery-slider {
-    height: 500px;
-  }
-
-  .tablet-view {
-    display: none;
-  }
-
-  .mobile-view {
-    display: block;
-  }
+.image-container-small .image-box {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
 }
 
-/* 프로젝트 자세히 보기 버튼 스타일 */
+.image-container-small .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(217, 217, 217, 0.2);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+/* ===== 프로젝트 버튼 스타일 ===== */
 .view-projects-btn {
   display: inline-block;
-  font-size: 20px;
-  padding: 10px 20px;
-  margin: 15px auto;
+  font-size: 18px;
+  padding: 12px 30px;
+  margin: 25px auto;
   color: white;
-  background-color: gray;
-  border-radius: 25px;
+  background: linear-gradient(135deg, #1a73e8, #4285f4);
+  border-radius: 30px;
   text-decoration: none;
   text-align: center;
-}
-
-/* 게시물 상자 스타일 */
-.post-container {
-  width: 725px;
-  height: 325px;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 25px;
-  display: flex;
-  margin: 50px auto;
+  box-shadow: 0 4px 10px rgba(26, 115, 232, 0.25);
+  transition: all 0.3s ease;
+  font-weight: 600;
+  position: relative;
   overflow: hidden;
 }
 
-.post-image {
-  flex: 1.45;
-  background-size: cover;
-  background-position: center;
-  border-radius: 25px;
+.view-projects-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
 }
 
-.post-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  position: relative;
-  padding: 20px 3px;
+.view-projects-btn:hover::after {
+  animation: ripple 1.5s ease-out;
 }
 
-.post-content h3 {
-  font-size: 35px;
-  margin-bottom: 10px;
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+.view-projects-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(26, 115, 232, 0.35);
+  color: white;
+}
+
+.view-projects-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(26, 115, 232, 0.3);
+}
+
+/* ===== 포스트 컨테이너 스타일 ===== */
+.features-section {
+  padding: 60px 0;
+}
+
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-title {
   text-align: center;
-  padding: 10px;
+  margin-bottom: 50px;
 }
 
-.post-title-box {
+.section-title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.section-title p {
+  font-size: 18px;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.feature-img {
+  height: 220px;
+  overflow: hidden;
+}
+
+.feature-img img {
   width: 100%;
-  height: 80px;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.feature-card:hover .feature-img img {
+  transform: scale(1.05);
+}
+
+.feature-content {
+  padding: 25px;
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #f0f7ff;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
+  margin-bottom: 20px;
+  color: #1a73e8;
+  font-size: 24px;
 }
 
-.post-title-box h3 {
-  margin: 0;
+.feature-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+  font-family: "HancomMalangMalang", sans-serif;
+  position: relative;
+  display: inline-block;
 }
 
-.post-body {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+.feature-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #1a73e8, #4285f4);
+  border-radius: 3px;
+}
+
+.feature-text {
+  color: #666;
+  line-height: 1.6;
+  font-size: 15px;
+  margin-bottom: 20px;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.feature-link {
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-flex;
   align-items: center;
-  text-align: center;
-  word-wrap: break-word;
+  transition: all 0.3s ease;
 }
 
-/* 이미지 갤러리 섹션 스타일 - 간소화 */
+.feature-link i {
+  margin-left: 8px;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.feature-link:hover {
+  color: #0d5bcd;
+}
+
+.feature-link:hover i {
+  transform: translateX(4px);
+}
+
+/* ===== 이미지 갤러리 섹션 스타일 ===== */
 .image-gallery {
   width: 100%;
   max-width: 1300px;
-  margin: 50px auto;
+  margin: 80px auto 50px;
   position: relative;
+  padding: 0 15px;
 }
 
 .gallery-container {
   width: 100%;
-  height: 725px;
+  height: 600px; /* 625px에서 600px로 줄임 */
   overflow: hidden;
   border-radius: 20px;
   position: relative;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* 데스크탑 뷰 */
+/* 데스크탑 뷰 - 수정된 버전 */
 .gallery-desktop {
   display: flex;
   width: 100%;
   height: 100%;
+  justify-content: space-between;
 }
 
 .gallery-desktop .gallery-item {
-  width: 25%;
   height: 100%;
   position: relative;
+  overflow: hidden;
+  flex: 1;
+  transition: all 0.5s ease;
+}
+
+.gallery-desktop .gallery-item:hover {
+  flex: 1.25; /* 1.5에서 1.25로 축소하여 확대 효과를 더욱 미묘하게 조정 */
+  z-index: 2;
+}
+
+/* 호버되지 않은 항목들의 flex 조정 - 수정 */
+.gallery-desktop:hover .gallery-item:not(:hover) {
+  flex: 0.92; /* 0.8에서 0.92로 증가하여 축소 효과 최소화 */
 }
 
 .gallery-desktop .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-desktop .gallery-item:hover img {
+  transform: scale(1.03); /* 1.05에서 1.03으로 축소하여 확대 효과 감소 */
 }
 
 /* 슬라이더 공통 스타일 */
@@ -339,7 +391,7 @@ html {
 
 .slider-track {
   display: flex;
-  transition: transform 1s ease;
+  transition: transform 0.8s ease;
   height: 100%;
 }
 
@@ -347,135 +399,213 @@ html {
   position: relative;
   height: 100%;
   flex-shrink: 0;
+  padding: 10px; /* 슬라이드에 패딩 추가 */
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px; /* 슬라이드 이미지에 둥근 테두리 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* 태블릿 슬라이더 (2개 이미지) */
 .tablet-slider .slide {
   width: 50%;
-}
-
-.tablet-slider .slide img {
-  object-fit: contain;
+  padding: 8px; /* 12px에서 8px로 패딩 감소 */
 }
 
 /* 모바일 슬라이더 (1개 이미지) */
 .mobile-slider .slide {
   width: 100%;
-}
-
-.mobile-slider .slide img {
-  object-fit: contain;
+  padding: 15px 25px; /* 약간 패딩 줄임 */
 }
 
 .description-circle {
   position: absolute;
-  bottom: 15px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50px;
-  padding: 8px 15px;
+  padding: 10px 20px;
   color: white;
   font-size: 14px;
   backdrop-filter: blur(3px);
   white-space: nowrap;
   z-index: 5;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* 미디어 쿼리 - 중복 제거 및 통합 */
-@media (max-width: 980px) {
+.gallery-item:hover .description-circle,
+.slide:hover .description-circle {
+  background-color: rgba(26, 115, 232, 0.7);
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* 슬라이더 컨트롤 버튼 */
+.slider-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 5;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+  background-color: #fff;
+  transform: scale(1.2);
+}
+
+/* 모바일 용 갤러리 스타일 개선 */
+.mobile-gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-slide-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  color: white;
+  text-align: center;
+}
+
+.mobile-slide-overlay h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+/* ===== 반응형 디자인 (미디어 쿼리) ===== */
+
+/* 데스크톱 (981px 이상) */
+@media (min-width: 981px) {
+  .post-container {
+    flex-direction: row;
+    min-height: 280px;
+    max-height: none;
+  }
+
+  /* 홀수 번째와 짝수 번째 포스트 컨테이너의 레이아웃을 다르게 설정 */
+  .post-container:nth-child(even) .post-image {
+    order: 1;
+  }
+
+  .post-container:nth-child(even) .post-content {
+    order: 2;
+  }
+
+  .post-container:nth-child(odd) .post-image {
+    order: 2;
+  }
+
+  .post-container:nth-child(odd) .post-content {
+    order: 1;
+  }
+
+  .gallery-container {
+    height: 625px;
+  }
+
+  .slogan-box h2 {
+    line-height: 1.2; /* 데스크탑 라인 높이 */
+  }
+}
+
+/* 태블릿 (768px ~ 980px) */
+@media (min-width: 768px) and (max-width: 980px) {
   .slogan-box h3 {
     font-size: 28px;
   }
 
+  .slogan-box h2 {
+    line-height: 1.1; /* 태블릿 라인 높이 */
+  }
+
   .slogan-box h2 .line1 {
-    font-size: 30px;
-    margin-right: 75px;
+    font-size: 32px;
+    margin-right: 60px;
   }
 
   .slogan-box h2 .line2 {
-    font-size: 38px;
-    margin-left: 75px;
+    font-size: 36px;
+    margin-left: 60px;
   }
 
   .image-container {
     display: none;
-    width: 100%;
   }
 
   .image-container-small {
-    width: 100%;
     display: flex;
-    flex-direction: row;
-    height: 56vh;
-    min-height: 400px;
-    position: relative;
-  }
-
-  .image-container-small .image-box {
-    flex: 1;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .image-container-small .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(217, 217, 217, 0.2);
-    backdrop-filter: blur(4px);
-    z-index: 1;
   }
 
   .post-container {
-    width: 650px;
-    height: 290px; /* 비율에 맞게 높이도 조정 */
-    margin: 30px auto;
+    width: 90%;
+    height: auto;
+    min-height: 420px; /* 450px에서 420px로 줄임 */
+    max-height: none; /* 최대 높이 제한 제거 */
+    margin: 35px auto;
+    flex-direction: column; /* 태블릿에서는 세로로 배치 */
   }
 
-  .post-content h3 {
-    font-size: 28px;
-    padding: 8px;
+  .post-image {
+    height: 220px; /* 높이 고정 */
+    width: 100%;
+    max-width: 100%; /* 최대 너비 제한 제거 */
+    order: 1 !important; /* 항상 이미지 먼저 */
   }
 
   .post-content {
-    padding: 15px 2px;
-  }
-
-  .image-gallery {
+    order: 2 !important;
     width: 100%;
-    padding: 0 20px;
+    max-width: 100%; /* 최대 너비 제한 제거 */
+    padding: 25px 30px;
   }
 
-  .gallery-item {
-    width: 45%; /* 두 개씩 표시 */
+  .post-content h3 {
+    font-size: 24px;
   }
 
-  .gallery-desktop {
-    display: none;
+  .post-body {
+    font-size: 14px;
+    padding: 0 20px; /* 좌우 패딩 유지 */
+    max-height: none; /* 높이 제한 제거 */
+    overflow-y: visible; /* auto에서 visible로 변경 */
   }
 
-  .gallery-slider {
-    display: block;
-    height: 600px;
+  .post-title-box {
+    margin-bottom: 12px;
   }
 
-  .gallery-container {
-    height: 600px;
-  }
-
-  .tablet-view {
-    display: block;
-  }
-
-  .mobile-view {
-    display: none;
+  .post-title-box::after {
+    width: 40px;
+    margin-top: 3px;
   }
 
   .gallery-container {
-    height: 550px;
+    height: 550px; /* 500px에서 550px로 높이 증가 */
   }
 
   .gallery-desktop {
@@ -489,57 +619,239 @@ html {
   .mobile-slider {
     display: none !important;
   }
+
+  /* 태블릿 슬라이더 개선 */
+  .tablet-slider .slide {
+    padding: 8px; /* 패딩 감소로 이미지 간격 줄임 */
+  }
+
+  .tablet-slider .slide img {
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .description-circle {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+
+  /* 태블릿 새로운 피쳐 섹션 반응형 */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 }
 
+/* 모바일 (767px 이하) */
+@media (max-width: 767px) {
+  .slogan-box {
+    height: auto;
+    min-height: 180px;
+    padding: 30px 15px;
+  }
+
+  .slogan-box h2 {
+    line-height: 0.7; /* 모바일 라인 높이 */
+  }
+
+  .slogan-box h3 {
+    font-size: 24px;
+  }
+
+  .slogan-box h2 .line1 {
+    font-size: 26px;
+    margin-right: 30px;
+  }
+
+  .slogan-box h2 .line2 {
+    font-size: 30px;
+    margin-left: 30px;
+  }
+
+  .image-container {
+    display: none;
+  }
+
+  .image-container-small {
+    display: flex;
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .post-container {
+    width: 92%;
+    height: auto;
+    flex-direction: column;
+    margin: 30px auto;
+    border-radius: 12px;
+    max-height: none;
+    background-color: #fff;
+  }
+
+  .post-image {
+    height: 180px;
+    width: 100%;
+    max-width: 100%;
+    order: 1 !important;
+  }
+
+  .post-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 20px;
+    order: 2 !important;
+    background-color: #fff;
+  }
+
+  .post-title-box h3 {
+    font-size: 22px;
+  }
+
+  .post-title-box::after {
+    width: 40px;
+    height: 2.5px;
+  }
+
+  .post-body {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0 10px;
+    max-height: none;
+  }
+
+  .gallery-container {
+    height: 450px;
+    margin-bottom: 30px;
+  }
+
+  .gallery-desktop,
+  .tablet-slider {
+    display: none !important;
+  }
+
+  .mobile-slider {
+    display: block !important;
+  }
+
+  /* 모바일 슬라이더에서 프로그레스 바 문제 해결 */
+  .mobile-slider .mobile-progress-bar {
+    display: none;
+  }
+
+  /* 모바일 스타일 향상 */
+  .mobile-slider .slide {
+    position: relative;
+  }
+
+  .slider-controls {
+    bottom: 15px;
+  }
+
+  /* 모바일 새로운 피쳐 섹션 반응형 */
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  .section-title p {
+    font-size: 16px;
+  }
+
+  .feature-img {
+    height: 180px;
+  }
+}
+
+/* 작은 모바일 (575px 이하) */
 @media (max-width: 575px) {
   .slogan-box h3 {
+    font-size: 22px;
+  }
+
+  .slogan-box h2 {
     font-size: 26px;
   }
 
   .slogan-box h2 .line1 {
-    font-size: 28px;
-    margin-right: 50px;
+    font-size: 24px;
+    margin-right: 20px;
+    display: block;
+    transform: none;
   }
 
   .slogan-box h2 .line2 {
-    font-size: 32px;
-    margin-left: 50px;
-  }
-
-  .image-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .gallery-item {
-    width: 80%;
-  }
-
-  .gallery-container {
-    height: 500px;
-  }
-
-  .gallery-slider {
-    height: 500px;
-  }
-
-  .tablet-view {
-    display: none;
-  }
-
-  .mobile-view {
+    font-size: 26px;
+    margin-left: 20px;
     display: block;
+    transform: none;
+  }
+
+  .image-container-small .image-box:nth-child(3) {
+    display: none; /* 작은 화면에서는 3번째 이미지 감춤 */
+  }
+
+  .view-projects-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .post-container {
+    margin: 25px auto;
+  }
+
+  .post-image {
+    height: 160px;
+  }
+
+  .post-content {
+    padding: 18px 15px;
+  }
+
+  .post-title-box h3 {
+    font-size: 20px;
+  }
+
+  .post-body p {
+    font-size: 13px;
+    padding: 0 5px;
   }
 
   .gallery-container {
-    height: 400px;
+    height: 350px;
+    border-radius: 15px;
   }
 
-  .tablet-slider {
-    display: none !important;
+  .description-circle {
+    padding: 8px 16px;
+    font-size: 12px;
   }
 
-  .mobile-slider {
-    display: block !important;
+  /* 작은 모바일에서 이미지 더 작게 표시 */
+  .mobile-slider .slide {
+    padding: 10px 20px;
+  }
+
+  .feature-card {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .feature-content {
+    padding: 20px 15px;
+  }
+
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .feature-title {
+    font-size: 20px;
   }
 }

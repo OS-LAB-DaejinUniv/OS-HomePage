@@ -1,7 +1,7 @@
 .rsch-container {
   width: 950px;
   height: 325px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #fff;
   border-radius: 25px;
   display: flex;
   margin: 50px auto;

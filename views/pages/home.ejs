@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" class="index-page">
+<html lang="<%= lang === 'eng' ? 'en' : 'ko' %>" class="index-page">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,165 +8,150 @@
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/Home.css" />
-    <!-- Home.css 추가 -->
     <link rel="stylesheet" href="/css/styles.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <%- include('../partials/header') %>
 
     <div class="container-fluid p-0">
-      <div class="slogan-box">
+      <!-- 메인 슬로건 섹션 -->
+      <div class="slogan-box" data-aos="fade-down">
         <h3 id="sloganTopH3">Loading...</h3>
         <h2>
-          <span class="line1" id="sloganTopLine1"
-            >자바스크립트를 사용해 주세요</span
-          >
+          <span class="line1" id="sloganTopLine1">자바스크립트를 사용해 주세요</span>
           <br />
-          <span class="line2" id="sloganTopLine2"
-            >Please enable JavaScript</span
-          >
+          <span class="line2" id="sloganTopLine2">Please enable JavaScript</span>
         </h2>
       </div>
-      <div class="aaa">
-        <div class="image-container">
-          <div class="overlay"></div>
-          <div
-            class="image-box"
-            style="background-image: url('/images/Home/main-1.jpg')"
-          ></div>
-          <div
-            class="image-box"
-            style="background-image: url('/images/Home/main-2.jpg')"
-          ></div>
-          <div
-            class="image-box"
-            style="background-image: url('/images/Home/main-3.jpg')"
-          ></div>
-          <div
-            class="image-box"
-            style="background-image: url('/images/Home/main-4.jpg')"
-          ></div>
-          <div
-            class="image-box"
-            style="background-image: url('/images/Home/main-5.jpg')"
-          ></div>
-        </div>
-      </div>
-      <div class="image-container-small d-lg-none">
+      
+      <!-- 메인 이미지 섹션 - 데스크톱 -->
+      <div class="image-container" data-aos="fade-up">
         <div class="overlay"></div>
-        <div
-          class="image-box"
-          style="background-image: url('/images/Home/main-1.jpg')"
-        ></div>
-        <div
-          class="image-box"
-          style="background-image: url('/images/Home/main-3.jpg')"
-        ></div>
-        <div
-          class="image-box"
-          style="background-image: url('/images/Home/main-4.jpg')"
-        ></div>
+        <div class="image-box" style="background-image: url('/images/Home/main-1.jpg')"></div>
+        <div class="image-box" style="background-image: url('/images/Home/main-2.jpg')"></div>
+        <div class="image-box" style="background-image: url('/images/Home/main-3.jpg')"></div>
+        <div class="image-box" style="background-image: url('/images/Home/main-4.jpg')"></div>
+        <div class="image-box" style="background-image: url('/images/Home/main-5.jpg')"></div>
       </div>
-      <div class="d-flex justify-content-center">
-        <a href="/Projects" id="viewProjectsBtn" class="view-projects-btn"
-          >프로젝트 자세히 보기</a
-        >
+      
+      <!-- 메인 이미지 섹션 - 모바일/태블릿 -->
+      <div class="image-container-small">
+        <div class="overlay"></div>
+        <div class="image-box" style="background-image: url('/images/Home/main-1.jpg')"></div>
+        <div class="image-box" style="background-image: url('/images/Home/main-3.jpg')"></div>
+        <div class="image-box" style="background-image: url('/images/Home/main-4.jpg')"></div>
       </div>
-      <div class="slogan-box">
+      
+      <!-- 프로젝트 버튼 -->
+      <div class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        <a href="/Research" id="viewProjectsBtn" class="view-projects-btn">
+          <i class="fas fa-flask me-2"></i>연구 활동 자세히 보기
+        </a>
+      </div>
+      
+      <!-- 중간 슬로건 섹션 -->
+      <div class="slogan-box" data-aos="fade-down">
         <h3 id="sloganMidH3">Loading...</h3>
         <h2>
-          <span class="line1" id="sloganMidLine1"
-            >자바스크립트를 사용해 주세요</span
-          >
+          <span class="line1" id="sloganMidLine1">자바스크립트를 사용해 주세요</span>
           <br />
-          <span class="line2" id="sloganMidLine2"
-            >Please enable JavaScript</span
-          >
-        </h2>
-      </div>
-      <!-- 기존의 포스트 컨테이너 -->
-      <div class="post-container">
-        <div
-          class="post-image"
-          style="background-image: url('/images/Home/content-1.jpg')"
-        ></div>
-        <div class="post-content">
-          <div class="post-title-box">
-            <h3 id="postTitle1">Loading...</h3>
-          </div>
-          <div class="post-body">
-            <p id="postContent1">Loading...</p>
-          </div>
-        </div>
-      </div>
-      <div class="post-container">
-        <div class="post-content">
-          <div class="post-title-box">
-            <h3 id="postTitle2">Loading...</h3>
-          </div>
-          <div class="post-body">
-            <p id="postContent2">Loading...</p>
-          </div>
-        </div>
-        <div
-          class="post-image"
-          style="background-image: url('/images/Home/content-2.jpg')"
-        ></div>
-      </div>
-      <div class="post-container">
-        <div
-          class="post-image"
-          style="background-image: url('/images/Home/content-3.jpg')"
-        ></div>
-        <div class="post-content">
-          <div class="post-title-box">
-            <h3 id="postTitle3">Loading...</h3>
-          </div>
-          <div class="post-body">
-            <p id="postContent3">Loading...</p>
-          </div>
-        </div>
-      </div>
-      <div class="slogan-box">
-        <h3 id="sloganBotH3">Loading...</h3>
-        <h2>
-          <span class="line1" id="sloganBotLine1"
-            >자바스크립트를 사용해 주세요</span
-          >
-          <br />
-          <span class="line2" id="sloganBotLine2"
-            >Please enable JavaScript</span
-          >
+          <span class="line2" id="sloganMidLine2">Please enable JavaScript</span>
         </h2>
       </div>
 
-      <!-- 이미지 갤러리 섹션 - 구조 간소화 -->
-      <div class="image-gallery">
+      <!-- 새로운 컨텐츠 포스트 섹션 (피처 섹션으로 구현) -->
+      <section class="features-section">
+        <div class="features-container">
+          <div class="section-title" data-aos="fade-up">
+            <h2 id="sectionTitle">OS LAB의 핵심 활동</h2>
+            <p id="sectionSubtitle">우리 연구실에서 제공하는 다양한 실습 및 연구 활동을 알아보세요</p>
+          </div>
+          
+          <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="feature-img">
+                <img src="/images/Home/content-1.jpg" alt="서버 실습" loading="lazy">
+              </div>
+              <div class="feature-content">
+                <div class="feature-icon">
+                  <i class="fas fa-server"></i>
+                </div>
+                <h3 class="feature-title" id="featureTitle1">서버 실습</h3>
+                <p class="feature-text" id="featureContent1">실제 서버의 분해와 조립을 통해 하드웨어의 구조를 직접 경험하며, 설정을 통해 최적화 기술을 터득합니다.</p>
+                <a href="/Research#server-practice" class="feature-link">
+                  더 알아보기 <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="feature-img">
+                <img src="/images/Home/content-2.jpg" alt="보안 관리" loading="lazy">
+              </div>
+              <div class="feature-content">
+                <div class="feature-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="feature-title" id="featureTitle2">보안 관리</h3>
+                <p class="feature-text" id="featureContent2">서버 보안의 기초, 심화 기술까지 다루며, 효과적인 접근 제어와 암호화 기술을 익히며, 실제 사례를 통해 보안 위협을 분석합니다.</p>
+                <a href="/Research#security-management" class="feature-link">
+                  더 알아보기 <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="feature-img">
+                <img src="/images/Home/content-3.jpg" alt="개인 실습" loading="lazy">
+              </div>
+              <div class="feature-content">
+                <div class="feature-icon">
+                  <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3 class="feature-title" id="featureTitle3">개인 실습</h3>
+                <p class="feature-text" id="featureContent3">개인 실습용 PC와 연구실 서버를 통해, 독립적인 연구와 개발 환경을 제공하고, 학생들은 공용 서버를 이용하여 협업 프로젝트를 진행합니다.</p>
+                <a href="/Research#personal-practice" class="feature-link">
+                  더 알아보기 <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- 하단 슬로건 섹션 -->
+      <div class="slogan-box" data-aos="fade-down">
+        <h3 id="sloganBotH3">Loading...</h3>
+        <h2>
+          <span class="line1" id="sloganBotLine1">자바스크립트를 사용해 주세요</span>
+          <br />
+          <span class="line2" id="sloganBotLine2">Please enable JavaScript</span>
+        </h2>
+      </div>
+
+      <!-- 이미지 갤러리 섹션 -->
+      <div class="image-gallery" data-aos="fade-up">
         <div class="gallery-container">
           <!-- 데스크탑 뷰 (4개 이미지 모두 표시) -->
           <div class="gallery-desktop">
             <div class="gallery-item">
-              <img src="/images/Home/gallery-1.jpg" alt="Gallery Image 1" />
+              <img src="/images/Home/gallery-1.jpg" alt="Gallery Image 1" loading="lazy" />
               <div class="description-circle">연구실 MT</div>
             </div>
             <div class="gallery-item">
-              <img src="/images/Home/gallery-2.jpg" alt="Gallery Image 2" />
+              <img src="/images/Home/gallery-2.jpg" alt="Gallery Image 2" loading="lazy" />
               <div class="description-circle">연구실 연합 MT</div>
             </div>
             <div class="gallery-item">
-              <img src="/images/Home/gallery-3.jpg" alt="Gallery Image 3" />
+              <img src="/images/Home/gallery-3.jpg" alt="Gallery Image 3" loading="lazy" />
               <div class="description-circle">스승의 날</div>
             </div>
             <div class="gallery-item">
-              <img src="/images/Home/gallery-4.jpg" alt="Gallery Image 4" />
+              <img src="/images/Home/gallery-4.jpg" alt="Gallery Image 4" loading="lazy" />
               <div class="description-circle">시험기간</div>
             </div>
           </div>
@@ -195,27 +180,18 @@
     <%- include('../partials/footer') %>
 
     <script src="/js/cookies.js"></script>
-    <script src="/js/nav-language.js"></script>
+    <script src="/js/language-utils.js"></script>
     <script src="/js/navbar.js"></script>
-    <script src="/js/Home-lang.js"></script>
     <script src="/js/gallery-slider.js"></script>
-    <!-- 새로운 JavaScript 파일 추가 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- 디버깅용 코드 추가 -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      // 페이지 로드 후 슬라이더 초기화 여부 확인
-      document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(function () {
-          console.log(
-            "태블릿 슬라이더 내용:",
-            document.querySelector(".tablet-slider .slider-track").innerHTML
-          );
-          console.log(
-            "모바일 슬라이더 내용:",
-            document.querySelector(".mobile-slider .slider-track").innerHTML
-          );
-        }, 1000);
+      // AOS 애니메이션 초기화
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 50,
+        delay: 100
       });
     </script>
   </body>

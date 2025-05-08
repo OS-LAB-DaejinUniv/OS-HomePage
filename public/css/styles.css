@@ -1,25 +1,34 @@
 /* style.css 파일 */
 @font-face {
-    font-family: 'HancomMalangMalang';
-    src: url('/Fonts/HancomMalangMalang-Bold.woff2') format('woff2'),
-        url('/Fonts/HancomMalangMalang-Bold.woff') format('woff'),
-        url('/Fonts/HancomMalangMalang-Bold.ttf') format('truetype'),
-        url('/Fonts/HancomMalangMalang-Bold.otf') format('opentype');
-    font-weight: bold;
-    font-style: normal;
+  font-family: "HancomMalangMalang";
+  src: url("/Fonts/HancomMalangMalang-Bold.woff2") format("woff2"),
+    url("/Fonts/HancomMalangMalang-Bold.woff") format("woff"),
+    url("/Fonts/HancomMalangMalang-Bold.ttf") format("truetype"),
+    url("/Fonts/HancomMalangMalang-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'HancomMalangMalang';
-    src: url('/Fonts/HancomMalangMalang-Regular.woff2') format('woff2'),
-        url('/Fonts/HancomMalangMalang-Regular.woff') format('woff'),
-        url('/Fonts/HancomMalangMalang-Regular.ttf') format('truetype'),
-        url('/Fonts/HancomMalangMalang-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "HancomMalangMalang";
+  src: url("/Fonts/HancomMalangMalang-Regular.woff2") format("woff2"),
+    url("/Fonts/HancomMalangMalang-Regular.woff") format("woff"),
+    url("/Fonts/HancomMalangMalang-Regular.ttf") format("truetype"),
+    url("/Fonts/HancomMalangMalang-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* 웹사이트에서 폰트를 메인 폰트로 사용 */
 body {
-    font-family: 'HancomMalangMalang', sans-serif !important;
+  font-family: "HancomMalangMalang", sans-serif !important;
+}
+
+/* 네비게이션 바와 드롭다운 메뉴에 폰트 명시적 적용 */
+.navbar,
+.nav-link,
+.navbar-brand,
+.dropdown-menu-custom,
+.dropdown-menu-custom a {
+  font-family: "HancomMalangMalang", sans-serif !important;
 }
