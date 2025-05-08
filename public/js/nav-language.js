@@ -27,7 +27,6 @@ function setLanguage(lang) {
   const pageTitles = {
     "Professor.html": { kor: "교수 소개", eng: "Professor" },
     "research-act.html": { kor: "연구 활동", eng: "Research" },
-    "OS-Log.html": { kor: "OS 마당", eng: "OS Log" },
     "Members.html": { kor: "멤버 소개", eng: "Members" },
   };
 
@@ -47,9 +46,9 @@ function setLanguage(lang) {
       }
     });
     // 텍스트를 한국어로 변경
+    document.getElementById("home_Link").innerText = "메인 화면";
     document.getElementById("professor_Link").innerText = "교수 소개";
     document.getElementById("research_Link").innerText = "연구 활동";
-    document.getElementById("osLog_Link").innerText = "OS 마당";
     document.getElementById("members_Link").innerText = "멤버 소개";
     document.querySelector("title").innerText =
       "OS LAB" + (titleSuffix ? " - " + titleSuffix : "");
@@ -68,9 +67,9 @@ function setLanguage(lang) {
       }
     });
     // 텍스트를 영어로 변경
+    document.getElementById("home_Link").innerText = "Home";
     document.getElementById("professor_Link").innerText = "Professor";
     document.getElementById("research_Link").innerText = "Research";
-    document.getElementById("osLog_Link").innerText = "OS Log";
     document.getElementById("members_Link").innerText = "Members";
     document.querySelector("title").innerText =
       "OS LAB" + (titleSuffix ? " - " + titleSuffix : "");
@@ -93,16 +92,16 @@ function updateDropdownMenu(lang) {
   const dropdownMenu = document.getElementById("dropdownMenuCustom");
   dropdownMenu.innerHTML = "";
   const itemsKor = [
+    { text: "메인 화면", link: "/" },
     { text: "교수 소개", link: "/Professor" },
     { text: "연구 활동", link: "/Research" },
-    { text: "OS 마당", link: "/OS-Log" },
     { text: "멤버 소개", link: "/Members" },
   ];
 
   const itemsEng = [
+    { text: "Home", link: "/" },
     { text: "Professor", link: "/Professor" },
     { text: "Research", link: "/Research" },
-    { text: "OS Log", link: "/OS-Log" },
     { text: "Members", link: "/Members" },
   ];
 
