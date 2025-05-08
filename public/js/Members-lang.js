@@ -156,7 +156,7 @@ function openMemberModal(index) {
     .then((data) => {
       const member = data.members[index];
 
-      // 모달에 데이터 채우기
+      // 모달에 데이터 채우기 - 이름이 모달 헤더가 아닌 왼쪽 상단에 위치
       document.getElementById("modalMemberName").textContent =
         member.name[lang];
       document.getElementById("modalMemberPosition").textContent =
