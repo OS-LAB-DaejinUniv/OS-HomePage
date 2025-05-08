@@ -166,7 +166,7 @@ function updateHomeContent(lang) {
     .catch((error) => console.error("Error loading content:", error));
 }
 
-// 홈 페이지 콘텐츠 설정 함수
+// 홈 페이지 콘텐츠 설정 함수 - 새로운 피처 카드 구조에 맞게 수정
 function setHomeContent(data, lang) {
   const sloganTop = data.sloganTop[lang];
   const sloganMid = data.sloganMid[lang];
@@ -197,14 +197,21 @@ function setHomeContent(data, lang) {
   document.getElementById("viewProjectsBtn").innerText =
     projectButtonText || "Loading...";
 
-  // 새로 추가된 콘텐츠 설정
+  // 새로운 피처 카드 콘텐츠 설정
   const contents = data.contents;
 
   contents.forEach((content, index) => {
-    const titleElement = document.querySelectorAll(".post-title-box h3")[index];
-    const contentElement = document.querySelectorAll(".post-body p")[index];
+    // 새 구조에 맞게 ID 변경
+    const titleElement = document.getElementById(`featureTitle${index + 1}`);
+    const contentElement = document.getElementById(
+      `featureContent${index + 1}`
+    );
 
-    titleElement.textContent = content.title[lang];
-    contentElement.innerHTML = content.content[lang].replace(/\n/g, "<br>"); // 줄넘김 처리
+    if (titleElement && contentElement) {
+      titleElement.textContent = content.title[lang];
+      contentElement.innerHTML = content.content[lang]
+        .replace(/<br>/g, " ") // <br> 태그를 공백으로 대체하여 간결하게
+        .replace(/\n/g, " "); // 줄바꿈 역시 공백으로
+    }
   });
 }
