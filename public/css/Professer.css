@@ -217,7 +217,7 @@ body {
 }
 
 .profile-name {
-  font-family: "HancomMalangMalang", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: #333;
@@ -225,7 +225,7 @@ body {
 }
 
 .profile-title {
-  font-family: "HancomMalangMalang", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   font-size: 1.1rem;
   color: #1a73e8;
   margin-bottom: 1.5rem;
@@ -239,7 +239,7 @@ body {
 
 .contact-item {
   display: flex;
-  font-family: "HancomMalangMalang", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 .contact-item i {
@@ -301,7 +301,7 @@ body {
 }
 
 .section-title {
-  font-family: "HancomMalangMalang", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   color: #1a73e8;
@@ -311,7 +311,7 @@ body {
 }
 
 .section-content {
-  font-family: "HancomMalangMalang", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   line-height: 1.7;
   color: #444;
 }
@@ -456,6 +456,7 @@ body {
     margin-bottom: 0;
     white-space: nowrap;
     font-size: 0.95rem;
+    font-family: "Noto Sans KR", sans-serif;
   }
 
   .contact-value {
@@ -463,6 +464,7 @@ body {
     grid-row: 1;
     font-size: 0.95rem;
     line-height: 1.4;
+    font-family: "Noto Sans KR", sans-serif;
   }
 
   .eng-mode .contact-item {

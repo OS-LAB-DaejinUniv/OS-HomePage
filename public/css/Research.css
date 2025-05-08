@@ -1,11 +1,12 @@
 .rsch-container {
   width: 950px;
   height: 325px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: white;
   border-radius: 25px;
   display: flex;
   margin: 50px auto;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .rsch-container img {
