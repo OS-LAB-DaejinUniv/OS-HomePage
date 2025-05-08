@@ -261,6 +261,29 @@ body {
   line-height: 1.5;
 }
 
+/* 영어 모드에서의 라벨 너비 최적화 */
+.eng-mode .contact-item {
+  display: flex;
+  align-items: flex-start; /* 상단 정렬로 변경 */
+}
+
+.eng-mode .contact-label {
+  flex: 0 0 80px; /* 영어 모드에서 라벨 너비 축소 */
+  font-size: 0.95rem; /* 폰트 크기 약간 축소 */
+}
+
+.eng-mode .contact-value {
+  flex: 1;
+  color: #333;
+  line-height: 1.4;
+  font-size: 0.95rem; /* 영어 텍스트 폰트 크기 약간 축소 */
+}
+
+/* 학력사항 같은 긴 항목을 위한 추가 스타일 */
+.eng-mode .contact-item:last-child .contact-value {
+  line-height: 1.3; /* 줄 간격 축소 */
+}
+
 /* 경력 및 업적 섹션 */
 .career-sections {
   display: flex;
@@ -305,55 +328,196 @@ body {
   }
 }
 
-/* 태블릿 (981px 이하) */
-@media (max-width: 981px) {
+/* 태블릿 - 큰 화면 (768px ~ 980px) */
+@media (min-width: 768px) and (max-width: 980px) {
   .profile-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 2rem 1.5rem;
+    flex-direction: row;
+    padding: 2rem;
+    align-items: flex-start;
   }
 
   .profile-image {
-    margin-right: 0;
-    margin-bottom: 2rem;
-    flex: 0 0 220px;
+    flex: 0 0 200px;
+    margin-right: 2rem;
+    margin-bottom: 0;
   }
 
-  .contact-item {
-    flex-direction: column;
+  .profile-card,
+  .career-section {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profile-name {
+    font-size: 1.8rem;
     text-align: left;
-    margin-bottom: 1rem;
   }
 
-  .contact-label {
-    margin-bottom: 0.25rem;
+  .profile-title {
+    font-size: 1.05rem;
+    text-align: left;
   }
 
   .contact-details {
-    align-items: flex-start;
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
+    margin-top: 1rem;
+  }
+
+  .career-section {
+    padding: 1.8rem;
+  }
+
+  .eng-mode .contact-label {
+    flex-basis: auto;
+    font-size: 0.92rem;
+    min-width: 75px;
+  }
+
+  /* 태블릿 전용 스타일 - 더 세련된 카드 디자인 */
+  .profile-card {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+  }
+
+  .career-section {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .career-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* 태블릿 - 작은 화면 (576px ~ 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .profile-card,
+  .career-section {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profile-header {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    grid-gap: 1.5rem;
+    padding: 1.8rem;
+    align-items: start;
+  }
+
+  .profile-image {
+    width: 160px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .profile-info {
+    width: 100%;
+  }
+
+  .profile-name {
+    font-size: 1.7rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .profile-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* 연락처 항목 레이아웃 조정 */
+  .contact-item {
+    display: grid;
+    grid-template-columns: 1.5rem 80px 1fr;
+    grid-gap: 0.5rem;
+    align-items: baseline;
+    margin-bottom: 0.7rem;
+    height: auto;
+  }
+
+  .contact-item i {
+    flex: none;
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 0.25rem;
+  }
+
+  .contact-label {
+    flex: none;
+    grid-column: 2;
+    grid-row: 1;
+    margin-right: 0;
+    margin-bottom: 0;
+    white-space: nowrap;
+    font-size: 0.95rem;
+  }
+
+  .contact-value {
+    grid-column: 3;
+    grid-row: 1;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .eng-mode .contact-item {
+    grid-template-columns: 1.5rem 70px 1fr;
+  }
+
+  .eng-mode .contact-label {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .section-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
   .career-section {
     padding: 1.5rem;
+    margin-bottom: 1rem;
   }
 }
 
 /* 모바일 (575px 이하) */
 @media (max-width: 575px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .profile-card,
+  .career-section {
+    width: 100%;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-image {
+    flex: 0 0 180px;
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
   .profile-name {
     font-size: 1.7rem;
   }
 
   .profile-title {
     font-size: 1rem;
-  }
-
-  .profile-image {
-    flex: 0 0 180px;
   }
 
   .title-heading {
@@ -368,16 +532,13 @@ body {
     font-size: 1.3rem;
   }
 
-  .profile-header {
-    padding: 1.5rem 1rem;
-  }
-
   .career-section {
     padding: 1.25rem;
   }
 
-  .contact-item i {
-    flex-basis: 1.2rem;
+  .contact-item {
+    flex-direction: column;
+    margin-bottom: 1rem;
   }
 
   .contact-label {
@@ -391,5 +552,13 @@ body {
 
   .section-content {
     font-size: 0.95rem;
+  }
+
+  .eng-mode .contact-label {
+    font-size: 0.85rem;
+  }
+
+  .eng-mode .contact-value {
+    font-size: 0.85rem;
   }
 }

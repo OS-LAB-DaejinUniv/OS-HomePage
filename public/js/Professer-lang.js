@@ -43,23 +43,28 @@ function renderProfessorInfo(professor, lang) {
   // 이름과 직책 설정
   document.getElementById("professorName").textContent = professor.name[lang];
 
-  // 직함은 교수님이므로 수동으로 추가
+  // 직함에 약어 사용 (영어의 경우)
   document.getElementById("professorTitle").textContent =
-    lang === "eng"
-      ? "Professor, Department of Computer Engineering"
-      : "컴퓨터공학과 교수";
+    lang === "eng" ? "Prof., Dept. of Computer Eng." : "컴퓨터공학과 교수";
 
   // 연락처 정보 설정
   const contactDetailsContainer = document.getElementById("contactDetails");
   contactDetailsContainer.innerHTML = "";
 
+  // 영어일 때 contact-label 클래스에 'eng' 클래스 추가
+  if (lang === "eng") {
+    contactDetailsContainer.classList.add("eng-mode");
+  } else {
+    contactDetailsContainer.classList.remove("eng-mode");
+  }
+
   professor.contact.forEach((contact) => {
     const contactItem = document.createElement("div");
     contactItem.className = "contact-item";
 
-    // 아이콘 선택
+    // 아이콘 선택 로직 개선
     let iconClass = "fas fa-info-circle"; // 기본 아이콘
-    if (contact.label.eng === "Phone") iconClass = "fas fa-phone";
+    if (contact.label.eng === "Office") iconClass = "fas fa-building";
     if (contact.label.eng === "Email") iconClass = "fas fa-envelope";
     if (contact.label.eng === "Major") iconClass = "fas fa-graduation-cap";
     if (contact.label.eng === "Academic Societies") iconClass = "fas fa-users";
@@ -72,7 +77,16 @@ function renderProfessorInfo(professor, lang) {
 
     const contactLabel = document.createElement("span");
     contactLabel.className = "contact-label";
-    contactLabel.textContent = contact.label[lang];
+
+    // 영어일 때 약어 사용
+    let labelText = contact.label[lang];
+    if (lang === "eng") {
+      if (contact.label.eng === "Academic Societies") labelText = "Societies";
+      if (contact.label.eng === "Research Areas") labelText = "Research";
+      // Office는 충분히 짧아서 약어가 필요없음
+    }
+
+    contactLabel.textContent = labelText;
     contactItem.appendChild(contactLabel);
 
     const contactValue = document.createElement("span");
@@ -80,7 +94,15 @@ function renderProfessorInfo(professor, lang) {
 
     // 값이 객체인 경우와 문자열인 경우를 구분
     if (typeof contact.value === "object") {
-      contactValue.innerHTML = contact.value[lang].replace(/\n/g, "<br>");
+      // 영어일 때 약어 사용 및 텍스트 최적화
+      let valueText = contact.value[lang];
+      if (lang === "eng") {
+        valueText = valueText
+          .replace("Computer Engineering", "Comp. Eng.")
+          .replace("Distributed & Operating Systems", "Dist. & OS")
+          .replace("Korean Society For Internet Information", "KSII");
+      }
+      contactValue.innerHTML = valueText.replace(/\n/g, "<br>");
     } else {
       contactValue.textContent = contact.value;
     }
