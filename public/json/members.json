@@ -2,110 +2,139 @@
   "members": [
     {
       "name": {
-        "kor": "김지훈",
+        "kor": "김연진",
         "eng": "Jihoon Kim"
       },
       "position": {
-        "kor": "연구실장",
+        "kor": "랩장",
         "eng": "Lab Manager"
       },
-      "email": "jihoon@oslab.kr",
+      "email": "kyj9750322@gmail.com",
       "interests": {
-        "kor": ["운영체제", "클라우드 컴퓨팅", "분산 시스템"],
-        "eng": ["Operating Systems", "Cloud Computing", "Distributed Systems"]
+        "kor": ["시스템 보안", "정보 보호", "네트워크 보안", "포렌식"],
+        "eng": ["System Sec", "Info Sec", "Network Sec", "Forensics"]
       },
-      "github": "jihoonkim",
-      "img": "https://avatars.githubusercontent.com/u/1234567",
-      "role": "leader"
+      "github": "OS-LAB-DaejinUniv",
+      "img": "../images/img-prof.jpeg",
+      "role": "leader",
+      "bio": {
+        "kor": "운영체제 및 분산 컴퓨팅 분야의 전문 지식으로 OS Lab을 이끌고 있습니다. 학생 멘토링과 시스템 소프트웨어 연구 발전에 열정을 가지고 있습니다.",
+        "eng": "Leading the OS Lab with expertise in operating systems and distributed computing. Passionate about mentoring students and advancing research in system software."
+      }
     },
     {
       "name": {
-        "kor": "박서연",
-        "eng": "Seoyeon Park"
+        "kor": "양준석",
+        "eng": "Junseok Yang"
       },
       "position": {
-        "kor": "부연구실장",
-        "eng": "Deputy Manager"
+        "kor": "부원",
+        "eng": "Member"
       },
-      "email": "seoyeon@oslab.kr",
+      "email": "admin@os-lab.dev",
       "interests": {
-        "kor": ["네트워크 보안", "시스템 프로그래밍", "웹 서비스"],
-        "eng": ["Network Security", "System Programming", "Web Services"]
+        "kor": [
+          "네트워크 보안",
+          "시스템 보안",
+          "클라우드 컴퓨팅",
+          "웹 서비스",
+          "DevOps"
+        ],
+        "eng": [
+          "Network Sec",
+          "System Sec",
+          "Cloud Computing",
+          "Web Services",
+          "DevOps"
+        ]
       },
-      "github": "seoyeonpark",
-      "img": "https://avatars.githubusercontent.com/u/2345678",
-      "role": "leader"
+      "github": "JJ-IM",
+      "img": "https://github.com/JJ-IM.png",
+      "role": "member",
+      "bio": {
+        "kor": "운영체제 및 분산 컴퓨팅 분야의 전문 지식으로 OS Lab을 이끌고 있습니다. 학생 멘토링과 시스템 소프트웨어 연구 발전에 열정을 가지고 있습니다.",
+        "eng": "Leading the OS Lab with expertise in operating systems and distributed computing. Passionate about mentoring students and advancing research in system software."
+      }
     },
     {
       "name": {
-        "kor": "이민준",
-        "eng": "Minjun Lee"
+        "kor": "신우진",
+        "eng": "Woojin Shin"
       },
       "position": {
-        "kor": "연구원",
-        "eng": "Researcher"
+        "kor": "부원",
+        "eng": "Member"
       },
-      "email": "minjun@oslab.kr",
+      "email": "whoami@os-lab.dev",
       "interests": {
-        "kor": ["머신러닝", "임베디드 시스템", "리눅스 커널"],
-        "eng": ["Machine Learning", "Embedded Systems", "Linux Kernel"]
+        "kor": ["파이썬", "서버 엔지니어링", "데이터 엔지니어링", "DevOps"],
+        "eng": ["Python", "Server Engineering", "Data Engineering", "DevOps"]
       },
-      "github": "minjunlee",
-      "img": "https://avatars.githubusercontent.com/u/3456789",
+      "github": "tlsnwls",
+      "img": "https://github.com/tlsnwls.png",
+      "role": "member",
+      "bio": {
+        "kor": "운영체제 및 분산 컴퓨팅 분야의 전문 지식으로 OS Lab을 이끌고 있습니다. 학생 멘토링과 시스템 소프트웨어 연구 발전에 열정을 가지고 있습니다.",
+        "eng": "Leading the OS Lab with expertise in operating systems and distributed computing. Passionate about mentoring students and advancing research in system software."
+      }
+    },
+    {
+      "name": {
+        "kor": "강병재",
+        "eng": "Byeongjae Kang"
+      },
+      "position": {
+        "kor": "부원",
+        "eng": "Member"
+      },
+      "email": "dmesg@os-lab.dev",
+      "interests": {
+        "kor": ["네트워크", "웹 풀스택", "서버 엔지니어링", "임베디드 시스템"],
+        "eng": [
+          "Network",
+          "Web Fullstack",
+          "Server Engineering",
+          "Embedded Systems"
+        ]
+      },
+      "github": "2o4oo",
+      "img": "https://github.com/2o4oo.png",
       "role": "member"
     },
     {
       "name": {
-        "kor": "최수아",
-        "eng": "Sua Choi"
+        "kor": "이동재",
+        "eng": "Dongjae Lee"
       },
       "position": {
-        "kor": "연구원",
-        "eng": "Researcher"
+        "kor": "부원",
+        "eng": "Member"
       },
-      "email": "sua@oslab.kr",
+      "email": "krhasta@os-lab.dev",
       "interests": {
-        "kor": ["데이터베이스", "서버 최적화", "컨테이너화"],
-        "eng": ["Databases", "Server Optimization", "Containerization"]
+        "kor": ["웹 프론트엔드", "UI/UX", "서버 엔지니어링"],
+        "eng": ["Web Frontend", "UI/UX", "Server Engineering"]
       },
-      "github": "suachoi",
-      "img": "https://avatars.githubusercontent.com/u/4567890",
+      "github": "krhasta",
+      "img": "https://github.com/krhasta.png",
       "role": "member"
     },
     {
       "name": {
-        "kor": "정도윤",
-        "eng": "Doyun Jung"
+        "kor": "오채빈",
+        "eng": "Chaebin Oh"
       },
       "position": {
-        "kor": "연구원",
-        "eng": "Researcher"
+        "kor": "부원",
+        "eng": "Member"
       },
-      "email": "doyun@oslab.kr",
-      "interests": {
-        "kor": ["보안", "네트워크 프로토콜", "DevOps"],
-        "eng": ["Security", "Network Protocols", "DevOps"]
-      },
-      "github": "doyunjung",
-      "img": "https://avatars.githubusercontent.com/u/5678901",
-      "role": "member"
-    },
-    {
-      "name": {
-        "kor": "한소율",
-        "eng": "Soyul Han"
-      },
-      "position": {
-        "kor": "연구원",
-        "eng": "Researcher"
-      },
-      "email": "soyul@oslab.kr",
+      "email": "chaebin0926@naver.com",
       "interests": {
         "kor": ["웹 개발", "UI/UX", "프론트엔드"],
         "eng": ["Web Development", "UI/UX", "Frontend"]
       },
-      "github": "soyulhan",
-      "img": "https://avatars.githubusercontent.com/u/6789012",
+      "github": "chaeb03",
+      "img": "https://github.com/chaeb03.png",
       "role": "member"
     }
   ]

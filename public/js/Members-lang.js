@@ -1,14 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
   fetch("/json/members.json")
     .then((response) => response.json())
-    .then((data) => setMembersContent(data, getLanguage()))
-    .catch((error) => console.error("Error loading members content:", error));
+    .then((data) => {
+      const lang = getLanguage();
+      renderMembers(data.members, lang);
+      setupModalEvents();
+    })
+    .catch((error) => console.error("Error loading members data:", error));
 });
 
 document.addEventListener("languageChanged", function () {
   fetch("/json/members.json")
     .then((response) => response.json())
-    .then((data) => setMembersContent(data, getLanguage()))
+    .then((data) => {
+      const lang = getLanguage();
+      renderMembers(data.members, lang);
+      setupModalEvents();
+      ㄴ;
+    })
     .catch((error) => console.error("Error updating members content:", error));
 });
 
@@ -19,98 +28,188 @@ function getLanguage() {
   return cookies ? cookies.split("=")[1] : "kor";
 }
 
-function setMembersContent(data, lang) {
-  const container = document.getElementById("membersContainer");
-  if (!container) return;
+// 멤버 카드 렌더링
+function renderMembers(members, lang) {
+  const grid = document.getElementById("membersGrid");
+  if (!grid) return;
 
   // 로딩 인디케이터 제거
-  container.innerHTML = "";
+  grid.innerHTML = "";
 
-  let html = "";
-  data.members.forEach((member, index) => {
-    // AOS 애니메이션 효과 (번갈아가며 다른 방향에서 나타남)
-    const aosAnimation = index % 2 === 0 ? "fade-right" : "fade-left";
-
-    html += `
-      <div class="col-lg-4 col-md-6 member-card-container" data-role="${
-        member.role
-      }" data-aos="${aosAnimation}" data-aos-delay="${index * 100}">
-        <div class="member-card">
-          <div class="member-img-container">
-            <img src="${member.img}" alt="${
-      member.name[lang]
-    }" class="member-img">
-            <span class="position-badge">${member.position[lang]}</span>
-          </div>
-          <div class="member-info">
-            <h3>${member.name[lang]}</h3>
-            <div class="email">
-              <i class="fas fa-envelope"></i> 
-              <span>${member.email}</span>
-            </div>
-            <div class="member-interests">
-              ${member.interests[lang]
-                .map(
-                  (interest) => `<span class="member-tag">${interest}</span>`
-                )
-                .join("")}
-            </div>
-          </div>
-          <div class="member-footer">
-            <a href="https://github.com/${
-              member.github
-            }" target="_blank" class="github-btn">
-              <i class="fab fa-github"></i> GitHub
-            </a>
-            <span class="detail-btn" onclick="showMemberDetail(${index}, '${lang}')">
-              ${lang === "eng" ? "Details" : "상세정보"} &rarr;
-            </span>
-          </div>
-        </div>
-      </div>
-    `;
+  // 랩장이 먼저 표시되도록 정렬
+  members.sort((a, b) => {
+    if (a.role === "leader" && b.role !== "leader") return -1;
+    if (a.role !== "leader" && b.role === "leader") return 1;
+    return 0;
   });
-  container.innerHTML = html;
+
+  // 각 멤버 카드 생성
+  members.forEach((member, index) => {
+    const card = createMemberCard(member, lang, index);
+    grid.appendChild(card);
+  });
 
   // AOS 새로고침
   if (typeof AOS !== "undefined") {
     AOS.refresh();
   }
+}
 
-  // showMemberDetail 함수를 전역으로 정의
-  window.showMemberDetail = function (index, lang) {
-    const member = data.members[index];
+// 멤버 카드 생성 함수
+function createMemberCard(member, lang, index) {
+  const card = document.createElement("div");
+  card.className = "member-card";
+  card.setAttribute("data-aos", "fade-up");
+  card.setAttribute("data-aos-delay", `${index * 80}`);
+  card.setAttribute("data-index", index.toString());
+  card.setAttribute("data-member-id", member.github);
 
-    // 모달에 데이터 채우기
-    document.getElementById("modalMemberName").textContent = member.name[lang];
-    document.getElementById("modalMemberPosition").textContent =
-      member.position[lang];
-    document.getElementById("modalMemberImg").src = member.img;
-    document.getElementById("modalMemberEmail").textContent = member.email;
+  const interestsHTML = member.interests[lang]
+    .map((interest) => `<span class="interest-tag">${interest}</span>`)
+    .join("");
 
-    // 관심 분야 채우기
-    const interestsContainer = document.getElementById("modalMemberInterests");
-    interestsContainer.innerHTML = "";
-    member.interests[lang].forEach((interest) => {
-      const interestElem = document.createElement("span");
-      interestElem.className = "interest-tag";
-      interestElem.textContent = interest;
-      interestsContainer.appendChild(interestElem);
+  // 카드 내용 구성
+  card.innerHTML = `
+    <div class="member-image-container">
+      <img src="${member.img}" alt="${member.name[lang]}" class="member-image">
+      <span class="member-role">${
+        member.role === "leader"
+          ? lang === "eng"
+            ? "Leader"
+            : "랩장"
+          : lang === "eng"
+          ? "Member"
+          : "부원"
+      }</span>
+    </div>
+    <div class="member-content">
+      <h3 class="member-name">${member.name[lang]}</h3>
+      <p class="member-position">${member.position[lang]}</p>
+      <div class="member-email">
+        <i class="fas fa-envelope"></i>
+        <span>${member.email}</span>
+      </div>
+      <div class="member-interests">
+        ${interestsHTML}
+      </div>
+      <div class="member-footer">
+        <a href="https://github.com/${
+          member.github
+        }" target="_blank" class="github-link">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <button class="details-button" data-index="${index}">
+          ${
+            lang === "eng" ? "Details" : "상세정보"
+          } <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  `;
+
+  return card;
+}
+
+// 모달 이벤트 설정
+function setupModalEvents() {
+  // 상세정보 버튼 이벤트
+  document.querySelectorAll(".details-button").forEach((button) => {
+    button.addEventListener("click", function () {
+      const index = parseInt(this.dataset.index);
+      openMemberModal(index);
+    });
+  });
+
+  // 모달 닫기 버튼 이벤트
+  document
+    .getElementById("modalCloseBtn")
+    .addEventListener("click", closeModal);
+
+  // 모달 오버레이 클릭 시 닫기
+  document
+    .getElementById("memberModalOverlay")
+    .addEventListener("click", function (e) {
+      if (e.target === this) {
+        closeModal();
+      }
     });
 
-    // GitHub 링크 설정
-    document.getElementById(
-      "modalGithubLink"
-    ).href = `https://github.com/${member.github}`;
-
-    // 모달 타이틀 설정
-    document.getElementById("memberDetailModalLabel").textContent =
-      lang === "eng" ? "Member Details" : "멤버 상세 정보";
-
-    // 모달 열기
-    const modal = new bootstrap.Modal(
-      document.getElementById("memberDetailModal")
-    );
-    modal.show();
-  };
+  // ESC 키 누를 때 모달 닫기
+  document.addEventListener("keydown", function (e) {
+    if (
+      e.key === "Escape" &&
+      document.getElementById("memberModalOverlay").classList.contains("show")
+    ) {
+      closeModal();
+    }
+  });
 }
+
+// 모달 열기
+function openMemberModal(index) {
+  // 현재 언어 가져오기
+  const lang = getLanguage();
+
+  // JSON 데이터 다시 가져오기
+  fetch("/json/members.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const member = data.members[index];
+
+      // 모달에 데이터 채우기
+      document.getElementById("modalMemberName").textContent =
+        member.name[lang];
+      document.getElementById("modalMemberPosition").textContent =
+        member.position[lang];
+      document.getElementById("modalMemberImg").src = member.img;
+      document.getElementById("modalMemberEmail").textContent = member.email;
+      document.getElementById(
+        "modalGithubLink"
+      ).href = `https://github.com/${member.github}`;
+      document.getElementById("modalGithubLink").textContent = member.github;
+
+      // 관심 분야
+      const interestsContainer = document.getElementById(
+        "modalMemberInterests"
+      );
+      interestsContainer.innerHTML = "";
+      member.interests[lang].forEach((interest) => {
+        const tag = document.createElement("span");
+        tag.className = "interest-tag";
+        tag.textContent = interest;
+        interestsContainer.appendChild(tag);
+      });
+
+      // Bio 정보 (있는 경우에만)
+      const bioSection = document.getElementById("modalBioSection");
+      const bioElement = document.getElementById("modalMemberBio");
+
+      if (member.bio && member.bio[lang]) {
+        bioElement.textContent = member.bio[lang];
+        bioSection.style.display = "block";
+      } else {
+        bioSection.style.display = "none";
+      }
+
+      // 모달 표시
+      document.getElementById("memberModalOverlay").classList.add("show");
+      document.body.classList.add("modal-open");
+    })
+    .catch((error) => console.error("Error loading member details:", error));
+}
+
+// 모달 닫기
+function closeModal() {
+  document.getElementById("memberModalOverlay").classList.remove("show");
+  document.body.classList.remove("modal-open");
+}
+
+// 페이지 초기화
+document.addEventListener("DOMContentLoaded", function () {
+  // AOS 초기화
+  AOS.init({
+    duration: 700,
+    once: true,
+    offset: 50,
+  });
+});
