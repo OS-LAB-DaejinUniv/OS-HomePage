@@ -1,4 +1,4 @@
-# OS LAB 홈페이지 프로젝트
+# OS LAB 홈페이지 프로젝트 (Version without DB)
 
 ![OS LAB 로고](/public/images/Logo.png)
 
@@ -170,4 +170,3 @@ OS LAB 홈페이지는 대진대학교 운영체제 연구실을 소개하는 �
 ```Bash
 Get-ChildItem -Recurse | Where-Object { $_.FullName -notlike "*\node_modules*" } | ForEach-Object { $_.FullName.Substring($PWD.Path.Length) } | Sort-Object | ForEach-Object { $_ -replace "\\", "/" -replace "/", (" " * ($_.Split("/").Count - 1) + "|--") }
 ```
-

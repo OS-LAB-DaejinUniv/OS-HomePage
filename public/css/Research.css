@@ -1,86 +1,569 @@
-.rsch-container {
-  width: 950px;
-  height: 325px;
-  background-color: #fff;
-  border-radius: 25px;
-  display: flex;
-  margin: 50px auto;
-  overflow: hidden;
+/* 기본 스타일 */
+body {
+  font-family: "HancomMalangMalang", "Noto Sans KR", sans-serif !important;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
-.rsch-container img {
-  object-fit: cover;
+.research-main {
+  padding: 3rem 0;
 }
 
-.content-image {
-  width: 500px;
-  background-size: cover;
+.container {
+  max-width: 1140px;
+  padding: 0 1.5rem;
+  margin: 0 auto;
 }
 
-.post-content-rsch {
-  margin: 0 1rem 0 1rem;
+/* 페이지 헤더 */
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-.glow {
-  box-shadow: 0 5px 15px rgba(97, 97, 97, 0.4);
-}
-@font-face {
-  font-family: "ptr";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-.asdf {
-  font-family: "ptr";
-}
-
-/* 연구 게시물 레이아웃을 위한 기본 스타일 (연구 페이지 항목) */
-.research-item {
-  border-radius: 8px;
-  display: flex;
-  width: 65vw;
-  height: 315px;
-  background-color: #fff;
+.title-heading {
+  font-family: "HancomMalangMalang", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #333;
   margin-bottom: 1rem;
-  max-width: 950px;
+  position: relative;
+  display: inline-block;
 }
 
-.research-img {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  width: 400px;
-  object-fit: cover;
+.title-heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #1a73e8, #4285f4);
+  margin: 0.8rem auto 0;
+  border-radius: 3px;
 }
 
-.research-info {
+.subtitle {
+  font-family: "HancomMalangMalang", sans-serif;
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 연구 그리드 */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 데스크탑: 3개 */
+  gap: 30px;
+  position: relative;
+  min-height: 300px;
+  margin: 0 auto; /* 중앙 정렬 */
+  width: 80%; /* 좌우 마진 증가 (90%에서 80%로 변경) */
+  max-width: 1200px; /* 최대 너비 제한 */
+}
+
+/* 로딩 인디케이터 */
+.loading-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  padding: 0 2rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 10;
 }
 
-/* 5줄 이상이면 ..으로 처리 (텍스트 줄 제한) */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(26, 115, 232, 0.3);
+  border-top-color: #1a73e8;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+}
+
+.loading-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 연구 카드 스타일 */
+.research-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.research-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.research-image-container {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 비율 */
+  overflow: hidden;
+  background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+}
+
+.research-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.research-card:hover .research-image {
+  transform: scale(1.05);
+}
+
 .research-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.research-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.research-date {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.research-description {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-family: "HancomMalangMalang", sans-serif;
 }
 
-/* 미디어 쿼리: 화면 너비 980px 이하 */
-@media (max-width: 980px) {
-  .research-item {
-    flex-direction: column;
-    height: auto;
-    width: 90vw;
+.research-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.github-link i {
+  margin-right: 0.5rem;
+}
+
+.github-link:hover {
+  color: #1a73e8;
+}
+
+.details-button {
+  background: none;
+  border: none;
+  color: #1a73e8;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.details-button:hover {
+  color: #0d5bcd;
+}
+
+.details-button i {
+  margin-left: 0.3rem;
+  font-size: 0.8rem;
+}
+
+/* 노션 스타일 모달 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.research-modal {
+  background: white;
+  width: 90%;
+  max-width: 900px;
+  height: 85vh;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(30px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.modal-overlay.show .research-modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex-grow: 1;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* 노션 스타일 헤더 */
+.notion-header {
+  padding: 32px 64px 24px;
+  width: 100%;
+  border-bottom: 1px solid #eeeeef;
+}
+
+.notion-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #37352f;
+  margin-bottom: 16px;
+  font-family: "HancomMalangMalang", sans-serif;
+  line-height: 1.2;
+}
+
+.notion-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.metadata-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.metadata-item i {
+  margin-right: 6px;
+}
+
+/* 깃허브 링크 스타일 추가 */
+#headerGithubLink {
+  transition: all 0.2s ease;
+}
+
+#headerGithubLink a {
+  color: #888;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+#headerGithubLink:hover a {
+  color: #0366d6;
+}
+
+#headerGithubLink i {
+  margin-right: 6px;
+  font-size: 1rem;
+}
+
+/* 노션 스타일 콘텐츠 */
+.notion-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.markdown-content {
+  font-family: "HancomMalangMalang", "Noto Sans KR", sans-serif;
+  line-height: 1.7;
+  color: #37352f;
+  padding: 40px 64px 120px;
+  max-width: 100%;
+}
+
+/* 마크다운 스타일링 - 노션 스타일 */
+.markdown-content h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.3rem;
+  color: #37352f;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.markdown-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: #37352f;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.markdown-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.7rem;
+  color: #37352f;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.markdown-content p {
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content a {
+  color: #0b6ccf;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.markdown-content a:hover {
+  color: #0352a0;
+}
+
+.markdown-content img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+}
+
+.markdown-content code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
+  background-color: #f1f1f1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.markdown-content pre {
+  background-color: #f6f6f6;
+  border-radius: 4px;
+  padding: 16px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.markdown-content pre code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
+  background-color: transparent;
+  padding: 0;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.markdown-content blockquote {
+  border-left: 3px solid #ddd;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1rem;
+  color: #666;
+}
+
+/* Mermaid 다이어그램 스타일 */
+.mermaid-diagram {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.mermaid-diagram svg {
+  max-width: 100%;
+  height: auto !important;
+}
+
+/* 모달 푸터 - 스타일 조정 */
+.modal-footer {
+  padding: 16px 64px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #eeeeef;
+  background: white;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1200px) {
+  .research-grid {
+    width: 85%; /* 좀 더 넓게 사용 (95%에서 85%로 변경) */
   }
-  .research-img {
-    width: 100%;
-    border-radius: 8px 8px 0 0;
+}
+
+@media (max-width: 992px) {
+  .research-grid {
+    grid-template-columns: repeat(2, 1fr); /* 태블릿: 2개 */
+    gap: 25px;
+    width: 85%; /* 태블릿에서도 여유 있는 마진 (92%에서 85%로 변경) */
   }
-  .research-info {
-    padding: 1rem;
+}
+
+@media (max-width: 767px) {
+  .research-grid {
+    grid-template-columns: 1fr; /* 모바일: 1개 */
+    gap: 20px;
+    width: 80%; /* 모바일에서 여유 있는 마진 (85%에서 80%로 변경) */
   }
+
+  .notion-header {
+    padding: 24px 24px 16px;
+  }
+
+  .notion-title {
+    font-size: 1.8rem;
+  }
+
+  .markdown-content {
+    padding: 24px 24px 80px;
+  }
+
+  .modal-footer {
+    padding: 16px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .research-grid {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+
+  .title-heading {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .modal-header {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .notion-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* body에 모달 열림 상태 표시 */
+body.modal-open {
+  overflow: hidden;
 }

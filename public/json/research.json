@@ -6,15 +6,16 @@
         "eng": "OSLabID - ID Card for OS Lab Members"
       },
       "date": "2023-01-01",
-      "content": {
-        "kor": "온라인 사이트 및 오프라인에서 연구실 부원의 본인인증을 위해 사용할 수 있는 스마트카드입니다. 기존의 Mifare Classic 칩셋의 UID 바이트 단순 비교 방식에서 발전하여, 스마트카드를 활용한 암호화된 인증 로직을 구현하였습니다. 구체적으로, Javacard 3.0.5 플랫폼에서 제공하는 AES-128 암호화 API와 Random byte API를 사용하여 간단한 시도-응답 메커니즘을 구현하였습니다. 상세한 설명은 아래 링크를 참고해 주십시오.",
-        "eng": "A smart card designed for both online and offline authentication of OS Lab members. It improves upon the traditional method of simply comparing UID bytes of the Mifare Classic chipset by implementing an encrypted authentication logic using a smart card. Specifically, it employs the AES-128 encryption API and the Random byte API provided by the Javacard 3.0.5 platform to execute a simple challenge-response mechanism. For detailed information, please refer to the link below."
+      "preview": {
+        "kor": "온라인 사이트 및 오프라인에서 연구실 부원의 본인인증을 위해 사용할 수 있는 스마트카드입니다. 기존의 단순 인증 방식에서 벗어나 암호화된 인증 로직을 구현하였습니다.",
+        "eng": "A smart card designed for both online and offline authentication of OS Lab members. It improves upon traditional methods by implementing an encrypted authentication logic."
       },
       "img": "/images/Research/sc.jpg",
       "link": {
         "kor": "https://github.com/OS-LAB-DaejinUniv/Smart-Lab/blob/main/smartcard/README.md",
         "eng": "https://github.com/OS-LAB-DaejinUniv/Smart-Lab/blob/main/smartcard/README.md"
-      }
+      },
+      "markdownId": "0"
     },
     {
       "title": {
@@ -22,11 +23,12 @@
         "eng": "TinyFS - A Low Footprint Filesystem"
       },
       "date": "2023-02-15",
-      "content": {
-        "kor": "임베디드 시스템의 적합성과 리눅스 호환성을 모두 갖추는 것을 목표로 개발 중인 파일 시스템입니다. 연구실에서 개발하는 임베디드 장치에 포팅하여, 각 장치 간의 상호 접근 및 데이터 교환이 가능하도록 하는 것을 목표로 합니다. 주요 특징으로는 2KB 미만의 낮은 메모리 사용량과 전원 중단 시에도 데이터 무결성을 보장하는 기능을 포함하고 있습니다.",
-        "eng": "A file system currently under development aimed at ensuring compatibility with both embedded systems and Linux. The project seeks to enable inter-device access and data exchange by porting the system onto lab-developed embedded devices. Key features include low memory usage of under 2KB and data integrity assurance during power failures."
+      "preview": {
+        "kor": "임베디드 시스템의 적합성과 리눅스 호환성을 모두 갖춘 파일 시스템입니다. 낮은 메모리 사용량과 데이터 무결성 보장을 특징으로 합니다.",
+        "eng": "A file system ensuring compatibility with both embedded systems and Linux. Features include low memory usage and data integrity assurance."
       },
-      "img": "/images/Research/fs.png"
+      "img": "/images/Research/fs.png",
+      "markdownId": "1"
     },
     {
       "title": {
@@ -34,15 +36,16 @@
         "eng": "OSPass - Secure Sign-In Service via Smart Card"
       },
       "date": "2023-03-10",
-      "content": {
-        "kor": "OAuth 2.0 표준을 준수하는 온라인 부원 인증 서비스로, 기존의 아이디와 비밀번호 없이도 안전하게 로그인이 가능하도록 설계되었습니다. 다양한 대내외 프로젝트에서 활용될 수 있으며, 스마트카드를 통한 추가 보안 기능이 포함되어 있습니다. 자세한 설명은 아래 링크에서 확인하실 수 있습니다.",
-        "eng": "An online authentication service for lab members that complies with OAuth 2.0 standards, allowing secure login without traditional username and password credentials. It is designed for use across various internal and external projects and incorporates additional security features through smart card integration. For more details, please refer to the link below."
+      "preview": {
+        "kor": "OAuth 2.0 표준을 준수하는 온라인 부원 인증 서비스로, 기존의 아이디와 비밀번호 없이도 안전하게 로그인이 가능합니다.",
+        "eng": "An online authentication service that complies with OAuth 2.0 standards, allowing secure login without traditional username and password credentials."
       },
       "img": "/images/Research/ospass.png",
       "link": {
         "kor": "https://github.com/OS-LAB-DaejinUniv/OSPass",
         "eng": "https://github.com/OS-LAB-DaejinUniv/OSPass"
-      }
+      },
+      "markdownId": "2"
     },
     {
       "title": {
@@ -50,15 +53,33 @@
         "eng": "SmartLab API - Indoor Automation API"
       },
       "date": "2023-04-05",
-      "content": {
-        "kor": "스마트홈과 유사한 IoT 서비스를 연구실 내에서 구현하기 위한 프로젝트입니다. 이 프로젝트는 실내 가전의 상태 모니터링과 인터넷을 통한 제어 기능을 제공하는 REST API 개발을 목표로 하고 있습니다. 또한, 교내망 접속 시 API 문서를 바로 확인할 수 있는 시스템도 포함되어 있습니다.",
-        "eng": "A project aimed at implementing IoT services similar to smart homes within the lab. The objective is to develop a REST API that provides both monitoring of household appliance statuses and remote control capabilities via the internet. Additionally, the system includes a feature for accessing API documentation when connected to the campus network."
+      "preview": {
+        "kor": "스마트홈과 유사한 IoT 서비스를 연구실 내에서 구현하기 위한 프로젝트입니다. 실내 가전의 상태 모니터링과 제어 기능을 제공합니다.",
+        "eng": "A project aimed at implementing IoT services similar to smart homes within the lab. Provides monitoring of appliance statuses and remote control capabilities."
       },
       "img": "/images/Research/sl.png",
       "link": {
         "kor": "http://jay.oslab/smartlab",
         "eng": "http://jay.oslab/smartlab"
-      }
+      },
+      "markdownId": "3"
+    },
+    {
+      "title": {
+        "kor": "Mermaid MD 문법 확인 테스트",
+        "eng": "Mermaid MD Syntax Check Test"
+      },
+      "date": "2025-05-09",
+      "preview": {
+        "kor": "간단한 문법부터 복잡한 문법까지 다양한 문법을 지원하는 Mermaid MD 문법 확인 테스트입니다. 이를 테스트하여 앞으로 작성되는 게시물에 대한 Mermaid MD 문법을 확인할 수 있습니다.",
+        "eng": "A syntax check test for Mermaid MD, supporting a wide range of syntax from simple to complex. This test allows verification of the Mermaid MD syntax for future posts."
+      },
+      "img": "https://github.com/mermaid-js/mermaid/raw/develop/img/header.png",
+      "link": {
+        "kor": "https://github.com/mermaid-js/mermaid",
+        "eng": "https://github.com/mermaid-js/mermaid"
+      },
+      "markdownId": "4"
     }
   ]
 }

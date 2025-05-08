@@ -3,89 +3,104 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Research - OS LAB</title>
+    <title><%= lang === 'eng' ? 'Research - OS LAB' : '연구 활동 - OS LAB' %></title>
     <link rel="icon" href="/images/Favi.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/Home.css" />
     <link rel="stylesheet" href="/css/styles.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="/css/Research.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <%- include('../partials/header') %>
-    <div
-      style="
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      "
-      class="mt-3 space-y-7 asdf"
-    >
-      <!-- 서버 전송 researchItems가 없으면 research-lang.js에서 채워집니다 -->
-      <div id="researchContainer">
-        <% var items = (typeof researchItems !== 'undefined') ? researchItems :
-        []; %> <% items.forEach(function(item){ %>
-        <div
-          class="max-w-5xl glow"
-          style="
-            border-radius: 8px;
-            display: flex;
-            width: 75vw;
-            height: 300px;
-            background-color: #fff;
-            margin-bottom: 1rem;
-          "
-        >
-          <img
-            src="<%= item.img %>"
-            alt="<%= item.title[lang] %>"
-            style="
-              border-top-left-radius: 8px;
-              border-bottom-left-radius: 8px;
-              width: 300px;
-              object-fit: cover;
-            "
-          />
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: flex-start;
-              padding: 0 2rem;
-            "
-          >
-            <p class="font-bold text-2xl mb-3"><%= item.title[lang] %></p>
-            <% if(item.date){ %>
-            <p class="card-text">
-              <small class="text-muted"><%= item.date %></small>
+
+    <main class="research-main">
+      <div class="container">
+        <!-- 페이지 헤더 -->
+        <div class="page-header" data-aos="fade-down">
+          <h1 class="title-heading" id="researchPageTitle">
+            <%= lang === 'eng' ? 'Research Projects' : '연구 활동' %>
+          </h1>
+          <p class="subtitle" id="researchPageSubtitle">
+            <%= lang === 'eng' ? 'Explore our latest research and development projects' : '최신 연구 및 개발 프로젝트를 살펴보세요' %>
+          </p>
+        </div>
+
+        <!-- 연구 항목 그리드 -->
+        <div class="research-grid" id="researchGrid">
+          <div class="loading-wrapper">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">
+              <%= lang === 'eng' ? 'Loading research projects...' : '연구 프로젝트를 불러오는 중...' %>
             </p>
-            <% } %>
-            <p class="leading-6"><%- item.content[lang] %></p>
-            <% if(item.link && item.link[lang]){ %>
-            <a href="<%= item.link[lang] %>" class="btn btn-primary">
-              <%= lang === 'eng' ? 'View Details' : '자세히 보기' %>
-            </a>
-            <% } %>
           </div>
         </div>
-        <% }); %>
+      </div>
+    </main>
+
+    <!-- 연구 상세정보 모달 - 노션 스타일로 변경 -->
+    <div class="modal-overlay" id="researchModalOverlay">
+      <div class="research-modal">
+        <!-- 닫기 버튼 -->
+        <button class="modal-close" id="modalCloseBtn">
+          <i class="fas fa-times"></i>
+        </button>
+        
+        <!-- 노션 스타일 헤더 -->
+        <div class="notion-header">
+          <h1 id="modalTitle" class="notion-title"></h1>
+          <div class="notion-metadata">
+            <div class="metadata-item">
+              <i class="far fa-calendar"></i>
+              <span id="modalDate" class="modal-date"></span>
+            </div>
+            <!-- 깃허브 링크 아이템 추가 -->
+            <div class="metadata-item" id="headerGithubLink">
+              <i class="fab fa-github"></i>
+              <a id="headerGithubUrl" href="#" target="_blank">
+                <span id="headerGithubText">
+                  <%= lang === 'eng' ? 'View on GitHub' : '깃허브에서 보기' %>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 모달 콘텐츠 - 스크롤 영역 -->
+        <div class="notion-content">
+          <div class="loading-wrapper" id="modalLoading">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">
+              <%= lang === 'eng' ? 'Loading content...' : '내용을 불러오는 중...' %>
+            </p>
+          </div>
+          <div id="markdownContent" class="markdown-content"></div>
+        </div>
+
       </div>
     </div>
+
     <%- include('../partials/footer') %>
     <script src="/js/cookies.js"></script>
     <script src="/js/language-utils.js"></script>
     <script src="/js/navbar.js"></script>
     <script src="/js/research-lang.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@4.0.0/marked.min.js"></script>
+    <!-- Mermaid 다이어그램 라이브러리 업데이트 -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.min.js"></script>
+    <!-- Highlight.js 관련 코드 제거 -->
+    <script src="/js/markdown-viewer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 700,
+        once: true,
+        offset: 50,
+      });
+    </script>
   </body>
 </html>
