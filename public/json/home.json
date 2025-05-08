@@ -39,6 +39,50 @@
     "kor": "연구 활동 자세히 보기",
     "eng": "View Research Activities"
   },
+  "sectionTitle": {
+    "kor": "OS LAB의 핵심 활동",
+    "eng": "OS LAB Core Activities"
+  },
+  "sectionSubtitle": {
+    "kor": "우리 연구실에서 제공하는 다양한 실습 및 연구 활동을 알아보세요",
+    "eng": "Explore our lab's diverse research and hands-on activities"
+  },
+  "gallery": {
+    "items": [
+      {
+        "src": "/images/Home/gallery-1.jpg",
+        "alt": "Gallery Image 1",
+        "desc": {
+          "kor": "연구실 MT",
+          "eng": "Lab Retreat"
+        }
+      },
+      {
+        "src": "/images/Home/gallery-2.jpg",
+        "alt": "Gallery Image 2",
+        "desc": {
+          "kor": "연구실 연합 MT",
+          "eng": "Joint Lab Retreat"
+        }
+      },
+      {
+        "src": "/images/Home/gallery-3.jpg",
+        "alt": "Gallery Image 3",
+        "desc": {
+          "kor": "스승의 날",
+          "eng": "Teachers' Day"
+        }
+      },
+      {
+        "src": "/images/Home/gallery-4.jpg",
+        "alt": "Gallery Image 4",
+        "desc": {
+          "kor": "시험기간",
+          "eng": "Exam Period"
+        }
+      }
+    ]
+  },
   "contents": [
     {
       "title": {

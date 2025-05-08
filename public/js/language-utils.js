@@ -202,6 +202,16 @@ function setHomeContent(data, lang) {
   const sloganBot = data.sloganBot[lang];
   const projectButtonText = data.projectButtonText[lang];
 
+  // 섹션 제목 업데이트
+  if (data.sectionTitle) {
+    updateElementContent("sectionTitle", data.sectionTitle[lang]);
+  }
+
+  // 섹션 부제목 업데이트
+  if (data.sectionSubtitle) {
+    updateElementContent("sectionSubtitle", data.sectionSubtitle[lang]);
+  }
+
   // 슬로건 요소 업데이트
   updateElementContent("sloganTopH3", sloganTop.title);
   updateElementContent("sloganTopLine1", sloganTop.line1);
@@ -232,6 +242,11 @@ function setHomeContent(data, lang) {
           .replace(/\n/g, " ");
       }
     });
+  }
+
+  // 갤러리가 있다면 갤러리 초기화 함수 호출
+  if (data.gallery && typeof initializeGallery === "function") {
+    initializeGallery();
   }
 }
 
