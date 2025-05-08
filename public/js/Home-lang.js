@@ -83,10 +83,8 @@ function setLanguage(lang) {
   // 홈 페이지 콘텐츠 업데이트
   updateHomeContent(lang);
 
-  // 만약 현재 페이지가 Research라면 즉시 research 콘텐츠 업데이트를 위해 이벤트 디스패치
-  if (window.location.pathname.includes("/Research")) {
-    document.dispatchEvent(new Event("languageChanged"));
-  }
+  // 언어 변경 이벤트 디스패치 - 모든 페이지에서 공통으로 사용
+  document.dispatchEvent(new Event("languageChanged"));
 }
 
 // 드롭다운 메뉴 업데이트 함수

@@ -47,7 +47,7 @@ function setLanguage(lang) {
       }
     });
     // 텍스트를 한국어로 변경
-    document.getElementById("professer_Link").innerText = "교수 소개";
+    document.getElementById("professor_Link").innerText = "교수 소개";
     document.getElementById("research_Link").innerText = "연구 활동";
     document.getElementById("osLog_Link").innerText = "OS 마당";
     document.getElementById("members_Link").innerText = "멤버 소개";
@@ -83,6 +83,9 @@ function setLanguage(lang) {
 
   // 현재 페이지 링크에 하단 줄 추가
   highlightCurrentPage();
+
+  // 언어 변경 후 이벤트 발생
+  document.dispatchEvent(new Event("languageChanged"));
 }
 
 // 드롭다운 메뉴 업데이트 함수

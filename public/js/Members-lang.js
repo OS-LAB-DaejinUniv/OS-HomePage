@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
+  loadMembersData();
+  updatePageStaticText(getLanguage());
+});
+
+document.addEventListener("languageChanged", function () {
+  loadMembersData();
+  updatePageStaticText(getLanguage());
+});
+
+function loadMembersData() {
   fetch("/json/members.json")
     .then((response) => response.json())
     .then((data) => {
@@ -7,25 +17,62 @@ document.addEventListener("DOMContentLoaded", function () {
       setupModalEvents();
     })
     .catch((error) => console.error("Error loading members data:", error));
-});
-
-document.addEventListener("languageChanged", function () {
-  fetch("/json/members.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const lang = getLanguage();
-      renderMembers(data.members, lang);
-      setupModalEvents();
-      ㄴ;
-    })
-    .catch((error) => console.error("Error updating members content:", error));
-});
+}
 
 function getLanguage() {
   const cookies = document.cookie
     .split(";")
     .find((c) => c.trim().startsWith("language="));
   return cookies ? cookies.split("=")[1] : "kor";
+}
+
+function updatePageStaticText(lang) {
+  // 페이지 제목 및 부제목 업데이트
+  const titleElem = document.getElementById("membersPageTitle");
+  const subtitleElem = document.getElementById("membersPageSubtitle");
+
+  if (titleElem) {
+    titleElem.textContent = lang === "eng" ? "OS LAB Members" : "OS LAB 연구실";
+  }
+
+  if (subtitleElem) {
+    subtitleElem.textContent =
+      lang === "eng"
+        ? "Dedicated team building infrastructure together"
+        : "인프라 구축에 열정을 쏟는 우리 부원들";
+  }
+
+  // 문서 제목 업데이트
+  document.title =
+    lang === "eng" ? "Lab Members - OS LAB" : "연구실 구성원 - OS LAB";
+
+  // 모달 내 정적 텍스트 업데이트
+  const researchInterestsHeader = document.querySelector(
+    ".modal-right .info-section:first-child h4"
+  );
+  const bioHeader = document.querySelector(
+    ".modal-right .info-section:last-child h4"
+  );
+
+  if (researchInterestsHeader) {
+    const icon = researchInterestsHeader.querySelector("i");
+    researchInterestsHeader.innerHTML = "";
+    researchInterestsHeader.appendChild(icon);
+    researchInterestsHeader.appendChild(
+      document.createTextNode(
+        lang === "eng" ? " Research Interests" : " 관심 분야"
+      )
+    );
+  }
+
+  if (bioHeader) {
+    const icon = bioHeader.querySelector("i");
+    bioHeader.innerHTML = "";
+    bioHeader.appendChild(icon);
+    bioHeader.appendChild(
+      document.createTextNode(lang === "eng" ? " Bio" : " 소개")
+    );
+  }
 }
 
 // 멤버 카드 렌더링
