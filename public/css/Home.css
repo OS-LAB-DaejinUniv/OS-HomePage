@@ -214,18 +214,24 @@ html {
   margin: 0 auto;
 }
 
+/* 콘텐츠 영역 조정 */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  align-items: stretch; /* 모든 카드가 같은 높이로 늘어남 */
 }
 
+/* 피처 카드 기본 스타일 수정 */
 .feature-card {
   background: white;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: auto; /* 고정 높이 제거 */
 }
 
 .feature-card:hover {
@@ -236,21 +242,17 @@ html {
 .feature-img {
   height: 220px;
   overflow: hidden;
-}
-
-.feature-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.feature-card:hover .feature-img img {
-  transform: scale(1.05);
+  flex-shrink: 0; /* 고정 높이 유지 */
 }
 
 .feature-content {
   padding: 25px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* 남은 공간 채우기 */
+  min-height: 250px; /* 최소 높이 설정 */
+  /* padding-bottom: 70px; 버튼을 위한 공간 확보 */
 }
 
 .feature-icon {
@@ -291,8 +293,9 @@ html {
   color: #666;
   line-height: 1.6;
   font-size: 15px;
-  margin-bottom: 20px;
+  /* margin-bottom: 10px; 버튼과의 간격 늘림 */
   font-family: "HancomMalangMalang", sans-serif;
+  flex-grow: 1; /* 텍스트 영역 확장 */
 }
 
 .feature-link {
@@ -303,6 +306,10 @@ html {
   display: inline-flex;
   align-items: center;
   transition: all 0.3s ease;
+  margin-top: auto; /* 콘텐츠 맨 아래로 이동 */
+  padding-top: 20px; /* 상단 여백 추가 */
+  padding-bottom: 10px; /* 하단 여백 추가 */
+  align-self: flex-start; /* 왼쪽 정렬 */
 }
 
 .feature-link i {
@@ -640,6 +647,17 @@ html {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+
+  .feature-content {
+    min-height: 320px; /* 태블릿에서 최소 높이 조정 */
+    padding-bottom: 70px; /* 버튼 공간 유지 */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feature-card {
+    height: 580px; /* 태블릿에서 약간 줄인 높이 */
+  }
 }
 
 /* 모바일 (767px 이하) */
@@ -753,16 +771,20 @@ html {
     gap: 20px;
   }
 
-  .section-title h2 {
-    font-size: 28px;
+  .feature-content {
+    min-height: auto; /* 모바일에서는 자연스러운 높이 */
+    padding-bottom: 70px; /* 버튼 공간 유지 */
+    display: flex;
+    flex-direction: column;
   }
 
-  .section-title p {
-    font-size: 16px;
+  .feature-text {
+    margin-bottom: 25px; /* 모바일에서는 간격 축소 */
   }
 
-  .feature-img {
-    height: 180px;
+  .feature-card {
+    height: auto; /* 모바일에서는 자연스러운 높이로 */
+    min-height: 480px; /* 최소 높이만 설정 */
   }
 }
 

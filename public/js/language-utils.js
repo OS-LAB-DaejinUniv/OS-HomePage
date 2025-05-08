@@ -227,6 +227,15 @@ function setHomeContent(data, lang) {
 
   updateElementContent("viewProjectsBtn", projectButtonText);
 
+  // 더 알아보기 버튼 텍스트 업데이트
+  if (data.readMoreText) {
+    const readMoreButtons = document.querySelectorAll(".feature-link");
+    readMoreButtons.forEach((button) => {
+      button.innerHTML =
+        data.readMoreText[lang] + ' <i class="fas fa-arrow-right"></i>';
+    });
+  }
+
   // 피처 카드 콘텐츠 설정
   const contents = data.contents;
   if (contents && contents.length > 0) {

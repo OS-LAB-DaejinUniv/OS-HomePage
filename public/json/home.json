@@ -39,6 +39,10 @@
     "kor": "연구 활동 자세히 보기",
     "eng": "View Research Activities"
   },
+  "readMoreText": {
+    "kor": "더 알아보기",
+    "eng": "Learn More"
+  },
   "sectionTitle": {
     "kor": "OS LAB의 핵심 활동",
     "eng": "OS LAB Core Activities"
