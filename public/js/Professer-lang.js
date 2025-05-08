@@ -1,3 +1,7 @@
+/**
+ * 교수 페이지 특화 기능
+ */
+
 document.addEventListener("DOMContentLoaded", function () {
   loadProfessorData();
   updatePageStaticText(getLanguage());

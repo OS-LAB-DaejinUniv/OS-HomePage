@@ -1,3 +1,7 @@
+/**
+ * 멤버 페이지 특화 기능
+ */
+
 document.addEventListener("DOMContentLoaded", function () {
   loadMembersData();
   updatePageStaticText(getLanguage());
@@ -40,6 +44,10 @@ function updatePageStaticText(lang) {
     lang === "eng" ? "Lab Members - OS LAB" : "연구실 구성원 - OS LAB";
 
   // 모달 내 정적 텍스트 업데이트
+  updateModalTexts(lang);
+}
+
+function updateModalTexts(lang) {
   const researchInterestsHeader = document.querySelector(
     ".modal-right .info-section:first-child h4"
   );

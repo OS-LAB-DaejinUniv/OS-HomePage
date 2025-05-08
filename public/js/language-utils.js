@@ -1,7 +1,12 @@
 /**
- * 언어 관리 유틸리티
+ * 언어 관리 통합 모듈
  * 모든 페이지의 언어 전환과 관련된 공통 기능을 제공합니다.
  */
+
+// 현재 언어 가져오기 (쿠키 또는 기본값)
+function getLanguage() {
+  return getCookie("language") || "kor";
+}
 
 // 언어 설정 함수
 function setLanguage(lang) {
@@ -23,11 +28,9 @@ function setLanguage(lang) {
   // 현재 페이지에 맞는 제목 접미사 결정
   const titleSuffix = pageTitles[pageName] ? pageTitles[pageName][lang] : "";
 
+  // 언어에 따른 UI 업데이트
   if (lang === "kor") {
-    // 언어 선택 버튼 상태 업데이트
     updateLanguageButtons("kor");
-
-    // 네비게이션 메뉴 텍스트 업데이트
     updateNavigationText({
       home: "메인 화면",
       professor: "교수 소개",
@@ -35,10 +38,7 @@ function setLanguage(lang) {
       members: "멤버 소개",
     });
   } else {
-    // 언어 선택 버튼 상태 업데이트
     updateLanguageButtons("eng");
-
-    // 네비게이션 메뉴 텍스트 업데이트
     updateNavigationText({
       home: "Home",
       professor: "Professor",
@@ -52,8 +52,8 @@ function setLanguage(lang) {
     "OS LAB" + (titleSuffix ? " - " + titleSuffix : "");
 
   // h1 제목 업데이트 (존재하는 경우)
-  if (document.querySelector("h1")) {
-    document.querySelector("h1").innerText = titleSuffix;
+  if (document.querySelector("h1.title-heading")) {
+    document.querySelector("h1.title-heading").innerText = titleSuffix;
   }
 
   // 드롭다운 메뉴 업데이트
@@ -186,7 +186,7 @@ function updateHomeContent(lang) {
     .then((data) => setHomeContent(data, lang))
     .catch((error) => {
       console.error("Error loading content:", error);
-      setDefaultHomeContent(lang);
+      // 에러 발생 시는 기본 상태로 유지하고 별도 처리 없음
     });
 }
 
@@ -203,25 +203,25 @@ function setHomeContent(data, lang) {
   const projectButtonText = data.projectButtonText[lang];
 
   // 슬로건 요소 업데이트
-  updateElementText("sloganTopH3", sloganTop.title);
-  updateElementText("sloganTopLine1", sloganTop.line1);
-  updateElementText("sloganTopLine2", sloganTop.line2);
+  updateElementContent("sloganTopH3", sloganTop.title);
+  updateElementContent("sloganTopLine1", sloganTop.line1);
+  updateElementContent("sloganTopLine2", sloganTop.line2);
 
-  updateElementText("sloganMidH3", sloganMid.title);
-  updateElementText("sloganMidLine1", sloganMid.line1);
-  updateElementText("sloganMidLine2", sloganMid.line2);
+  updateElementContent("sloganMidH3", sloganMid.title);
+  updateElementContent("sloganMidLine1", sloganMid.line1);
+  updateElementContent("sloganMidLine2", sloganMid.line2);
 
-  updateElementText("sloganBotH3", sloganBot.title);
-  updateElementText("sloganBotLine1", sloganBot.line1);
-  updateElementText("sloganBotLine2", sloganBot.line2);
+  updateElementContent("sloganBotH3", sloganBot.title);
+  updateElementContent("sloganBotLine1", sloganBot.line1);
+  updateElementContent("sloganBotLine2", sloganBot.line2);
 
-  updateElementText("viewProjectsBtn", projectButtonText);
+  updateElementContent("viewProjectsBtn", projectButtonText);
 
   // 피처 카드 콘텐츠 설정
   const contents = data.contents;
   if (contents && contents.length > 0) {
     contents.forEach((content, index) => {
-      updateElementText(`featureTitle${index + 1}`, content.title[lang]);
+      updateElementContent(`featureTitle${index + 1}`, content.title[lang]);
 
       const contentElement = document.getElementById(
         `featureContent${index + 1}`
@@ -236,74 +236,9 @@ function setHomeContent(data, lang) {
 }
 
 // 요소 텍스트 업데이트 헬퍼 함수
-function updateElementText(elementId, text) {
+function updateElementContent(elementId, text) {
   const element = document.getElementById(elementId);
   if (element) element.innerText = text;
-}
-
-// 에러 발생 시 기본 텍스트 설정
-function setDefaultHomeContent(lang) {
-  const defaultText = {
-    kor: {
-      sloganTop: {
-        title: "Developer",
-        line1: "아이디어에서 현실까지",
-        line2: "개발자가 만드는 세상",
-      },
-      sloganMid: {
-        title: "Server Engineer",
-        line1: "코드로 시작하는 서버의 이야기",
-        line2: "세상을 연결하는 우리의 여정",
-      },
-      sloganBot: {
-        title: "TeamWork",
-        line1: "각자의 장점을 모아",
-        line2: "불가능을 가능으로",
-      },
-      projectButtonText: "연구 활동 자세히 보기",
-    },
-    eng: {
-      sloganTop: {
-        title: "Developer",
-        line1: "Ideas to Code",
-        line2: "By Developers",
-      },
-      sloganMid: {
-        title: "Server Engineer",
-        line1: "Server Stories in Code",
-        line2: "Connecting the World",
-      },
-      sloganBot: {
-        title: "TeamWork",
-        line1: "Strengths Combined",
-        line2: "Success Achieved",
-      },
-      projectButtonText: "View Research Activities",
-    },
-  };
-
-  const content = defaultText[lang];
-  if (!content) return;
-
-  // 각 요소에 기본 텍스트 설정
-  updateElementText("sloganTopH3", content.sloganTop.title);
-  updateElementText("sloganTopLine1", content.sloganTop.line1);
-  updateElementText("sloganTopLine2", content.sloganTop.line2);
-
-  updateElementText("sloganMidH3", content.sloganMid.title);
-  updateElementText("sloganMidLine1", content.sloganMid.line1);
-  updateElementText("sloganMidLine2", content.sloganMid.line2);
-
-  updateElementText("sloganBotH3", content.sloganBot.title);
-  updateElementText("sloganBotLine1", content.sloganBot.line1);
-  updateElementText("sloganBotLine2", content.sloganBot.line2);
-
-  updateElementText("viewProjectsBtn", content.projectButtonText);
-}
-
-// 현재 언어 가져오기
-function getLanguage() {
-  return getCookie("language") || "kor";
 }
 
 // 초기화 함수
@@ -312,19 +247,14 @@ function initializeLanguage() {
   setLanguage(lang);
 
   // 언어 변경 버튼 이벤트 리스너 설정
-  document
-    .getElementById("korBtn")
-    .addEventListener("click", () => setLanguage("kor"));
-  document
-    .getElementById("engBtn")
-    .addEventListener("click", () => setLanguage("eng"));
-  document
-    .getElementById("korBtnMobile")
-    .addEventListener("click", () => setLanguage("kor"));
-  document
-    .getElementById("engBtnMobile")
-    .addEventListener("click", () => setLanguage("eng"));
+  document.querySelectorAll("#korBtn, #korBtnMobile").forEach((btn) => {
+    if (btn) btn.addEventListener("click", () => setLanguage("kor"));
+  });
+
+  document.querySelectorAll("#engBtn, #engBtnMobile").forEach((btn) => {
+    if (btn) btn.addEventListener("click", () => setLanguage("eng"));
+  });
 }
 
-// 페이지 로드 시 초기화
+// DOM이 로드되면 언어 설정 초기화
 document.addEventListener("DOMContentLoaded", initializeLanguage);
