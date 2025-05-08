@@ -126,3 +126,270 @@
     font-size: 12px;
   }
 }
+
+/* 기본 스타일 */
+body {
+  font-family: "HancomMalangMalang", "Noto Sans KR", sans-serif !important;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.professor-main {
+  padding: 3rem 0;
+}
+
+.container {
+  max-width: 1140px;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+/* 페이지 헤더 */
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title-heading {
+  font-family: "HancomMalangMalang", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.title-heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #1a73e8, #4285f4);
+  margin: 0.8rem auto 0;
+  border-radius: 3px;
+}
+
+.subtitle {
+  font-family: "HancomMalangMalang", sans-serif;
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 교수님 프로필 카드 */
+.professor-profile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+}
+
+.profile-header {
+  display: flex;
+  padding: 2.5rem;
+}
+
+.profile-image {
+  flex: 0 0 280px;
+  margin-right: 2.5rem;
+}
+
+.profile-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-family: "HancomMalangMalang", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.profile-title {
+  font-family: "HancomMalangMalang", sans-serif;
+  font-size: 1.1rem;
+  color: #1a73e8;
+  margin-bottom: 1.5rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  font-family: "HancomMalangMalang", sans-serif;
+}
+
+.contact-item i {
+  flex: 0 0 1.5rem;
+  color: #1a73e8;
+  margin-top: 0.25rem;
+}
+
+.contact-label {
+  flex: 0 0 100px;
+  font-weight: 600;
+  color: #555;
+  margin-right: 1rem;
+}
+
+.contact-value {
+  flex: 1;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* 경력 및 업적 섹션 */
+.career-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.career-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-family: "HancomMalangMalang", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a73e8;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(26, 115, 232, 0.2);
+}
+
+.section-content {
+  font-family: "HancomMalangMalang", sans-serif;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* 반응형 스타일 */
+/* 데스크톱 (981px 초과) */
+@media (min-width: 981px) {
+  .container {
+    padding: 0 2rem;
+  }
+  .profile-card,
+  .career-section {
+    width: 900px;
+  }
+}
+
+/* 태블릿 (981px 이하) */
+@media (max-width: 981px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .profile-image {
+    margin-right: 0;
+    margin-bottom: 2rem;
+    flex: 0 0 220px;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .contact-label {
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-details {
+    align-items: flex-start;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .career-section {
+    padding: 1.5rem;
+  }
+}
+
+/* 모바일 (575px 이하) */
+@media (max-width: 575px) {
+  .profile-name {
+    font-size: 1.7rem;
+  }
+
+  .profile-title {
+    font-size: 1rem;
+  }
+
+  .profile-image {
+    flex: 0 0 180px;
+  }
+
+  .title-heading {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .profile-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .career-section {
+    padding: 1.25rem;
+  }
+
+  .contact-item i {
+    flex-basis: 1.2rem;
+  }
+
+  .contact-label {
+    flex-basis: auto;
+    margin-bottom: 0.15rem;
+  }
+
+  .contact-value {
+    font-size: 0.95rem;
+  }
+
+  .section-content {
+    font-size: 0.95rem;
+  }
+}
