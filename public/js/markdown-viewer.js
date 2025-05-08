@@ -4,6 +4,8 @@
  */
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Highlight.js 초기화 코드 제거
+
   // Mermaid 초기화
   if (typeof mermaid !== "undefined") {
     mermaid.initialize({
@@ -30,8 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
       if (language === "mermaid") {
         return `<div class="mermaid">${code}</div>`;
       }
-      // 그 외 일반 코드는 기본 렌더러 사용
-      return originalCodeRenderer.call(this, code, language, isEscaped);
+
+      // 일반 코드 블록 간소화 (하이라이팅 없음)
+      return `<pre><code class="language-${
+        language || "plaintext"
+      }">${code}</code></pre>`;
     };
 
     marked.setOptions({
@@ -47,6 +52,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// HTML 이스케이프 헬퍼 함수
+function escapeHtml(unsafe) {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
 
 // 마크다운 파일 로드 및 렌더링 함수
 function renderMarkdownFromUrl(url, targetElementId) {
@@ -72,9 +87,6 @@ function renderMarkdownFromUrl(url, targetElementId) {
 
         // Mermaid 다이어그램 렌더링
         renderMermaidDiagrams(targetElement);
-
-        // 코드 블록 하이라이트
-        highlightCodeBlocks(targetElement);
       } else {
         targetElement.innerHTML = `<pre>${markdown}</pre>`;
       }
@@ -108,17 +120,9 @@ function optimizeImages(container) {
   });
 }
 
-// 코드 블록 하이라이트 (옵션)
-function highlightCodeBlocks(container) {
-  const codeBlocks = container.querySelectorAll("pre code");
-  if (typeof hljs !== "undefined") {
-    codeBlocks.forEach((block) => {
-      hljs.highlightElement(block);
-    });
-  }
-}
+// 코드 블록 하이라이팅 함수 제거
 
-// Mermaid 다이어그램 렌더링 (새 함수 추가)
+// Mermaid 다이어그램 렌더링
 function renderMermaidDiagrams(container) {
   if (typeof mermaid === "undefined") return;
 

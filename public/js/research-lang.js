@@ -253,17 +253,8 @@ function loadMarkdownContent(index, lang) {
           });
         });
 
-        // Mermaid 다이어그램 렌더링 (새로 추가)
+        // Mermaid 다이어그램 렌더링
         renderMermaidDiagrams(document.getElementById("markdownContent"));
-
-        // 코드 영역에 하이라이팅 적용 (선택적)
-        if (typeof hljs !== "undefined") {
-          document
-            .querySelectorAll("#markdownContent pre code")
-            .forEach((block) => {
-              hljs.highlightElement(block);
-            });
-        }
       } else {
         document.getElementById("markdownContent").textContent = markdown;
       }
