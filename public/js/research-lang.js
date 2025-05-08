@@ -41,7 +41,7 @@ function setResearchContent(data, lang) {
             item.link && item.link[lang]
               ? `<a href="${item.link[lang]}" class="btn btn-primary">
                 ${lang === "eng" ? "View Details" : "자세히 보기"}
-               </a>`
+              </a>`
               : ""
           }
         </div>
