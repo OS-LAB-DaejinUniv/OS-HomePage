@@ -18,13 +18,6 @@ function loadProfessorData() {
     .catch((error) => console.error("Error loading professor data:", error));
 }
 
-function getLanguage() {
-  const cookies = document.cookie
-    .split(";")
-    .find((c) => c.trim().startsWith("language="));
-  return cookies ? cookies.split("=")[1] : "kor";
-}
-
 function updatePageStaticText(lang) {
   // 페이지 제목 업데이트
   document.getElementById("professorPageTitle").textContent =

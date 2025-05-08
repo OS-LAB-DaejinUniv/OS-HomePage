@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => console.error("Error loading research content:", error));
 });
 
-// 초기 로딩 외, 언어 변경 시 다시 업데이트
+// 언어 변경 시 컨텐츠 업데이트
 document.addEventListener("languageChanged", function () {
   fetch("/json/research.json")
     .then((response) => response.json())
@@ -13,13 +13,7 @@ document.addEventListener("languageChanged", function () {
     .catch((error) => console.error("Error updating research content:", error));
 });
 
-function getLanguage() {
-  const cookies = document.cookie
-    .split(";")
-    .find((c) => c.trim().startsWith("language="));
-  return cookies ? cookies.split("=")[1] : "kor";
-}
-
+// getLanguage는 language-utils.js에서 가져오므로 단순화함
 function setResearchContent(data, lang) {
   const container = document.getElementById("researchContainer");
   if (!container) return;

@@ -339,3 +339,12 @@ function setHomeContent(data, lang) {
     });
   }
 }
+
+/**
+ * 홈페이지 특화 기능
+ * 대부분의 기능은 language-utils.js로 이동했습니다.
+ */
+
+// DOMContentLoaded 이벤트에서의 초기화는 language-utils.js에서 처리
+
+// 특정 홈페이지 전용 기능이 있다면 여기에 추가
