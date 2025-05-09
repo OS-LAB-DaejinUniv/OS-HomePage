@@ -55,7 +55,7 @@ body {
 }
 
 /* 멤버 그리드 - 새로운 레이아웃 */
-.members-grid {
+.members-main-grid {
   display: grid;
   grid-template-columns: repeat(3, 300px);
   gap: 30px;
@@ -226,14 +226,6 @@ body {
   transform: translateY(-2px);
 }
 
-.member-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1rem;
-  border-top: 1px solid #f0f0f0;
-  margin-top: auto;
-}
 
 .github-link {
   display: flex;
@@ -480,7 +472,7 @@ body {
 
 /* 태블릿 (981px 이하) */
 @media (max-width: 980px) {
-  .members-grid {
+  .members-main-grid {
     grid-template-columns: repeat(2, minmax(280px, 1fr));
     gap: 25px;
     padding: 0 15px;
@@ -524,7 +516,7 @@ body {
 
 /* 모바일 (575px 이하) */
 @media (max-width: 575px) {
-  .members-grid {
+  .members-main-grid {
     grid-template-columns: repeat(1, minmax(280px, 1fr));
     gap: 20px;
     padding: 0 20px;
@@ -558,69 +550,9 @@ body {
   .modal-name {
     font-size: 1.5rem;
   }
-
-  /* 모바일 푸터 최적화 */
-  .modern-footer .footer-links {
-    width: 100%;
-  }
-}
-
-/* Members 페이지 푸터 수정 - 겹침 및 z-index 문제 해결 */
-.members-footer {
-  margin-top: 2rem;
-  clear: both; /* 플로트 해제 */
-  position: relative;
-  z-index: 5; /* 더 높은 z-index */
-}
-
-.members-footer .footer-container {
-  display: flex !important; /* 강제 가로 배치 */
-  flex-direction: row !important; /* 가로 방향 강제 */
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.members-footer .footer-brand {
-  width: auto !important;
-  min-width: 200px;
-  flex: 1;
-}
-
-.members-footer .footer-links {
-  display: flex !important;
-  width: auto !important;
-  flex-wrap: wrap;
-  flex-direction: row !important;
-  gap: 3rem;
-}
-
-.members-footer .footer-column {
-  width: auto !important;
-}
-
-.members-footer .members-links {
-  min-width: 380px;
-}
-
-/* 모바일 스타일 */
-@media (max-width: 768px) {
-  .members-footer .footer-container {
-    flex-direction: column-reverse !important;
-  }
-
-  .members-footer .footer-links {
-    width: 100% !important;
-  }
 }
 
 /* body에 모달 열림 상태 표시 */
 body.modal-open {
   overflow: hidden;
-}
-
-/* Members 페이지 푸터 수정 - 겹침 및 z-index 문제 해결 */
-.modern-footer {
-  position: relative;
-  z-index: 1;
-  margin-top: 2rem;
 }

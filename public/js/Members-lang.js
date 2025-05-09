@@ -4,7 +4,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   // 바디에 특별 클래스 추가
-  document.body.classList.add("override-footer-layout");
+  // document.body.classList.add("override-footer-layout");
 
   loadMembersData();
   updatePageStaticText(getLanguage());
