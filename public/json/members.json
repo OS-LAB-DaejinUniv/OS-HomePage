@@ -18,8 +18,8 @@
       "img": "../images/img-prof.jpeg",
       "role": "leader",
       "bio": {
-        "kor": "운영체제 및 분산 컴퓨팅 분야의 전문 지식으로 OS Lab을 이끌고 있습니다. 학생 멘토링과 시스템 소프트웨어 연구 발전에 열정을 가지고 있습니다.",
-        "eng": "Leading the OS Lab with expertise in operating systems and distributed computing. Passionate about mentoring students and advancing research in system software."
+        "kor": "정보보호와 디지털 포렌식, 네트워크 보안 분야에 관심을 갖고 있습니다. 다양한 보안 위협을 분석하고 대응하는 기술에 매력을 느끼며, 실질적인 보안 강화 방법을 탐구하고 있습니다. 앞으로 실무와 연결되는 연구를 통해 보안 분야에서 전문성을 키워나가는 것을 목표로 하고 있습니다.",
+        "eng": "I am interested in information security, digital forensics, and network security. I am fascinated by the technologies that analyze and respond to various security threats, and I explore practical methods to enhance security. My goal is to develop expertise in the field of security through research connected to practical work."
       }
     },
     {
@@ -52,8 +52,8 @@
       "img": "https://github.com/JJ-IM.png",
       "role": "member",
       "bio": {
-        "kor": "운영체제 및 분산 컴퓨팅 분야의 전문 지식으로 OS Lab을 이끌고 있습니다. 학생 멘토링과 시스템 소프트웨어 연구 발전에 열정을 가지고 있습니다.",
-        "eng": "Leading the OS Lab with expertise in operating systems and distributed computing. Passionate about mentoring students and advancing research in system software."
+        "kor": "대부분 모든 분야에 관심이 있으며, 특히 네트워크 보안과 서버에 많으며, 수많은 서버들을 운영 및 관리를 하고 있습니다. 또한, 클라우드 컴퓨팅과 웹 서비스에 대한 관심이 많으며, DevOps에 대한 경험도 쌓고 있습니다. 추가적으로, 'Colio.net' 을 운영하고 있으며, 다양한 웹 서비스를 제공하고 있습니다.",
+        "eng": "I am interested in almost all fields, especially network security and servers, and I operate and manage numerous servers. I also have a keen interest in cloud computing and web services, and I am gaining experience in DevOps. Additionally, I run 'Colio.net', providing various web services."
       }
     },
     {
@@ -74,8 +74,8 @@
       "img": "https://github.com/tlsnwls.png",
       "role": "member",
       "bio": {
-        "kor": "운영체제 및 분산 컴퓨팅 분야의 전문 지식으로 OS Lab을 이끌고 있습니다. 학생 멘토링과 시스템 소프트웨어 연구 발전에 열정을 가지고 있습니다.",
-        "eng": "Leading the OS Lab with expertise in operating systems and distributed computing. Passionate about mentoring students and advancing research in system software."
+        "kor": "서버 엔지니어링과 데이터 엔지니어링에 관심이 많습니다. 특히, 파이썬을 활용한 데이터 처리 및 분석에 매력을 느끼고 있으며, DevOps 환경에서의 자동화와 효율성 향상에도 열정을 가지고 있습니다.",
+        "eng": "I am very interested in server engineering and data engineering. I am particularly fascinated by data processing and analysis using Python, and I am passionate about automation and efficiency improvement in DevOps environments."
       }
     },
     {
@@ -99,7 +99,11 @@
       },
       "github": "2o4oo",
       "img": "https://github.com/2o4oo.png",
-      "role": "member"
+      "role": "member",
+      "bio": {
+        "kor": "네트워크와 웹 풀스택 개발에 관심이 많습니다. 특히, 서버 엔지니어링과 임베디드 시스템에도 흥미를 가지고 있으며, 다양한 기술을 배우고 적용하는 데 열정을 가지고 있습니다.",
+        "eng": "I am very interested in network and web fullstack development. I am particularly interested in server engineering and embedded systems, and I am passionate about learning and applying various technologies."
+      }
     },
     {
       "name": {
@@ -117,7 +121,11 @@
       },
       "github": "krhasta",
       "img": "https://github.com/krhasta.png",
-      "role": "member"
+      "role": "member",
+      "bio": {
+        "kor": "웹 프론트엔드와 UI/UX 디자인에 관심이 많습니다. 특히, 사용자 경험을 개선하기 위한 다양한 기술과 도구를 배우고 적용하는 데 열정을 가지고 있습니다. 서버 엔지니어링에도 흥미를 가지고 있으며, 웹 애플리케이션의 전체적인 구조를 이해하고 싶습니다.",
+        "eng": "I am very interested in web frontend and UI/UX design. I am particularly passionate about learning and applying various technologies and tools to improve user experience. I also have an interest in server engineering and want to understand the overall structure of web applications."
+      }
     },
     {
       "name": {
@@ -130,12 +138,16 @@
       },
       "email": "chaebin0926@naver.com",
       "interests": {
-        "kor": ["웹 개발", "UI/UX", "프론트엔드"],
-        "eng": ["Web Development", "UI/UX", "Frontend"]
+        "kor": ["웹 백엔드", "MySQL", "클라우드 컴퓨팅", "시스템 보안"],
+        "eng": ["Web Backend", "MySQL", "Cloud Computing", "System Sec"]
       },
       "github": "chaeb03",
       "img": "https://github.com/chaeb03.png",
-      "role": "member"
+      "role": "member",
+      "bio": {
+        "kor": "현재 Spring Boot와 MySQL을 활용한 웹 백엔드 개발에 관심이 많습니다. 클라우드 컴퓨팅과 시스템 보안에도 흥미를 가지고 있으며, 다양한 기술을 배우고 적용하는 데 열정을 가지고 있습니다.",
+        "eng": "I am currently very interested in web backend development using Spring Boot and MySQL. I also have an interest in cloud computing and system security, and I am passionate about learning and applying various technologies."
+      }
     }
   ]
 }

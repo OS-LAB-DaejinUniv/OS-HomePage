@@ -273,7 +273,7 @@ function updateFooterText(lang) {
   // 푸터 텍스트 설정
   const footerTexts = {
     kor: {
-      copyright: "2024 OS LAB, Daejin University",
+      copyright: "2025 OS LAB, Daejin University",
       inquiry: "문의",
       address: "대진대학교 이공학관 다동 A9-4131",
       membersOnly: "구성원 전용",
@@ -285,7 +285,7 @@ function updateFooterText(lang) {
       aiChat: "AI챗",
     },
     eng: {
-      copyright: "2024 OS LAB, Daejin University",
+      copyright: "2025 OS LAB, Daejin University",
       inquiry: "Contact",
       address: "A9-4131, Science & Engineering Bldg., Daejin University",
       membersOnly: "Members Only",
