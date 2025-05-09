@@ -197,37 +197,263 @@ body {
   color: #1a73e8;
 }
 
-footer {
-  background-color: #f9fafc;
-  display: flex;
-  justify-content: start;
+/* 새로운 푸터 스타일 */
+.modern-footer {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  position: relative;
   font-family: "Noto Sans KR", sans-serif;
-  padding: 40px 67px;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+  z-index: 10; /* 푸터 z-index 추가 */
+  box-sizing: border-box; /* 박스 모델 명확히 지정 */
+  overflow: hidden; /* 내부 요소가 넘치지 않도록 설정 */
+  width: 100%; /* 전체 너비 명시 */
 }
 
-footer li {
-  padding-bottom: 3px;
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-start;
+  box-sizing: border-box; /* 박스 모델 추가 */
+  width: 100%; /* 너비 명시 */
 }
 
-.link:hover {
-  text-decoration: underline;
-  color: #0056b4;
+.footer-brand {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end; /* 브랜드 영역 하단 정렬 */
+  margin-bottom: 1rem; /* 하단 마진 추가 */
+  align-items: center; /* 중앙 정렬 추가 */
+  text-align: center; /* 텍스트 중앙 정렬 */
 }
 
-.footer-contents > ul {
-  padding: 0 20px 0 0;
-}
-
-.f-content {
-  color: #6b7683;
-}
-
-.f-title {
-  font-weight: bold;
-  color: #333d4c;
+.footer-logo-container {
+  display: flex; /* block에서 flex로 변경 */
+  align-items: flex-end; /* 항목들을 하단 정렬 */
+  margin-bottom: 1rem;
+  gap: 0.8rem; /* 로고와 깃허브 아이콘 사이 간격 */
+  justify-content: center; /* 중앙 정렬 추가 */
 }
 
 .footer-logo {
+  height: 2.8rem; /* 로고 크기 */
   width: auto;
-  height: 1.5rem;
+  filter: brightness(1.2);
+  opacity: 0.8; /* 투명도 적용 */
+}
+
+.github-icon {
+  width: 24px; /* 깃헙 아이콘 크기 조정 */
+  height: 24px;
+  color: #e2e8f0;
+  opacity: 0.8; /* 투명도 적용 */
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: inline-flex; /* inline-block에서 inline-flex로 변경 */
+  align-items: center;
+  margin-bottom: 0.1rem; /* 미세 조정 - 완전 바닥이 아닌 약간 위로 */
+}
+
+.copyright {
+  font-size: 0.875rem;
+  opacity: 0.7;
+  margin-top: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 중앙 정렬 추가 */
+}
+
+.copyright i {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.footer-column {
+  min-width: 180px;
+}
+
+/* 구성원 전용 링크를 위한 확장 스타일 */
+.members-links {
+  min-width: 380px; /* 더 넓은 공간 확보 */
+}
+
+.members-grid {
+  display: flex;
+  gap: 2rem;
+}
+
+.members-grid .footer-list {
+  min-width: 160px;
+}
+
+.footer-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 2rem;
+  height: 2px;
+  background: linear-gradient(90deg, #1a73e8, #4285f4);
+  border-radius: 2px;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-item {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer-item i {
+  margin-right: 0.5rem;
+  color: #4285f4;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  width: 20px; /* 아이콘에 고정 너비 지정 */
+  text-align: center; /* 아이콘 중앙 정렬 */
+}
+
+.footer-link {
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-link:hover {
+  color: #4285f4;
+  text-decoration: none;
+}
+
+/* 특수한 경우 스타일 오버라이드 */
+body.override-footer-layout .footer-container {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+body.override-footer-layout .footer-brand,
+body.override-footer-layout .footer-links {
+  width: auto !important;
+}
+
+/* 반응형 스타일 - 개선된 미디어 쿼리 */
+@media (max-width: 991px) {
+  .footer-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .footer-links {
+    flex: 1;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .members-links {
+    min-width: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column-reverse; /* 브랜드 영역을 아래로 */
+    padding: 2rem 1.5rem;
+  }
+
+  .footer-brand {
+    margin-bottom: 0;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+  }
+
+  .footer-links {
+    gap: 2rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .members-links {
+    min-width: 100%;
+  }
+
+  .members-grid {
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: space-between;
+  }
+
+  .members-grid .footer-list {
+    min-width: calc(50% - 1rem);
+    flex: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-heading {
+    margin-bottom: 1rem;
+  }
+
+  .members-grid {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .members-grid .footer-list {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .footer-item {
+    margin-bottom: 0.6rem;
+  }
+}
+
+/* 푸터 구분 경계선 */
+main {
+  min-height: calc(100vh - 300px);
+  padding-bottom: 3rem;
+  position: relative;
+  z-index: 1; /* z-index 추가하여 푸터 뒤에 오게 함 */
 }

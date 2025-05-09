@@ -41,54 +41,11 @@
       </div>
     </main>
 
-    <!-- 수정된 멤버 상세정보 모달 - 헤더 제거 및 구조 변경 -->
-    <div class="modal-overlay" id="memberModalOverlay">
-      <div class="member-modal">
-        <div class="modal-body">
-          <!-- 닫기 버튼을 modal-right 영역으로 이동 -->
-          <button class="modal-close" id="modalCloseBtn">
-            <i class="fas fa-times"></i>
-          </button>
-          
-          <div class="modal-left">
-            <div class="modal-avatar">
-              <img id="modalMemberImg" src="" alt="">
-            </div>
-            <!-- 이름을 프로필 사진 아래로 이동 -->
-            <h3 id="modalMemberName" class="modal-name"></h3>
-            <p id="modalMemberPosition" class="modal-position"></p>
-            <div class="modal-contact">
-              <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <span id="modalMemberEmail"></span>
-              </div>
-              <div class="contact-item">
-                <i class="fab fa-github"></i>
-                <a id="modalGithubLink" href="#" target="_blank"></a>
-              </div>
-            </div>
-          </div>
-          <div class="modal-right">
-            <div class="info-section">
-              <h4>
-                <i class="fas fa-lightbulb"></i>
-                <%= lang === 'eng' ? 'Research Interests' : '관심 분야' %>
-              </h4>
-              <div id="modalMemberInterests" class="interests-list"></div>
-            </div>
-            <div class="info-section" id="modalBioSection">
-              <h4>
-                <i class="fas fa-user"></i>
-                <%= lang === 'eng' ? 'Bio' : '소개' %>
-              </h4>
-              <p id="modalMemberBio" class="bio-text"></p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- 수정된 footer 래퍼 -->
+    <div class="members-footer">
+      <%- include('../partials/footer') %>
     </div>
 
-    <%- include('../partials/footer') %>
     <script src="/js/cookies.js"></script>
     <script src="/js/language-utils.js"></script>
     <script src="/js/navbar.js"></script>

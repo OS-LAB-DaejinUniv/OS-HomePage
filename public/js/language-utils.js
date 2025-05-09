@@ -59,6 +59,9 @@ function setLanguage(lang) {
   // 드롭다운 메뉴 업데이트
   updateDropdownMenu(lang);
 
+  // 푸터 텍스트 업데이트
+  updateFooterText(lang);
+
   // 쿠키 설정
   setCookie("language", lang, 30); // 쿠키를 30일간 유지
 
@@ -263,6 +266,61 @@ function setHomeContent(data, lang) {
 function updateElementContent(elementId, text) {
   const element = document.getElementById(elementId);
   if (element) element.innerText = text;
+}
+
+// 푸터 텍스트 업데이트 함수 추가
+function updateFooterText(lang) {
+  // 푸터 텍스트 설정
+  const footerTexts = {
+    kor: {
+      copyright: "2024 OS LAB, Daejin University",
+      inquiry: "문의",
+      address: "대진대학교 이공학관 다동 A9-4131",
+      membersOnly: "구성원 전용",
+      intranet: "인트라넷",
+      attendance: "근태내역 조회",
+      printing: "온라인 문서출력",
+      computing: "컴퓨팅 클라우드",
+      cloud: "클라우드",
+      aiChat: "AI챗",
+    },
+    eng: {
+      copyright: "2024 OS LAB, Daejin University",
+      inquiry: "Contact",
+      address: "A9-4131, Science & Engineering Bldg., Daejin University",
+      membersOnly: "Members Only",
+      intranet: "Intranet",
+      attendance: "Attendance",
+      printing: "Online Printing",
+      computing: "Computing Cloud",
+      cloud: "Cloud",
+      aiChat: "AI Chat",
+    },
+  };
+
+  // 푸터 요소 업데이트
+  updateElementContent("footerCopyright", footerTexts[lang].copyright);
+  updateElementContent("footerInquiry", footerTexts[lang].inquiry);
+  updateElementContent("footerAddress", footerTexts[lang].address);
+  updateElementContent("footerMembersOnly", footerTexts[lang].membersOnly);
+  updateElementContent("footerIntranet", footerTexts[lang].intranet);
+  updateElementContent("footerAttendance", footerTexts[lang].attendance);
+  updateElementContent("footerPrinting", footerTexts[lang].printing);
+  updateElementContent("footerComputing", footerTexts[lang].computing);
+  updateElementContent("footerCloud", footerTexts[lang].cloud);
+  updateElementContent("footerAIChat", footerTexts[lang].aiChat);
+
+  // 푸터 주소 아이콘 추가
+  const addressElement = document.getElementById("footerAddress");
+  if (addressElement) {
+    const icon = document.createElement("i");
+    icon.className = "fas fa-map-marker-alt";
+    addressElement.innerHTML = "";
+    addressElement.appendChild(icon);
+    addressElement.appendChild(
+      document.createTextNode(" " + footerTexts[lang].address)
+    );
+  }
 }
 
 // 초기화 함수

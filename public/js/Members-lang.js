@@ -3,6 +3,9 @@
  */
 
 document.addEventListener("DOMContentLoaded", function () {
+  // 바디에 특별 클래스 추가
+  document.body.classList.add("override-footer-layout");
+
   loadMembersData();
   updatePageStaticText(getLanguage());
 });
@@ -254,6 +257,16 @@ function closeModal() {
 
 // 페이지 초기화
 document.addEventListener("DOMContentLoaded", function () {
+  // Footer 문제 해결을 위한 타임아웃 설정
+  setTimeout(function () {
+    const footer = document.querySelector(".modern-footer");
+    if (footer) {
+      footer.style.display = "block";
+      footer.offsetHeight; // 강제 리플로우
+      footer.style.display = "";
+    }
+  }, 100);
+
   // AOS 초기화
   AOS.init({
     duration: 700,
