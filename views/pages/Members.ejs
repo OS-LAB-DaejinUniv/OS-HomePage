@@ -41,6 +41,45 @@
       </div>
     </main>
 
+    <!-- 멤버 상세정보 모달 -->
+    <div class="modal-overlay" id="memberModalOverlay">
+      <div class="member-modal">
+        <!-- 닫기 버튼 -->
+        <button class="modal-close" id="modalCloseBtn">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-body">
+          <div class="modal-left">
+            <div class="modal-avatar">
+              <img id="modalMemberImg" src="" alt="프로필" />
+            </div>
+            <div class="modal-name" id="modalMemberName"></div>
+            <div class="modal-position" id="modalMemberPosition"></div>
+            <div class="modal-contact">
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span id="modalMemberEmail"></span>
+              </div>
+              <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <a id="modalGithubLink" href="#" target="_blank"></a>
+              </div>
+            </div>
+          </div>
+          <div class="modal-right">
+            <div class="info-section">
+              <h4><i class="fas fa-star"></i> 관심 분야</h4>
+              <div class="interests-list" id="modalMemberInterests"></div>
+            </div>
+            <div class="info-section" id="modalBioSection">
+              <h4><i class="fas fa-user"></i> 소개</h4>
+              <div class="bio-text" id="modalMemberBio"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <%- include('../partials/footer') %>
 
     <script src="/js/cookies.js"></script>

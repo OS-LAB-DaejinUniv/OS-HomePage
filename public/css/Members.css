@@ -556,3 +556,12 @@ body {
 body.modal-open {
   overflow: hidden;
 }
+
+.member-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+  margin-top: auto;
+}
